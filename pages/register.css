@@ -36,7 +36,7 @@ p {
 
 body{
 	/*background: linear-gradient(to bottom left, #25A22B, #FFFFFF);*/
-    background-image: url("/images/reg-bg.jpg.png");
+    background-image: url("/images/reg-bg.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     background-size: cover;
@@ -127,7 +127,7 @@ hr.rounded {
 	align-content: center;
 	justify-self: center;
 	cursor: pointer;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins-Bold', sans-serif;
 }
 .container .form .submitBtn:hover{
 	background-color: #5fec5f;
