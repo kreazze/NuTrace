@@ -52,6 +52,10 @@ body{
     text-decoration: none;
     color: #25a22b;
 }
+.back a:hover{
+	color: black;
+	text-decoration:underline;
+}
 .container{
 	/*border: 2px solid black;*/
 	max-width: 500px;
@@ -131,6 +135,7 @@ hr.rounded {
 	margin-top: 20px;
 	padding: 5px;
 	background-color: #25a22b;
+	color: white;
 	border: none;
 	border-radius: 8px;
 	text-transform: uppercase;
@@ -142,4 +147,5 @@ hr.rounded {
 .container .form .submitBtn:hover{
 	background-color: #5fec5f;
 	opacity: 0.8;
+	color: black;
 }
