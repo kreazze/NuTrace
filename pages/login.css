@@ -33,6 +33,39 @@ p {
     margin-top: 0;
     font-family:'Poppins-Italic';
 }
+.p1 a{
+    margin-top: 2px;
+    margin-left: 55%;
+    margin-bottom: 0;
+    margin-right: 40px;
+    font-size: 15px;
+    color: #cac1c1;
+    font-family: 'Poppins-Medium';
+    text-emphasis: none;
+}
+.p1 a:hover{
+    color: #5fec5f;
+}
+.p2{
+    margin-top: 0;
+    margin-left: 42%;
+    margin-bottom: 10px;
+    margin-right: 40px;
+    font-size: 0.75rem;
+    color: #cac1c1;
+    font-family: 'Poppins-Italic';
+}
+.p3{
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color: black;
+    text-align: center;
+    margin-right: 50px;
+    font-family: 'Poppins-Regular';
+}
+.p3 a:hover{
+    color: #5fec5f;
+}
 
 body{
 	/*background: linear-gradient(to bottom left, #25A22B, #FFFFFF);*/
@@ -51,6 +84,10 @@ body{
 .back a{
     text-decoration: none;
     color: #25a22b;
+}
+.back a:hover{
+	color: black;
+	text-decoration:underline;
 }
 .container{
 	/*border: 2px solid black;*/
@@ -127,10 +164,12 @@ hr.rounded {
 .container .form .submitBtn{
 	width: 150px;
 	margin-left: 30%;
-	margin-bottom: 20px;
-	margin-top: 20px;
+    margin-right: 10%;
+	margin-bottom: 3px;
+	margin-top: 5px;
 	padding: 5px;
 	background-color: #25a22b;
+    color: white;
 	border: none;
 	border-radius: 8px;
 	text-transform: uppercase;
@@ -142,4 +181,42 @@ hr.rounded {
 .container .form .submitBtn:hover{
 	background-color: #5fec5f;
 	opacity: 0.8;
+    color: #000;
 }
+
+/*Popup for forgot password*/
+.forgotPass{
+    padding: 10px 10px;
+    width: 400px;
+    background:rgb(0, 0, 0);
+    border-radius: 10px;
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translate(-50%,-50%)scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #25a22b;
+    font-family: 'Poppins-Bold', sans-serif;
+    visibility: hidden;
+    transition: transform 0.4s, top0.4s;
+}
+.forgotPass .popup{
+    color: #ffffff;
+    top: 10px;
+}
+.continueBtn{
+    background-color: #25a22b;
+    color: white;
+    margin-top: 9px;;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.open-forgotPass{
+    visibility: visible;
+    top: 50%; 
+    transform: translate(-50%,-50%)scale(1);
+}   
