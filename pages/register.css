@@ -36,11 +36,21 @@ p {
 
 body{
 	/*background: linear-gradient(to bottom left, #25A22B, #FFFFFF);*/
-    background-image: url("/images/reg-bg.png");
+    background-image: url("/images/reg-bg.jpg.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     background-size: cover;
 	padding: 5px auto;
+}
+.back{
+    margin-left: 20px;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #25a22b;
+}
+.back a{
+    text-decoration: none;
+    color: #25a22b;
 }
 .container{
 	/*border: 2px solid black;*/
@@ -118,7 +128,7 @@ hr.rounded {
 	width: 150px;
 	margin-left: 30%;
 	margin-bottom: 20px;
-	margin-top: 10px;
+	margin-top: 20px;
 	padding: 5px;
 	background-color: #25a22b;
 	border: none;
