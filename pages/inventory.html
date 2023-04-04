@@ -5,11 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NuTrace</title>
-        <link rel ="stylesheet" href="/pages/calendar.css">
+        <link rel ="stylesheet" href="/pages/inventory.css">
         <link rel="icon" type="image/png" href="/images/nutrace_logo.png">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,900&display=swap" rel="stylesheet">
     </head>
     <body>
         <section id="sidebar">
@@ -67,16 +64,25 @@
             <main class="main-content">
                 <!--display real-time-->
                 <title>Inventory</title>
-                <div class="time" style="margin-left: 80%; padding: 2px auto;">
-                    <br>
-                    <p><b><b id="datetime" style="text-align:right; color: black; font: 1em sans-serif;"></span></b></p>
-                </div>
+                <p class="p5" id="datetime"></p>
+                <p class="p4">Crop Harvest Inventory</p>
+                
             </main>
         </section>
-        <!--Script for updating time-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <footer>
+            <img class="pup-logo" src="/images/assets/pup-logo.png" width="50px" height="50px">
+            <img class="ce-logo" src="/images/assets/ce-logo.png" width="50px" height="50px">
+            <img class="coe-logo" src="/images/assets/coe-logo.png" width="50px" height="50px">
+            <section class="footer-text">
+                <p class="p1">Polytechnic University of the Philippines</p>                
+                <p class="p2">College of Engineering</p>
+                <p class="p3">Department of Computer Engineering</p>
+            </section>
+        </footer>
         
+        <script src="/pages/script.js"></script>
+
+        <!--Script for updating time-->
         <script>
             var datetime = new Date();
             console.log(datetime);
@@ -91,11 +97,5 @@
             setInterval(refreshTime, 1000);
         </script>
         <!--Script for updating time-->
-
-
-        <footer>
-
-        </footer>
-        <script src="/pages/script.js"></script>
     </body>
 </html>
