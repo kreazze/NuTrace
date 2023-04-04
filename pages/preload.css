@@ -1,0 +1,159 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,800;1,900&display=swap');
+
+
+:root{
+    --primary-color: #027202;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: rgb(0, 0, 0);
+    color: white;
+    font-size: 1.5rem;
+}
+
+h1, h2, h3, h4{
+    line-height: 3rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+ul{
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+/*header section*/
+
+.main-header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: url(../images/landing-bg.png) no-repeat center center/cover;
+}
+
+.main-header::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(55, 58, 55, 0.76);
+    z-index: 1;
+}
+
+.header-top{
+    position: relative;
+    height: 10%;
+    z-index: 2;
+}
+
+.header-top .logo{
+    position: absolute;
+    top: 350%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.header-top a{
+    position: absolute;
+    top: 80%;
+    right: 0;
+    transform: translate(-50%,-50%);
+}
+
+.header-content{
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 14rem;
+    z-index: 2;
+}
+
+.header-content h1{
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.3rem;
+    margin: 0 0 2rem;
+}
+
+.header-content h4{
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 0 2rem;
+}
+
+.header-content p{
+    text-transform: '';
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin: 1rem 2rem;
+}
+
+.header-content a{
+    margin-top: 2rem;
+}
+h4{
+    font-size: 0.75rem;
+}
+
+/* utilities class*/
+
+/* .btn{
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.2rem 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    outline: none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+    border-radius: 2px;
+
+}
+
+.btn:hover{
+    opacity: 0.8;
+    background-color: #5fec5f;
+}
+.btn-rounded{
+    border-radius: 5px;
+}
+.btn-xl{
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+}
+.btn-lg{
+    font-size: 1.2rem;
+    padding: 0.8rem 1.3rem;
+    text-transform: uppercase;
+}
+.fa-fw{
+    margin-left: 1rem;
+} */
