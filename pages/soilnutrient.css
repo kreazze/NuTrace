@@ -153,6 +153,9 @@ body {
 #sidebar .side-menu.top li a:hover {
 	color: #ffb997;
 }
+#sidebar .side-menu li a:hover {
+	color: #ffb997;
+}
 #sidebar .side-menu li a .bx {
 	min-width: calc(60px  - ((4px + 6px) * 2));
 	display: flex;
