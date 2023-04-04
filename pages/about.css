@@ -225,24 +225,34 @@ body {
 	font-family: 'Poppins-Regular';
 }
 #first-content {
+	padding-left: 100px;
+	padding-right: 100px;
+	text-align: left;
 	display: flex;
 	justify-content: center;
 }
 .title {
 	margin: 5px;
     padding: 12px;
-	padding-left: 200px;
-	padding-right: 200px;
     border-radius: 40px;
-    border: none;
     color: white;
     font-family:'Poppins-Black';
     background-color: #25A22B;
 }
 .description {
-	font-size: 20px;
-	text-align: left;
+	font-size: 15px;
+	line-height: 1.5rem;
+	padding: 20px;
+	padding-right: 100px;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
 	font-family: 'Poppins-Regular';
+	color: black;
+	background-color: #ebebeb;
+	box-shadow: -2px 5px 5px #8f8f8f;
+}
+.prototype {
+	box-shadow: -2px 5px 5px #8f8f8f;
 }
 
 /* footer */
