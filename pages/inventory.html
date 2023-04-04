@@ -7,6 +7,9 @@
         <title>NuTrace</title>
         <link rel ="stylesheet" href="/pages/calendar.css">
         <link rel="icon" type="image/png" href="/images/nutrace_logo.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,900&display=swap" rel="stylesheet">
     </head>
     <body>
         <section id="sidebar">
@@ -61,10 +64,35 @@
                 <img class="menu-pic" src="/images/icons/white/menu-icon.png" width="25px" height="25px">         
                 <a class="user" href="#">Hello, User!</a>
             </nav>
-            <main>
-                
+            <main class="main-content">
+                <!--display real-time-->
+                <title>Inventory</title>
+                <div class="time" style="margin-left: 80%; padding: 2px auto;">
+                    <br>
+                    <p><b><b id="datetime" style="text-align:right; color: black; font: 1em sans-serif;"></span></b></p>
+                </div>
             </main>
         </section>
+        <!--Script for updating time-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+        
+        <script>
+            var datetime = new Date();
+            console.log(datetime);
+            document.getElementById("datetime").textContent = datetime; //it will print on html page
+
+            function refreshTime() {
+                const timeDisplay = document.getElementById("datetime");
+                const dateString = new Date().toLocaleString();
+                const formattedString = dateString.replace(", ", " - ");
+                timeDisplay.textContent = formattedString;
+            }
+            setInterval(refreshTime, 1000);
+        </script>
+        <!--Script for updating time-->
+
+
         <footer>
 
         </footer>
