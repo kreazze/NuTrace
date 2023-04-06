@@ -268,10 +268,10 @@ body {
 	text-align: center;
 	justify-content: center;
 	display: block;
-
 }
 .row {
-	margin-bottom: 25px;
+	margin-top: 25px;
+	margin-bottom: 50px;
 	line-height: 1.5rem;
 	display: flex;
 }
@@ -290,7 +290,7 @@ body {
 	background: #ebebeb;
 }
 .dev-content2 {
-	margin-top: 80px;
+	margin-top: 100px;
 	margin-bottom: 30px;
 	margin-left: 100px;
 	margin-right: 100px;
@@ -303,19 +303,25 @@ body {
 	box-shadow: -2px 5px 5px #8f8f8f;
 	background: #ebebeb;
 }
-.dev-pic {
+.dev-pic1 {
 	margin-top: 20px;
 	margin-left: 235px;
 	z-index: 9;
 	position: absolute;
 }
-.dev-pic img
-{
+.dev-pic2 {
+	margin-top: 20px;
+	margin-left: 900px;
+	z-index: 9;
+	position: absolute;
+}
+.dev-pic1 img, .dev-pic2 img {
 	border: 3px solid #8f8f8f;
 	border-radius: 50%;
 }
 .name {
 	font-size: 20px;
+	margin-bottom: 10px;
 	font-family: 'Poppins-Black';
 }
 .details {
