@@ -62,29 +62,13 @@
                 <a class="user" href="#">Hello, User!</a>
             </nav>
             <main class="main-content">
-                <!--display real-time-->
                 <title>Inventory</title>
-                <p class="p5" id="datetime"></p>
+                <p id="datetime"></p>
                 <p class="p4">Crop Harvest Inventory</p>
-                
             </main>
         </section>
-        <script src="/pages/script.js"></script>
-        <!--Script for updating time-->
-        <script>
-            var datetime = new Date();
-            console.log(datetime);
-            document.getElementById("datetime").textContent = datetime; //it will print on html page
-
-            function refreshTime() {
-                const timeDisplay = document.getElementById("datetime");
-                const dateString = new Date().toLocaleString();
-                const formattedString = dateString.replace(", ", " - ");
-                timeDisplay.textContent = formattedString;
-            }
-            setInterval(refreshTime, 1000);
-        </script>
-        <!--Script for updating time-->
+        <script src="/pages/sidebar.js"></script>
+        <script src="/pages/realtime.js"></script>
     </body>
     <footer id="footer">
         <img class="pup-logo" src="/images/assets/pup-logo.png" width="50px" height="50px">

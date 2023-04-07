@@ -45,6 +45,10 @@ body {
 	overflow-x: hidden;
 	color: #0b032d;
 	background: #f7f7f7;
+	width: 100%;
+	max-height: calc(100vh - 56px);
+	overflow-y: auto;
+	position: sticky;
 }
 
 /* sidebar */
@@ -219,33 +223,18 @@ body {
 	color: #25a22b;
 	font-family: 'Poppins-Black';
 }
-.p5{
-	color: black; 
+#datetime {
 	font-size: 1rem;
-	margin-left: 85%; 
-	padding-top: 5px;
+	top: 0;
+	right: 0;
+	margin-right: 15px; 
+	text-align: right;
+	color: black; 
 	font-family: 'Poppins-Regular';
 }
 .p4 {
 	margin-bottom: 30px;
 	font-size: 40px;
-}
-
-.title {
-	margin: 5px;
-    padding: 12px;
-	padding-left: 200px;
-	padding-right: 200px;
-    border-radius: 40px;
-    border: none;
-    color: white;
-    font-family:'Poppins-Black';
-    background-color: #25A22B;
-}
-.description {
-	font-size: 20px;
-	text-align: left;
-	font-family: 'Poppins-Regular';
 }
 
 /* footer */
