@@ -24,7 +24,6 @@
     src: url(/assets/font/Poppins-Regular.ttf);
 }
 
-/* content */
 *{
 	margin: 0;
 	padding: 0;
@@ -51,6 +50,8 @@ body {
 	overflow-y: auto;
 	position: sticky;
 }
+
+/* sidebar and header */
 #sidebar {
 	position: fixed;
 	top: 0;
@@ -178,7 +179,6 @@ body {
 	width: calc(100% - 60px);
 	left: 60px;
 }
-
 #content nav {
 	height: 56px;
 	background: #25a22b;
@@ -192,6 +192,7 @@ body {
 	z-index: 1000;
 }
 #content nav::before {
+	content: '';
 	position: absolute;
 	width: 40px;
 	height: 40px;
@@ -199,18 +200,28 @@ body {
 	left: 0;
 	border-radius: 50%;
 }
-
-#content nav .profile  {
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	object-fit: cover;
+.menu-pic {
+	cursor: pointer;
 }
-
 .user {
 	font-size: 20px;
 	color: white;
 	font-family: "Poppins-Bold";
+}
+
+/* overview */
+.main-content {
+	font-size: 40px;
+	line-height: 2.5rem;
+	margin-top: 40px;
+	text-align: center;
+	color: #25a22b;
+	font-family: 'Poppins-Black';
+}
+.p4 {
+	margin-bottom: 35px;
+	font-size: 25px;
+	font-family: 'Poppins-Regular';
 }
 
 /* footer */
@@ -257,7 +268,6 @@ img {
 		display: none;
 	}
 }
-
 @media screen and (max-width: 576px) {
 	#content nav form .form-input input {
 		display: none;

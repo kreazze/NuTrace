@@ -24,7 +24,6 @@
     src: url(/assets/font/Poppins-Regular.ttf);
 }
 
-/* content */
 *{
 	margin: 0;
 	padding: 0;
@@ -51,6 +50,8 @@ body {
 	overflow-y: auto;
 	position: sticky;
 }
+
+/* sidebar */
 #sidebar {
 	position: fixed;
 	top: 0;
@@ -178,7 +179,6 @@ body {
 	width: calc(100% - 60px);
 	left: 60px;
 }
-
 #content nav {
 	height: 56px;
 	background: #25a22b;
@@ -199,18 +199,81 @@ body {
 	left: 0;
 	border-radius: 50%;
 }
-
 #content nav .profile  {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
 	object-fit: cover;
 }
-
+.menu-pic {
+	cursor: pointer;
+}
 .user {
 	font-size: 20px;
 	color: white;
 	font-family: "Poppins-Bold";
+}
+
+/* content */
+.main-content {
+	margin-top: 10px;
+	text-align: center;
+}
+#datetime {
+	font-size: 1rem;
+	margin-top: 15px; 
+	margin-right: 15px; 
+	line-height: 1rem;
+	text-align: right;
+	color: black; 
+	font-family: 'Poppins-Regular';
+}
+.p4 {
+	font-size: 50px;
+	color: #25a22b;
+	font-family: 'Poppins-Black';
+}
+.p5 {
+	margin: 0px 100px 40px;
+	font-size: 18px;
+	color: black;
+	font-family: 'Poppins-Regular';
+}
+.upper-content {
+	display: inline-flex;
+	margin: 20px 100px 20px;
+}
+.main-left .main-right {
+	display: flex;
+}
+.text-left2 {
+	margin-right: 60px;
+}
+.title {
+	font-size: 20px;
+	padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+    border-radius: 40px;
+    color: white;
+	width: fit-content;
+    font-family:'Poppins-Bold';
+    background-color: #25A22B;
+}
+.description {
+	line-height: 1.5rem;
+	padding: 20px;
+	margin-bottom: 10px;
+	border-radius: 30px;
+	font-family: 'Poppins-Regular';
+	color: black;
+	background-color: #ebebeb;
+	box-shadow: -2px 5px 5px #8f8f8f;
+}
+.lower-content {
+	margin: 50px 100px 100px;
 }
 
 /* footer */
@@ -257,7 +320,6 @@ img {
 		display: none;
 	}
 }
-
 @media screen and (max-width: 576px) {
 	#content nav form .form-input input {
 		display: none;
@@ -300,4 +362,59 @@ img {
 	#content main .table-data .todo .todo-list {
 		min-width: 420px;
 	}
+}
+
+/* weather */
+.container {
+	margin-bottom: 50px;
+	margin-right: 60px;
+}
+.weather-content {
+	line-height: 1.5rem;
+	padding: 30px 20px 20px;
+	margin-bottom: 10px;
+	border-radius: 30px;
+	font-family: 'Poppins-Regular';
+	color: black;
+	background-color: #ebebeb;
+	box-shadow: -2px 5px 5px #8f8f8f;
+}
+.location {
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: black;
+	display: flex;
+	text-align: center;
+	font-family: 'Poppins-Regular';
+}
+.notification {
+	margin: 0;
+	background-color: #8f8f8f;
+	display: none;
+}
+.notification p {
+	font-size: x-small;
+	color: black;
+}
+.weather-value {
+	display: inline-flex;
+	color: black;
+}
+#value {
+	line-height: 3.5em;
+	padding-top: 40px;
+}
+.temperature-value {
+	margin: 0;
+	font-size: 90px;
+	font-family: 'Poppins-Bold';
+}
+.temperature-description {
+	font-size: 30px;
+	font-family: 'Poppins-Bold';
+}
+.weather-icon img {
+	padding-left: 10px;
+	width: 180px;
+	height: 180px;
 }
