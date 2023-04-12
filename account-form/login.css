@@ -1,15 +1,15 @@
 /* font */
 @font-face {
     font-family: 'Poppins-Black';
-    src: url(/assets/font/Poppins-Black.ttf);
+    src: url(../assets/font/Poppins-Black.ttf);
 }
 @font-face {
     font-family: 'Poppins-Bold';
-    src: url(/assets/font/Poppins-Bold.ttf);
+    src: url(../assets/font/Poppins-Bold.ttf);
 }
 @font-face {
     font-family: 'Poppins-Italic';
-    src: url(/assets/font/Poppins-Italic.ttf);
+    src: url(../assets/font/Poppins-Italic.ttf);
 }
 
 *{
@@ -69,7 +69,7 @@ p {
 
 body{
 	/*background: linear-gradient(to bottom left, #25A22B, #FFFFFF);*/
-    background-image: url("/images/login-bg.png");
+    background-image: url("../images/login-bg.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     background-size: cover;
