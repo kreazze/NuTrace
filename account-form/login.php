@@ -32,11 +32,11 @@
 					<label>Email:</label><br>
 					<input type="email" class="input" name="email" placeholder="juandelacruz@gmail.com" required><br>
 					<label>Password:</label><br>
-					<input type="password" class="input" name="password" placeholder="********"  maxlength="20" required>
-                    <p class="p1"><u><a href="#" onclick="openforgotPass()">Forgot Password</u></p></a>
-                    <p class="p2">Nakalimutan ang password</p>
+					<input type="password" class="input" name="password" placeholder="********"  maxlength="20" required><br>
+                    <!-- <p class="p1"><u><a href="#" onclick="openforgotPass()">Forgot Password</u></p></a>
+                    <p class="p2">Nakalimutan ang password</p> -->
                     <input type="submit" value="Log in" class="submitBtn">
-                    <p class="p3">No account? <a href="../pages/signup.html">Sign up here</a></p><br>
+                    <!-- <p class="p3">No account? <a href="../pages/signup.html">Sign up here</a></p><br> -->
 				</form>
                 <?php
                     // if (isset($_POST['email']) && isset($_POST['password'])){

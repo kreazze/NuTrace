@@ -69,7 +69,7 @@ p {
 
 body{
 	/*background: linear-gradient(to bottom left, #25A22B, #FFFFFF);*/
-    background-image: url("../images/login-bg.png");
+    background-image: url("../assets/images/login-bg.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     background-size: cover;
@@ -165,8 +165,8 @@ hr.rounded {
 	width: 150px;
 	margin-left: 30%;
     margin-right: 10%;
-	margin-bottom: 3px;
-	margin-top: 5px;
+	margin-bottom: 15px;
+	margin-top: 15px;
 	padding: 5px;
 	background-color: #25a22b;
     color: white;

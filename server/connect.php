@@ -2,7 +2,7 @@
 $hostname     = "localhost";
 $username     = "root";
 $password     = "";
-$databasename = "db_nutrace";
+$databasename = "nutrace_server";
 
 $conn = new mysqli($hostname, $username, $password, $databasename);
 

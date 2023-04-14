@@ -1,15 +1,15 @@
 /* font */
 @font-face {
     font-family: 'Poppins-Black';
-    src: url(/assets/font/Poppins-Black.ttf);
+    src: url(../assets/font/Poppins-Black.ttf);
 }
 @font-face {
     font-family: 'Poppins-Bold';
-    src: url(/assets/font/Poppins-Bold.ttf);
+    src: url(../assets/font/Poppins-Bold.ttf);
 }
 @font-face {
     font-family: 'Poppins-Italic';
-    src: url(/assets/font/Poppins-Italic.ttf);
+    src: url(../assets/font/Poppins-Italic.ttf);
 }
 
 *{
@@ -22,6 +22,11 @@ h1 {
     margin-bottom: 0;
     font-size: 1.85rem;
     font-family:'Poppins-Black';
+}
+h3{
+	font-size: 1.5rem;
+	margin-bottom: 0;
+	font-family:'Poppins-Bold';
 }
 h6 {
     font-size: 1rem;
@@ -36,7 +41,7 @@ p {
 
 body{
 	/*background: linear-gradient(to bottom left, #25A22B, #FFFFFF);*/
-    background-image: url("/images/reg-bg.png");
+    background-image: url("../assets/images/reg-bg.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     background-size: cover;
@@ -147,5 +152,31 @@ hr.rounded {
 .container .form .submitBtn:hover{
 	background-color: #5fec5f;
 	opacity: 0.8;
+	color: black;
+}
+.homepage{
+	width: 250px;
+	font-size: 1rem;
+	margin-left: 25%;
+	margin-bottom: 20px;
+	margin-top: 30px;
+	padding: 8px 8px;
+	background-color: #25a22b;
+	border: none;
+	border-radius: 8px;
+	text-transform: uppercase;
+	align-content: center;
+	justify-self: center;
+	text-align: center;
+	cursor: pointer;
+	font-family: 'Poppins-Bold', sans-serif;
+}
+.homepage:hover{
+	background-color: #5fec5f;
+	opacity: 0.8;
+	color: black;
+}
+.homepage a{
+	text-decoration: none;
 	color: black;
 }
