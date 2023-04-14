@@ -1,11 +1,11 @@
 // api key 0b232f542a49317c63d6424037d1e9f2
 // api key 96f6ba150dbfde1782395bffef95d6a2
 
-const iconElement = document.querySelector('.weather-icon');
-const tempElement = document.querySelector('.temperature-value');
-const descElement = document.querySelector('.temperature-description');
-const locationElement = document.querySelector('.location p');
-const notificationElement = document.querySelector('.notification');
+const iconElement = document.querySelector("#weather-icon");
+const tempElement = document.querySelector("#temperature-value");
+const descElement = document.querySelector("#temperature-description");
+const locationElement = document.querySelector("#location p");
+const notificationElement = document.querySelector("#notification");
 
 const weather = {};
 weather.temperature = {
@@ -56,7 +56,7 @@ function getWeather(latitude, longitude) {
 }
 
 function displayWeather() {
-    iconElement.innerHTML = `<img src = "/assets/images/weather/${weather.iconId}.png"/>`;
+    iconElement.innerHTML = `<img src = "http://localhost/NuTrace/assets/images/weather/${weather.iconId}.png"/>`;
     tempElement.innerHTML = `${weather.temperature.value}° <span> C </span>`;
     descElement.innerHTML = `${weather.description}`;
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;

@@ -1,27 +1,27 @@
 /* font */
 @font-face {
     font-family: 'Poppins-Black';
-    src: url(/assets/font/Poppins-Black.ttf);
+    src: url('http://localhost/NuTrace/assets/font/Poppins-Black.ttf');
 }
 @font-face {
     font-family: 'Poppins-Bold';
-    src: url(/assets/font/Poppins-Bold.ttf);
+    src: url('http://localhost/NuTrace/assets/font/Poppins-Bold.ttf');
 }
 @font-face {
     font-family: 'Poppins-Italic';
-    src: url(/assets/font/Poppins-Italic.ttf);
+    src: url('http://localhost/NuTrace/assets/font/Poppins-Italic.ttf');
 }
 @font-face {
     font-family: 'Poppins-Medium';
-    src: url(/assets/font/Poppins-Medium.ttf);
+    src: url('http://localhost/NuTrace/assets/font/Poppins-Medium.ttf');
 }
 @font-face {
     font-family: 'Poppins-SemiBold';
-    src: url(/assets/font/Poppins-SemiBold.ttf);
+    src: url('http://localhost/NuTrace/assets/font/Poppins-SemiBold.ttf');
 }
 @font-face {
     font-family: 'Poppins-Regular';
-    src: url(/assets/font/Poppins-Regular.ttf);
+    src: url('http://localhost/NuTrace/assets/font/Poppins-Regular.ttf');
 }
 
 *{
@@ -205,17 +205,17 @@ body {
 	border-radius: 50%;
 	object-fit: cover;
 }
-.menu-pic {
+#menu-pic {
 	cursor: pointer;
 }
-.user {
+#user {
 	font-size: 20px;
 	color: white;
 	font-family: "Poppins-Bold";
 }
 
 /* content */
-.main-content {
+#main-content {
 	margin-top: 10px;
 	text-align: center;
 }
@@ -228,28 +228,28 @@ body {
 	color: black; 
 	font-family: 'Poppins-Regular';
 }
-.p4 {
+#p4 {
 	font-size: 50px;
 	color: #25a22b;
 	font-family: 'Poppins-Black';
 }
-.p5 {
+#p5 {
 	margin: 0px 100px 40px;
 	font-size: 18px;
 	color: black;
 	font-family: 'Poppins-Regular';
 }
-.upper-content {
+#upper-content {
 	display: inline-flex;
 	margin: 20px 100px 20px;
 }
-.main-left .main-right {
+#main-left #main-right {
 	display: flex;
 }
-.text-left2 {
+#text-left2 {
 	margin-right: 60px;
 }
-.title {
+#title {
 	font-size: 20px;
 	padding-top: 5px;
     padding-bottom: 5px;
@@ -262,7 +262,7 @@ body {
     font-family:'Poppins-Bold';
     background-color: #25A22B;
 }
-.description {
+#description {
 	line-height: 1.5rem;
 	padding: 20px;
 	margin-bottom: 10px;
@@ -272,7 +272,7 @@ body {
 	background-color: #ebebeb;
 	box-shadow: -2px 5px 5px #8f8f8f;
 }
-.lower-content {
+#lower-content {
 	margin: 50px 100px 100px;
 }
 
@@ -289,21 +289,76 @@ body {
 img {
 	margin-right: 5px;
 }
-#footer .footer-text{
+#footer #footer-text{
 	line-height: 1rem;
 	margin-left: 1rem;
 }
-.p1 {
+#p1 {
 	font-size: 15px;
 	font-family: 'Poppins-Bold';
 }
-.p2 {
+#p2 {
 	font-size: 13px;
 	font-family: 'Poppins-SemiBold';
 }
-.p3 {
+#p3 {
 	font-size: 11px;
 	font-family: 'Poppins-Regular';
+}
+
+/* weather */
+#container {
+	margin-bottom: 50px;
+	margin-right: 60px;
+}
+#weather-content {
+	line-height: 1.5rem;
+	padding: 30px 20px 20px;
+	margin-bottom: 10px;
+	border-radius: 30px;
+	font-family: 'Poppins-Regular';
+	color: black;
+	background-color: #ebebeb;
+	box-shadow: -2px 5px 5px #8f8f8f;
+}
+#location {
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: black;
+	display: flex;
+	text-align: center;
+	font-family: 'Poppins-Regular';
+}
+#notification {
+	margin: 0;
+	background-color: #8f8f8f;
+	display: none;
+}
+#notification p {
+	font-size: x-small;
+	color: black;
+}
+#weather-value {
+	display: inline-flex;
+	color: black;
+}
+#value {
+	line-height: 3.5em;
+	padding-top: 40px;
+}
+#temperature-value {
+	margin: 0;
+	font-size: 90px;
+	font-family: 'Poppins-Bold';
+}
+#temperature-description {
+	font-size: 30px;
+	font-family: 'Poppins-Bold';
+}
+#weather-icon img {
+	padding-left: 10px;
+	width: 180px;
+	height: 180px;
 }
 
 @media screen and (max-width: 768px) {
@@ -362,59 +417,4 @@ img {
 	#content main .table-data .todo .todo-list {
 		min-width: 420px;
 	}
-}
-
-/* weather */
-.container {
-	margin-bottom: 50px;
-	margin-right: 60px;
-}
-.weather-content {
-	line-height: 1.5rem;
-	padding: 30px 20px 20px;
-	margin-bottom: 10px;
-	border-radius: 30px;
-	font-family: 'Poppins-Regular';
-	color: black;
-	background-color: #ebebeb;
-	box-shadow: -2px 5px 5px #8f8f8f;
-}
-.location {
-	font-size: 20px;
-	margin-bottom: 20px;
-	color: black;
-	display: flex;
-	text-align: center;
-	font-family: 'Poppins-Regular';
-}
-.notification {
-	margin: 0;
-	background-color: #8f8f8f;
-	display: none;
-}
-.notification p {
-	font-size: x-small;
-	color: black;
-}
-.weather-value {
-	display: inline-flex;
-	color: black;
-}
-#value {
-	line-height: 3.5em;
-	padding-top: 40px;
-}
-.temperature-value {
-	margin: 0;
-	font-size: 90px;
-	font-family: 'Poppins-Bold';
-}
-.temperature-description {
-	font-size: 30px;
-	font-family: 'Poppins-Bold';
-}
-.weather-icon img {
-	padding-left: 10px;
-	width: 180px;
-	height: 180px;
 }
