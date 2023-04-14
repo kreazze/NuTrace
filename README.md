@@ -10,5 +10,5 @@ A soil-nutrient monitoring device system that does the following:
 • Task Scheduler
 • Dashboard of Data Report
 
-> Database
+# Database
 database name: nutrace_server
