@@ -1,27 +1,27 @@
 /* font */
 @font-face {
     font-family: 'Poppins-Black';
-    src: url('http://localhost/NuTrace/assets/font/Poppins-Black.ttf');
+    src: url('../assets/font/Poppins-Black.ttf');
 }
 @font-face {
     font-family: 'Poppins-Bold';
-    src: url('http://localhost/NuTrace/assets/font/Poppins-Bold.ttf');
+    src: url('../assets/font/Poppins-Bold.ttf');
 }
 @font-face {
     font-family: 'Poppins-Italic';
-    src: url('http://localhost/NuTrace/assets/font/Poppins-Italic.ttf');
+    src: url('../assets/font/Poppins-Italic.ttf');
 }
 @font-face {
     font-family: 'Poppins-Medium';
-    src: url('http://localhost/NuTrace/assets/font/Poppins-Medium.ttf');
+    src: url('../assets/font/Poppins-Medium.ttf');
 }
 @font-face {
     font-family: 'Poppins-SemiBold';
-    src: url('http://localhost/NuTrace/assets/font/Poppins-SemiBold.ttf');
+    src: url('../assets/font/Poppins-SemiBold.ttf');
 }
 @font-face {
     font-family: 'Poppins-Regular';
-    src: url('http://localhost/NuTrace/assets/font/Poppins-Regular.ttf');
+    src: url('../assets/font/Poppins-Regular.ttf');
 }
 
 /* content */
