@@ -226,7 +226,7 @@ body {
 	line-height: 1rem;
 	text-align: right;
 	color: black; 
-	font-family: 'Poppins-Regular';
+	font-family: 'Poppins-Bold';
 }
 #p4 {
 	font-size: 50px;
@@ -267,6 +267,7 @@ body {
 	padding: 20px;
 	margin-bottom: 10px;
 	border-radius: 30px;
+	width: fit-content;
 	font-family: 'Poppins-Regular';
 	color: black;
 	background-color: #ebebeb;
@@ -276,34 +277,11 @@ body {
 	margin: 50px 100px 100px;
 }
 
-/* footer */
-#footer {
-	padding: 15px;
-	padding-left: 250px;
-	padding-right: 50px;
-	margin-top: auto;
-	display: flex;
-	color: white;
-	background-image: linear-gradient(to right, #25a22b, #75E463)
-}
-img {
-	margin-right: 5px;
-}
-#footer #footer-text{
-	line-height: 1rem;
-	margin-left: 1rem;
-}
-#p1 {
-	font-size: 15px;
-	font-family: 'Poppins-Bold';
-}
-#p2 {
-	font-size: 13px;
-	font-family: 'Poppins-SemiBold';
-}
-#p3 {
-	font-size: 11px;
-	font-family: 'Poppins-Regular';
+/* eggplant soil nutrient report */
+#variables {
+	margin: 10px;
+	padding-top: 10px;
+	text-align: left;
 }
 
 /* weather */
@@ -350,6 +328,7 @@ img {
 	margin: 0;
 	font-size: 90px;
 	font-family: 'Poppins-Bold';
+	color: #25A22B;
 }
 #temperature-description {
 	font-size: 30px;
@@ -359,6 +338,36 @@ img {
 	padding-left: 10px;
 	width: 180px;
 	height: 180px;
+}
+
+/* footer */
+#footer {
+	padding: 15px;
+	padding-left: 250px;
+	padding-right: 50px;
+	margin-top: auto;
+	display: flex;
+	color: white;
+	background-image: linear-gradient(to right, #25a22b, #75E463)
+}
+img {
+	margin-right: 5px;
+}
+#footer #footer-text{
+	line-height: 1rem;
+	margin-left: 1rem;
+}
+#p1 {
+	font-size: 15px;
+	font-family: 'Poppins-Bold';
+}
+#p2 {
+	font-size: 13px;
+	font-family: 'Poppins-SemiBold';
+}
+#p3 {
+	font-size: 11px;
+	font-family: 'Poppins-Regular';
 }
 
 @media screen and (max-width: 768px) {

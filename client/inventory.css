@@ -219,7 +219,6 @@ body {
 	font-size: 40px;
 	line-height: 2.5rem;
 	margin-top: 10px;
-	text-align: center;
 	color: #25a22b;
 	font-family: 'Poppins-Black';
 }
@@ -234,8 +233,76 @@ body {
 }
 .p4 {
 	margin-bottom: 30px;
-	font-size: 40px;
+	font-size: 50px;
+	text-align: center;
 }
+
+/* content */
+#buttons {
+	margin-left: 20px;
+	align-items: left;
+	display: inline-flex;
+}
+#add-btn {
+	margin-right: 10px;
+	padding: 5px 15px 5px;
+	font-size: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: none;
+	align-items: left;
+	font-family: 'Poppins-Bold';
+	color: white;
+	background-color: #25a22b;
+}
+#add-btn:hover {
+	background-color: #8f8f8f;
+}
+#dl-btn {
+	width: 55px;
+	height: 40px;
+	padding-top: 5px;
+	padding-left: 4px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: none;
+	align-items: left;
+	font-family: 'Poppins-Bold';
+	color: white;
+	background-color: #8f8f8f;
+}
+#dl-btn:hover {
+	background-color: #25a22b;
+}
+
+/* inventory content */
+#inventory-content {
+	margin: 20px;
+}
+#inventory-table {
+	min-width: 500px;
+	margin: 25px 0;
+	border: #8f8f8f solid 1px;
+	border-collapse: collapse;
+	color: black;
+}
+#inventory-table thead tr {
+	text-align: left;
+	background-color: white;
+}
+#inventory-table th {
+	padding: 5px 10px;
+}
+#table-title {
+	font-size: 18px;
+	font-family: 'Poppins-Bold';
+}
+#table-titleslash {
+	font-size: 15px;
+	font-style: italic;
+	font-family: 'Poppins-Regular';
+}
+
 
 /* footer */
 #footer {

@@ -54,7 +54,7 @@
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="#" class="logout">
+                    <a href="../account-form/login.html" class="logout">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
                         <span class="text">Logout</span>
                     </a>
@@ -71,6 +71,23 @@
                 <title>Inventory</title>
                 <p id="datetime"></p>
                 <p class="p4">Crop Harvest Inventory</p>
+                <div id="buttons">
+                    <button id="add-btn">+ ADD</button>
+                    <button id="dl-btn"><img id='dl-img' src="../assets/images/sidebar/white/download-icon.png" width="25px" height="25px"></button>
+                </div>
+                <div id="inventory-content">
+                    <table id="inventory-table">
+                        <thead>
+                            <tr>
+                                <th id="table-title">Date <span id="table-titleslash">(Petsa)</span></th>      
+                                <th id="table-title">Crop Type <span id="table-titleslash">(Uri ng Tanim)</span></th>	
+                                <th id="table-title">Quantity <span id="table-titleslash">(Dami)</span></th>									
+                                <th id="table-title">Name of Harvestor <span id="table-titleslash">(Pangalan ng Umani)</span></th>
+                                <th id="table-title">Action <span id="table-titleslash">(Maaaring Gawin)</span></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
             </main>
         </section>
         <script src="../js-files/sidebar.js"></script>

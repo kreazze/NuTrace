@@ -56,7 +56,7 @@ function getWeather(latitude, longitude) {
 }
 
 function displayWeather() {
-    iconElement.innerHTML = `<img src = "http://localhost/NuTrace/assets/images/weather/${weather.iconId}.png"/>`;
+    iconElement.innerHTML = `<img src = "../assets/images/weather/${weather.iconId}.png"/>`;
     tempElement.innerHTML = `${weather.temperature.value}° <span> C </span>`;
     descElement.innerHTML = `${weather.description}`;
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;

@@ -54,7 +54,7 @@
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="#" class="logout">
+                    <a href="../account-form/login.html" class="logout">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
                         <span class="text">Logout</span>
                     </a>
@@ -68,7 +68,6 @@
                 <a id="user" href="#">Hello, User!</a>
             </nav>
             <main id="main-content">
-                <p id="datetime"></p>
                 <p id="p4">Magandang Araw!</p>
                 <p id="p5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
                     ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
@@ -86,7 +85,7 @@
                                 <div id="notification"></div>
                                 <div id="weather-value">
                                     <div id="value">
-                                        <p id="temperature-value">-- °C</p>
+                                        <p id="temperature-value">--°C</p>
                                         <p id="temperature-description">-</p>
                                     </div>
                                     <div id="weather-icon">
@@ -100,7 +99,6 @@
                             <p id="title">Today's Task</p>
                             <div id="description">
                                 <p>Paragraph 1. Device description. By students of PUP eme eme. Features. Why we come up to this study. Objectives.</p>
-                                <br><br><br><br><br><br>
                             </div>
                         </div>
                     </div>
@@ -108,8 +106,27 @@
                     <div id="main-right">
                         <p id="title">Eggplant Soil Nutrient Report</p>
                         <div id="description">
-                            <p>Paragraph 1. Device description. By students of PUP eme eme. Features. Why we come up to this study. Objectives.</p>
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <p>As of <span id="datetime"></span></p>
+                            <div id="variables">
+                                <div>
+                                    <p>Nitrogen</p>
+                                </div>
+                                <div>
+                                    <p>Phosphorus</p>
+                                </div>
+                                <div>
+                                    <p>Potassium</p>
+                                </div>
+                                <div>
+                                    <p>Soil Moisture</p>
+                                </div>
+                                <div>
+                                    <p>Temperature</p>
+                                </div>
+                                <div>
+                                    <p>pH Level</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,7 +146,7 @@
         </section>
         <script src="../js-files/weather.js"></script>
         <script src="../js-files/sidebar.js"></script>
-        <script src="..js-files/realtime.js"></script>
+        <script src="../js-files/realtime.js"></script>
     </body>
     <footer id="footer">
         <img id="pup-logo" src="../assets/images/main/pup-logo.png" width="50px" height="50px">
