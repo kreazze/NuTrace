@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NuTrace</title>
         <link rel ="stylesheet" href="../client/inventory.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
     </head>
     <body>
@@ -72,8 +73,57 @@
                 <p id="datetime"></p>
                 <p class="p4">Crop Harvest Inventory</p>
                 <div id="buttons">
-                    <button id="add-btn">+ ADD</button>
+                    <a href="#divAdd"><button id="add-btn">+ ADD</button></a>
                     <button id="dl-btn"><img id='dl-img' src="../assets/images/sidebar/white/download-icon.png" width="25px" height="25px"></button>
+                    <div class="overlay" id="divAdd">
+                        <div class="wrapper"> 
+                            <a class="close" href="#">&times;</a>
+                            <h2>Add Item</h2>
+                            <h3>(Magdagdag sa listahan)</h3>
+                            <div class="content">
+                                <div class="popup-container">
+                                    <form>
+                                        <label>Date</label> <label class="tagalog">(Petsa)</label>
+                                        <input placeholder="MM/DD/YYYY" type="date">
+                                        <label>Crop Type</label> <label class="tagalog">(Uri ng Tanim)</label>
+                                        <div class="select-menu">
+                                            <div class="select-btn">
+                                                <span class="sBtn-text">Select crop</span>
+                                                <i class="fa-solid fa-angle-down"></i>
+                                            </div>
+                                    
+                                            <ul class="options">
+                                                <li class="option">
+                                                    <span class="option-text">Kamatis</span>
+                                                </li>
+                                                <li class="option">
+                                                    <span class="option-text">Mais</span>
+                                                </li>
+                                                <li class="option">
+                                                    <span class="option-text">Okra</span>
+                                                </li>
+                                                <li class="option">
+                                                    <span class="option-text">Patola</span>
+                                                </li>
+                                                <li class="option">
+                                                    <span class="option-text">Talong</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+            
+                                        <label>Quantity</label> <label class="tagalog">(Dami)</label>
+                                        <div class="qty">
+                                            <input type="text"><span class="unit">kg</span>
+                                        </div>
+                                        
+                                        <label>Name of harvester</label> <label class="tagalog">(Pangalan ng umani)</label>
+                                        <input placeholder="First Name & Last Name" type="text">
+                                        <button class="add">ADD</button>
+                                        <button class="cancel" onclick="close">CANCEL</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                 </div>
                 <div id="inventory-content">
                     <table id="inventory-table">
@@ -92,6 +142,7 @@
         </section>
         <script src="../js-files/sidebar.js"></script>
         <script src="../js-files/realtime.js"></script>
+        <script src="../js-files/popup-add.js"></script>
     </body>
     <footer id="footer">
         <img class="pup-logo" src="../assets/images/main/pup-logo.png" width="50px" height="50px">
