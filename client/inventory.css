@@ -210,7 +210,7 @@ body {
 .user {
 	font-size: 20px;
 	color: white;
-	font-family: "Poppins-Bold";
+	font-family: 'Poppins-Bold';
 }
 
 /* content */
@@ -260,6 +260,7 @@ body {
 #dl-btn {
 	width: 55px;
 	height: 40px;
+	margin-top: 6px;
 	padding-top: 5px;
 	padding-left: 4px;
 	border-radius: 10px;
@@ -275,17 +276,15 @@ body {
 }
 
 /*pop up*/
-
 h2 {
 	text-align: center;
-	font-family: "poppins black", sans-serif;
+	font-family: 'Poppins-Black';
 	font-size: 50px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 h3 {
-	font-style: italic;
-	font-family: "poppins", sans-serif;
+	font-family: 'Poppins-Italic';
 	text-align: center;
 	font-size: 18px;
     font-weight: 400;
@@ -326,7 +325,7 @@ h3 {
 	font-size: 30px;
 	text-decoration: none;
 	color: #8F8F8F;
-	font-family: "poppins";
+	font-family: 'Poppins-Regular';
 }
 .wrapper .close:hover {
 	color: #25A22B;
@@ -335,10 +334,9 @@ h3 {
 	max-height: 20%;
 	overflow: auto;
 }
-
 .add {
 	font-size: 18px;
-	font-family: "poppins semibold", sans-serif;
+	font-family: 'Poppins-SemiBold';
 	color: white;
 	background: #25A22B;
 	border-radius: 10px;
@@ -350,10 +348,9 @@ h3 {
 	outline: none;
 	cursor: pointer;
 }
-
 .cancel {
 	font-size: 18px;
-	font-family: "poppins semibold", sans-serif;
+	font-family: 'Poppins-SemiBold';
 	color: white;
 	background: #8F8F8F;
 	border-radius: 10px;
@@ -364,13 +361,11 @@ h3 {
 	outline: none;
 	cursor: pointer;
 }
-
 .popup-container {
 	border-radius: 5px;
 	background-color: #ffffff;
 	padding: 20px 0;
 }
-
 .select-menu{
     width: 95%;
 	border: 1px solid #8F8F8F;
@@ -392,9 +387,8 @@ h3 {
 	font-size: 18px;
 	color: black;
 	margin-right: -40px;
-	font-family: "poppins";
+	font-family: 'Poppins-Regular';
 }
-
 .select-btn i{
     font-size: 20px;
     transition: 0.3s;
@@ -427,32 +421,30 @@ h3 {
     background: #fff;
 	color: black;
 }
-
 .options .option:hover{
     background: #EBEBEB;
 }
-
 .option .option-text{
     font-size: 18px;
     color: black;
 	margin-top: 5px;
 	margin-bottom: 5px;
-	font-family: "poppins";
+	font-family: 'Poppins-Regular';
 }
 form label {
 	font-size: 18px;
-	font-family: "poppins semibold", sans-serif;
+	font-family: 'Poppins-SemiBold';
 	padding-left: 5px;
 	padding-top: 10px;
 }
 
 .tagalog{
-	font-family: "poppins", sans-serif;
+	font-family: 'Poppins-Regular';
 	font-size: 15px;
 }
 input[type=text], [type=date], select {
 	width: 95%;
-	font-family: "poppins", sans-serif;
+	font-family: 'Poppins-Regular';
 	padding: 12px;
 	border: 1px solid #8F8F8F;
 	border-radius: 7px;
@@ -465,13 +457,12 @@ input[type=text], [type=date], select {
 
 ::placeholder {
 	color: #8F8F8F;
-	font-family: "poppins", sans-serif;
+	font-family: 'Poppins-Regular';
 	font-size: 15px;
-  }
-  
+}  
 .qty input[type=text] {
 	width: 30%;	
-	font-family: "poppins", sans-serif;
+	font-family: 'Poppins-Regular';
 	padding: 8px 12px;
 	border: 1px solid #8F8F8F;
 	border-radius: 7px;
@@ -480,14 +471,12 @@ input[type=text], [type=date], select {
 	margin-left: 5px;
 	resize: vertical;
 }
-
 .qty .unit {
 	margin-left: 8px;
 	color: black;
 	font-size: 20px;
-	font-family: "poppins semibold", sans-serif;
+	font-family: 'Poppins-SemiBold';
 }
-
 
 /* inventory content */
 #inventory-content {
