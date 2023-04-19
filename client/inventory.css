@@ -278,13 +278,10 @@ body {
 /*pop up*/
 h2 {
 	text-align: center;
-<<<<<<< Updated upstream
 	font-family: 'Poppins-Black';
 	font-size: 50px;
-=======
 	font-family: "poppins black", sans-serif;
 	font-size: 40px;
->>>>>>> Stashed changes
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -432,7 +429,6 @@ h3 {
 .option .option-text{
     font-size: 15px;
     color: black;
-<<<<<<< Updated upstream
 	margin-top: 5px;
 	margin-bottom: 5px;
 	font-family: 'Poppins-Regular';
@@ -440,7 +436,6 @@ h3 {
 form label {
 	font-size: 18px;
 	font-family: 'Poppins-SemiBold';
-=======
 	margin-top: -10px;
 	margin-bottom: -10px;
 	font-family: "poppins";
@@ -448,7 +443,6 @@ form label {
 form label {
 	font-size: 15px;
 	font-family: "poppins semibold", sans-serif;
->>>>>>> Stashed changes
 	padding-left: 5px;
 }
 
@@ -458,13 +452,10 @@ form label {
 }
 input[type=text], [type=date], select {
 	width: 95%;
-<<<<<<< Updated upstream
 	font-family: 'Poppins-Regular';
 	padding: 12px;
-=======
 	font-family: "poppins";
 	padding: 7px;
->>>>>>> Stashed changes
 	border: 1px solid #8F8F8F;
 	border-radius: 7px;
 	box-sizing: border-box;
@@ -480,13 +471,10 @@ input[type=text], [type=date], select {
 }  
 .qty input[type=text] {
 	width: 30%;	
-<<<<<<< Updated upstream
 	font-family: 'Poppins-Regular';
 	padding: 8px 12px;
-=======
 	font-family: "poppins", sans-serif;
 	padding: 5px;
->>>>>>> Stashed changes
 	border: 1px solid #8F8F8F;
 	border-radius: 7px;
 	box-sizing: border-box;
@@ -496,13 +484,10 @@ input[type=text], [type=date], select {
 .qty .unit {
 	margin-left: 6px;
 	color: black;
-<<<<<<< Updated upstream
 	font-size: 20px;
 	font-family: 'Poppins-SemiBold';
-=======
 	font-size: 18px;
 	font-family: "poppins", sans-serif;
->>>>>>> Stashed changes
 }
 
 /* inventory content */
