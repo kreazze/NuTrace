@@ -38,6 +38,7 @@ p {
 body {
 	/*background: linear-gradient(to bottom left, #25A22B, #FFFFFF);*/
     background-image: url("../assets/images/reg-bg.png");
+    background-image: url("../assets/images/account-bg.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     background-position: 100%;
@@ -50,6 +51,11 @@ body {
 	max-width: 500px;
 	height: 600px;
 	margin: 55px auto;
+height: auto;
+	width: 100%;
+	background-color: whitesmoke;
+	margin: 30px auto;
+    margin-top: 95px;
 	padding: 5px auto;
 	border-radius: 10px;
 	box-shadow: 8px 8px 8px rgba(0,0,0,0.5);
@@ -64,6 +70,9 @@ body {
 .container .logo {
 	padding-top: 30px;
 }
+.container .logo{
+	padding-top: 40px;
+}
 hr.rounded {
     margin-top: 0;
     margin-bottom: 0;
@@ -71,8 +80,25 @@ hr.rounded {
     border-radius: 5px;
     margin-left: 50px;
     margin-right: 50px;
+    margin-bottom: 10px;
     align-items: center;
 }
+
+.container{
+	font-size: 1.345rem;
+	padding: auto;
+	margin-bottom: 5px;
+	color: #25a22b;
+	text-align: center;
+	font-family:'Poppins-Black',sans-serif;
+}
+h2{
+    font-size: 25px;
+}
+p{
+    margin-top: -4px;
+}
+
 button {
     width: 75%;
     font-size: 2rem;
@@ -88,10 +114,14 @@ button {
 .btn1 {
     padding-left: 120px;
     padding-right: 120px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .btn2 {
     padding-left: 108px;
     padding-right: 108px;
+    margin-bottom: 50px;
+
 }
 .btn3 {
     padding-left: 54px;

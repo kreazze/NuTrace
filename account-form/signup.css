@@ -34,8 +34,10 @@ p {
     margin-top: 0;
     font-family:'Poppins-Italic';
 }
-body {
-    background-image: url("../assets/images/reg-bg.png");
+
+body{
+	/*background: linear-gradient(to bottom left, #25A22B, #FFFFFF);*/
+    background-image: url("../assets/images/reg-bg.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: 100%;

@@ -158,10 +158,10 @@ body {
 	color: white;
 }
 #sidebar .side-menu.top li a:hover {
-	color: black;
+	color: #EBEBEB;
 }
 #sidebar .side-menu li a:hover {
-	color: black;
+	color: #EBEBEB;
 }
 #sidebar .side-menu li a .bx {
 	min-width: calc(60px  - ((4px + 6px) * 2));
@@ -387,6 +387,7 @@ h6 {
 	border: none;
 	outline: none;
 	cursor: pointer;
+	transition: 5s ease-in-out;
 }
 .popup-container {
 	border-radius: 5px;
@@ -543,6 +544,101 @@ input[type=text], [type=date], [type=number], select {
 	font-size: 17px;
 	text-align: center;
 	font-family: 'Poppins-Regular';
+}
+/*popup*/
+h2 {
+	text-align: center;
+	font-family: "poppins black", sans-serif;
+	font-size: 25px;
+	margin-top: 10px;
+	margin-bottom: 23px;
+}
+h3 {
+	font-style: italic;
+	font-family: "poppins", sans-serif;
+	text-align: center;
+	font-size: 15px;
+    font-weight: 400;
+}
+.box {
+	text-align: center;
+}
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #000000cc;
+	color:#25A22B;
+	transition: opacity 200ms;
+	visibility: hidden;
+	opacity: 0;
+}
+.modal-overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+.modal-wrapper {
+	margin: 15% auto;
+	padding: 20px;
+	background: white;
+	border-radius: 15px;
+	width: 35%;
+	height: 25%;
+	position: relative;
+	transition: all 5s ease-in-out;
+}
+.modal-wrapper .content {
+	max-height: 30%;
+	overflow: auto;
+}
+
+.yes {
+	font-size: 18px;
+	font-family: "poppins semibold", sans-serif;
+	color: white;
+	background: #25A22B;
+	border-radius: 10px;
+	width: 20%;
+	margin-left: 25%;
+	margin-top: 91px;
+	margin-bottom: 12px;
+	padding: 7px 15px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	position: absolute;
+}
+
+.no {
+	font-size: 18px;
+	font-family: 'Poppins-SemiBold';
+	color: white;
+	background: #8F8F8F;
+	border-radius: 10px;
+	width: 20%;
+	margin-top: 80px;
+	padding: 7px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	margin-left: 50%;
+	position: absolute;
+}
+
+/*logout*/
+.logout-text{
+	display: flex;
+	position: absolute;
+	margin-top: -25px;
+	margin-left: 45px;
+}
+
+.popup-container {
+	border-radius: 5px;
+	background-color: #ffffff;
+	padding: 20px 0;
 }
 
 

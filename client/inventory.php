@@ -41,7 +41,7 @@
     </head>
     <body class="container">
         <section id="sidebar">
-            <a href="#" class="brand">
+            <a href="homepage.html" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
                 <span>NuTrace</span>
             </a>
@@ -49,6 +49,8 @@
                 <li>
                     <a href="./dashboard.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/home-icon.png" width="25px" height="25px">
+                    <a href="./dashboard.html">
+                        <img class="navbar-pic" src="../assets/images/sidebar/white/home-icon.png" width="25px" height="20px">
                         <span class="text">Dashboard</span>
                     </a>
                 </li>
@@ -86,9 +88,25 @@
             <ul class="side-menu">
                 <li>
                     <a href="../account-form/login.php" class="logout">
+            </ul>
+            <ul class="side-menu">
+                <li>
+                    <div class="box">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
-                        <span class="text">Logout</span>
-                    </a>
+                        <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
+                    </div>
+                    <div class="modal-overlay" id="logout">
+                        <div class="modal-wrapper"> 
+                            <h2>Are you sure you want to log out?</h2>
+                            <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
+                            <div class="content">
+                                <div class="buttons">
+                                    <a href="../account-form/login.html"><button class="yes">YES</button></a>
+                                    <a href="inventory.html"><button class="no">NO</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </section>
@@ -129,12 +147,17 @@
                                         <div class="qty">
                                             <input type="number" name="quantity" placeholder="In Kilogram (kg)" required>
                                         </div>
-                                        
                                         <label>Name of harvester</label><label class="tagalog">(Pangalan ng umani)</label>
                                         <input placeholder="First Name & Last Name" name="harvester" type="text" required>
                                         <button type="submit" class="add" name="add">ADD</button>
                                         <button class="cancel" onclick="close()">CANCEL</button>
+                                        <label>Name of harvester</label> <label class="tagalog">(Pangalan ng umani)</label>
+                                        <input placeholder="First Name & Last Name" type="text">
+                                        <div class="popup" id="popup">
+                                            <button class="add">ADD</button>
+                                            <a href="#inventory-content" class="cancel">CANCEL</a>
                                     </form>
+                                        </div>
                                 </div>
                             </div>
                         </div>
