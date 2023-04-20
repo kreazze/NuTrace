@@ -152,7 +152,7 @@
                           </div>
                         </div>
                         <div class="add-event-footer">
-                          <button class="add-event-btn">Add Event</button>
+                          <button class="add-event-btn" name="add-event-btn">Add Event</button>
                         </div>
                       </div>
                     </div>
@@ -160,7 +160,7 @@
                         <i class="fas fa-plus"></i> 
                     </button>
                   </div>
-                  <script src="/js-files/calendar.js"></script>
+                  <script src="../js-files/calendar.js"></script>
             </main>
         </section>
         <script src="../js-files/sidebar.js"></script>

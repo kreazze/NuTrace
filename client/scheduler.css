@@ -25,7 +25,7 @@
 }
 @font-face {
 	font-family: 'Poppins-ExtraLight';
-	src: url('/assets/font/Poppins-ExtraLight.ttf');
+	src: url('../assets/font/Poppins-ExtraLight.ttf');
 }
 :root {
 	--primary-clr: #0cab19;
@@ -37,7 +37,9 @@
 	box-sizing: border-box;
 }
 
-  
+h1{
+	font-size: 2.5rem;
+}
 html {
 	overflow-x: hidden;
 }

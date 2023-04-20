@@ -5,14 +5,14 @@
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>NuTrace</title>
-		<link rel="stylesheet" type="text/css" href="../account-form/login.css">
+		<link rel="stylesheet" type="text/css" href="../admin/admin_login.css">
 		<link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
         <div class="container">
         <div class="back">
-                <a href="account.php"><i class="fa-sharp fa-solid fa-chevron-left fa-sm" style="color: #25a22b;"></i> Back </a>
+                <a href="../account-form/account.php"><i class="fa-sharp fa-solid fa-chevron-left fa-sm" style="color: #25a22b;"></i> Back </a>
             </div>
 			<div class="login">
 				<div class="logo-title">
@@ -20,6 +20,7 @@
                     <h3>NuTrace</h3>
                 </div> 
 				<hr class="rounded">
+                <p class="adminGreet">Welcome back, Admin!</p>
 			</div>
             <form class="form" action="#" method="post">
                 <label class="tb-title">Email:</label><br>
@@ -46,9 +47,10 @@
                     }
                 }
             </script>
-            <div>
+            <div class="submit">
                 <input type="submit" value="LOGIN" class="submitBtn">
-                <p class="p3">No account? <a href="../account-form/signup.php">Sign up here</a></p><br>
+                <!-- When admins logs in, mag-oopen ung dashboard for admin -->
+                <!-- <p class="p3">No account? <a href="../account-form/signup.php">Sign up here</a></p><br> -->
 			</div>
 			<div class="form">
                 <?php
@@ -80,27 +82,6 @@
                     // }
                 ?>
 			</div>
-            <!--For Popup
-            <div class="forgotPass" id="forgotPass">
-                <h3>Forgot Password</h3>
-                <p>(Nakalimutan ang password)</p>
-                <br>
-                <p class="popup">Enter your contact number</p>
-                <input type="text" name="contact" placeholder="09XXXXXXXXX" required><br>
-                <button class="continueBtn" onclick="closeforgotPass()">Continue</button>
-            </div> -->
 		</div>		
     </body>
-    <script>
-        let forgotPass = document.getElementById("forgotPass");
-
-        function openforgotPass()
-        {
-            forgotPass.classList.add("open-forgotPass");
-        }
-        function closeforgotPass()
-        {
-            forgotPass.classList.remove("open-forgotPass");
-        }
-    </script>
 </html> 

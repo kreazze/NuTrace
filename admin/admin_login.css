@@ -1,0 +1,209 @@
+/* font */
+@font-face {
+    font-family: 'Poppins-Black';
+    src: url(../assets/font/Poppins-Black.ttf);
+}
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url(../assets/font/Poppins-Bold.ttf);
+}
+@font-face {
+    font-family: 'Poppins-Italic';
+    src: url(../assets/font/Poppins-Italic.ttf);
+}
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url(../assets/font/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url(../assets/font/Poppins-SemiBold.ttf);
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+p {
+    font-size: 1rem;
+    margin-top: 0;
+    font-family:'Poppins-Italic';
+}
+.p1 {
+    margin-bottom: 0;
+    margin-left: 60%;
+    margin-right: 40px;
+    padding-top: 20px;
+    font-size: 15px;
+    color: #cac1c1;
+    font-family: 'Poppins-Medium';
+    text-emphasis: none;
+}
+.p1:hover {
+    color: #5fec5f;
+}
+.p2 {
+    margin-top: 0;
+    margin-left: 45%;
+    margin-bottom: 10px;
+    margin-right: 40px;
+    font-size: 0.75rem;
+    color: #cac1c1;
+    font-family: 'Poppins-Italic';
+}
+.p3{
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color: black;
+    text-align: center;
+    font-family: 'Poppins-Regular';
+}
+.p3 a:hover {
+    color: #5fec5f;
+}
+
+body {
+    background-image: url("../assets/images/reg-bg.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-position: 100%;
+    background-size: cover;
+}
+.container { 
+	max-width: 500px;
+	height: 500px;
+    padding: 60px auto;
+	margin: 35px auto;
+	border-radius: 10px;
+	box-shadow: 8px 8px 8px rgba(0,0,0,0.5);
+    background-color: whitesmoke;
+}
+.back {
+    margin-left: 20px;
+    padding: 10px;
+    font-family: 'Poppins-Regular';
+    color: #25a22b;
+}
+.back a {
+    text-decoration: none;
+    color: #25a22b;
+}
+.back a:hover {
+	color: black;
+	text-decoration: underline;
+}
+.login {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 3px;
+	color: #25a22b;
+	text-align: center;
+	font-family:'Poppins-Black';
+}
+.logo-title {
+    display: inline-flex;
+}
+.logo-title h3 {
+    margin-left: 5px;
+}
+.rounded {
+    border-top: 0.5px solid #cac1c1;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    align-items: center;
+}
+.tb-title {
+	width: 150px;
+	margin-right: 10px;
+	font-size: 1.5rem;
+    font-family: 'Poppins-SemiBold';
+    color: #25a22b;
+}
+.form {
+    width: 100%;
+	height: max-content;
+    margin-top: 20px;
+    margin-left: 50px;
+    font-size: 1.5rem;
+}
+.input {
+    width: 400px;
+	padding: 5px;
+	border: none;
+    outline: none;
+	border-radius: 8px;
+	text-indent: 10px;
+    font-size: 1rem;
+    font-family: 'Poppins-Regular';
+	display: flex;
+    background-color: rgb(224, 217, 217);
+}
+.checkPass {
+    margin-top: 0px;
+    margin-left: 330px;
+    margin-right: 5px;
+    font-size: 0.8rem;
+    font-family: 'Poppins-Regular';
+}
+
+.submitBtn {
+	width: 150px;
+    margin-top: 20px;
+    margin-left: 170px;
+    padding: 5px;
+	border-radius: 20px;
+    font-size: 1.5rem;
+    font-family: 'Poppins-Black';
+    border: none;
+	cursor: pointer;
+    text-align: center;
+    color: white;
+    background-color: #25a22b;
+}
+.submitBtn:hover {
+	opacity: 0.8;
+    color: white;
+	background-color: #8f8f8f;
+}
+.login .adminGreet{
+    margin-top: 10px;
+}
+
+/*Popup for forgot password
+.forgotPass{
+    padding: 10px 10px;
+    width: 400px;
+    background:rgb(0, 0, 0);
+    border-radius: 10px;
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translate(-50%,-50%)scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #25a22b;
+    font-family: 'Poppins-Bold', sans-serif;
+    visibility: hidden;
+    transition: transform 0.4s, top0.4s;
+}
+.forgotPass .popup{
+    color: #ffffff;
+    top: 10px;
+}
+.continueBtn{
+    background-color: #25a22b;
+    color: white;
+    margin-top: 9px;;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.open-forgotPass{
+    visibility: visible;
+    top: 50%; 
+    transform: translate(-50%,-50%)scale(1);
+} */
