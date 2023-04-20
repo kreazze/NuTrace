@@ -17,8 +17,6 @@
             <ul class="side-menu top">
                 <li class="active">
                     <a href="./dashboard.php">
-                        <img class="navbar-pic" src="../assets/images/sidebar/green/home-select.png" width="25px" height="25px">
-                    <a href="./dashboard.html">
                         <img class="navbar-pic" src="../assets/images/sidebar/green/home-select.png" width="25px" height="20px">
                         <span class="text">Dashboard</span>
                     </a>
@@ -41,18 +39,6 @@
                         <span class="text">Scheduler</span>
                     </a>
                 </li>
-                <li>
-                    <a href="./about.php">
-                        <img class="navbar-pic" src="../assets/images/sidebar/white/about-icon.png" width="25px" height="25px">
-                        <span class="text">About Us</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./how-to.php">
-                        <img class="navbar-pic" src="../assets/images/sidebar/white/how-to-icon.png" width="25px" height="25px">
-                        <span class="text">How to use?</span>
-                    </a>
-                </li>
             </ul>
             <ul class="side-menu">
                 <li>
@@ -71,7 +57,7 @@
                             <div class="content">
                                 <div class="buttons">
                                     <a href="../account-form/login.html"><button class="yes">YES</button></a>
-                                    <a href="dashboard.html"><button class="no">NO</button></a>
+                                    <a href="dashboard.php"><button class="no">NO</button></a>
                                 </div>
                             </div>
                         </div>

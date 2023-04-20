@@ -792,10 +792,10 @@ main .add-event-footer .add-event-btn:hover {
 	color: white;
 }
 #sidebar .side-menu.top li a:hover {
-	color: #EBEBEB;
+	color: #25A22B;
 }
 #sidebar .side-menu li a:hover {
-	color: #EBEBEB;
+	color: #25A22B;
 }
 #sidebar .side-menu li a .bx {
 	min-width: calc(60px  - ((4px + 6px) * 2));
