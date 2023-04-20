@@ -45,8 +45,9 @@ body{
 }
 .container{
 	max-width: 500px;
-	height: 600px;
+	height: fit-content;
 	padding: 60px auto;
+	padding-bottom: 10px;
 	margin: 55px auto;
 	border-radius: 10px;
 	box-shadow: 8px 8px 8px rgba(0,0,0,0.5);
@@ -94,6 +95,7 @@ body{
 	text-align: center;
     font-family:'Poppins-ExtraLight';
 }
+/*FORMS*/
 .form {
 	padding-bottom: 0;
 	margin-bottom: 0;
@@ -145,28 +147,47 @@ body{
 	opacity: 0.8;
 	color: black;
 }
-.homepage {
-	width: 250px;
-	font-size: 1rem;
-	margin-left: 25%;
-	margin-bottom: 20px;
-	margin-top: 30px;
-	padding: 8px 8px;
-	background-color: #25a22b;
+.container .form select{
+	width: 400px;
+	padding: 5px;
 	border: none;
+	outline: none;
 	border-radius: 8px;
-	align-content: center;
-	justify-self: center;
-	text-align: center;
-	cursor: pointer;
-	font-family: 'Poppins-Bold', sans-serif;
+	text-indent: 10px;
+    font-size: 1rem;
+    font-family: 'Poppins-Regular';
+	display: flex;
+    background-color: rgb(224, 217, 217);
 }
-.homepage:hover{
-	background-color: #5fec5f;
-	opacity: 0.8;
-	color: black;
+.container .form .error-msg{
+	margin-bottom: 10px;
+	width: 400px;
+	padding: 5px;
+	border: none;
+	outline: none;
+	border-radius: 8px;
+	text-indent: 10px;
+    font-size: 1rem;
+    font-family: 'Poppins-Regular';
+	background: crimson;
+	color:#fff;
+	padding:10px;
+	margin-bottom: 5px;
+	display: block;
 }
-.homepage a{
-	text-decoration: none;
-	color: black;
+.container .form .success-msg{
+	margin-bottom: 10px;
+	width: 400px;
+	padding: 5px;
+	border: none;
+	outline: none;
+	border-radius: 8px;
+	text-indent: 10px;
+    font-size: 1rem;
+    font-family: 'Poppins-Regular';
+	background: rgb(9, 147, 9);
+	color:#fff;
+	padding:10px;
+	margin-bottom: 5px;
+	display: block;
 }

@@ -26,10 +26,6 @@
 				<input type="email" class="input" name="email" placeholder="juandelacruz@gmail.com" required><br>
 				<label class="tb-title">Password:</label><br>
 				<input type="password" class="input" name="password" placeholder="********"  maxlength="20" required><br>
-                <!-- 
-                <p class="p1"><u><a href="#" onclick="openforgotPass()">Forgot Password</u></p></a>
-                <p class="p2">Nakalimutan ang password</p>
-                -->
 			</form>
             <div class="checkPass">
                 <label>Show Password &nbsp;</label>
@@ -50,57 +46,6 @@
                 <input type="submit" value="LOGIN" class="submitBtn">
                 <p class="p3">No account? <a href="../account-form/signup.php">Sign up here</a></p><br>
 			</div>
-			<div class="form">
-                <?php
-                    // if (isset($_POST['email']) && isset($_POST['password'])){
-                    //     function validate($data){
-                    //         $data = trim($data);
-                    //         $data = stripslashes($data);
-                    //         $data = htmlspecialchars($data);
-                    //         return $data;
-                    //     }
-                    //     $email      = validate($_POST['email']);
-                    //     $password   = validate($_POST['password']);
-
-                    //     if (empty($email)){
-                    //         header("Location: login.php?error=Email is required.");
-                    //         exit();
-                    //     }
-                    //     else if(empty($password)){
-                    //         header("Location: login.php?error=Password is required.");
-                    //         exit();
-                    //     }
-                    //     else{
-                    //         echo 'Valid input';
-                    //     }
-                    // }
-                    // else{
-                    //     header("Location: login.php");
-                    //     exit();
-                    // }
-                ?>
-			</div>
-            <!--For Popup
-            <div class="forgotPass" id="forgotPass">
-                <h3>Forgot Password</h3>
-                <p>(Nakalimutan ang password)</p>
-                <br>
-                <p class="popup">Enter your contact number</p>
-                <input type="text" name="contact" placeholder="09XXXXXXXXX" required><br>
-                <button class="continueBtn" onclick="closeforgotPass()">Continue</button>
-            </div> -->
 		</div>		
     </body>
-    <script>
-        let forgotPass = document.getElementById("forgotPass");
-
-        function openforgotPass()
-        {
-            forgotPass.classList.add("open-forgotPass");
-        }
-        function closeforgotPass()
-        {
-            forgotPass.classList.remove("open-forgotPass");
-        }
-    </script>
 </html> 
