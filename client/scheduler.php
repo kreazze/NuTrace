@@ -69,7 +69,7 @@
                         <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
                         <div class="content">
                             <div class="buttons">
-                                <a href="../account-form/login.html"><button class="yes">YES</button></a>
+                                <a href="../account-form/login.php"><button class="yes">YES</button></a>
                                 <a href="scheduler.php"><button class="no">NO</button></a>
                             </div>
                         </div>

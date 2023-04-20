@@ -10,7 +10,7 @@
 <body>
     <header class="main-header">
         <div class="header-top">
-            <a href="./account-form/account.html">
+            <a href="./account-form/account.php">
                 <h1 class="logo"><img id="logo-pic" src="./assets/images/main/nutrace_logo.png" width="200px" height="200px"></h1>
                 <div class="header-content">
                     <h1>NuTrace</h1>

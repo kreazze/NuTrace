@@ -10,7 +10,7 @@
     </head>
     <body>
         <section id="sidebar">
-            <a href="homepage.html" class="brand">
+            <a href="homepage.php" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
                 <span>NuTrace</span>
             </a>
@@ -43,9 +43,6 @@
             <ul class="side-menu">
                 <li>
                     <a href="../account-form/login.php" class="logout">
-            </ul>
-            <ul class="side-menu">
-                <li>
                     <div class="box">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
                         <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
@@ -56,7 +53,7 @@
                             <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
                             <div class="content">
                                 <div class="buttons">
-                                    <a href="../account-form/login.html"><button class="yes">YES</button></a>
+                                    <a href="../account-form/login.php"><button class="yes">YES</button></a>
                                     <a href="dashboard.php"><button class="no">NO</button></a>
                                 </div>
                             </div>
@@ -67,9 +64,9 @@
         </section>
     
         <section id="content">
-            <nav id="profile">  
-                <img id="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">          
-                <a id="user" href="#">Hello, User!</a>
+            <nav class="profile">      
+                <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">      
+                <a class="user" href="#">Hello, User!</a>
             </nav>
             <main id="main-content">
                 <p id="p4">Magandang Araw!</p>

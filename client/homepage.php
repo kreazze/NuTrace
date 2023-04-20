@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NuTrace</title>
-        <link rel ="stylesheet" href="homepage.css">
+        <link rel ="stylesheet" href="../client/homepage.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
         
@@ -13,8 +13,7 @@
     <body>   
         <section id="content">
             <nav class="profile">            
-                <!--<img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">-->
-                <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
+                <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="60px" height="60px">
                 <p class="nav-title">NuTrace</p>
             </nav>
             <main>

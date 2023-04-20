@@ -4,12 +4,12 @@
     {
 		$conn = new mysqli('localhost','root','', 'nutrace_server');
 
-        $fullname   = $_POST['fullname'];
-		$contact    = $_POST['contact'];
-		$email      = $_POST['email'];
-		$password   = md5($_POST['password']);
-		$cpassword	= md5($_POST['cpassword']);
-		$user_type	= $_POST['user_type'];
+        $fullname   = $_POST["fullname"];
+		$contact    = $_POST["contact"];
+		$email      = $_POST["email"];
+		$password   = md5($_POST["password"]);
+		$cpassword	= md5($_POST["cpassword"]);
+		$user_type	= $_POST["user_type"];
 
 		$select  = "SELECT * FROM tbl_users WHERE email = '$email' && password ='$password' ";
 		$result 	= mysqli_query($conn,$select);
@@ -22,10 +22,10 @@
 			   $error[] = 'Password do not matched!';
 			}
 			else{
-			   $insert = "INSERT INTO tbl_users (fullname, contact, email, password, cpassword, user_type) VALUES ('$fullname','$contact','$email','$password','$cpassword,'$user_type')";
+			   $insert = "INSERT INTO tbl_users (fullname, contact, email, password, cpassword, user_type) VALUES ('$fullname','$contact','$email','$password','$cpassword','$user_type')";
 
 			   mysqli_query($conn, $insert);
-			   $alert ="<script>alert('Registered Successfully!');</script>";
+			   $alert ="<script>alert('Registered Successfully!'');</script>";
 					echo $alert;
 			   header('location:../account-form/login.php');
 
