@@ -7,10 +7,6 @@
 		<title>Register in NuTrace</title>
 		<link rel="stylesheet" type="text/css" href="../account-form/signup.css">
 		<link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,900&display=swap" rel="stylesheet">
-		<!--Font Awesome Bootstrap-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	</head>
 	<body>
@@ -19,16 +15,15 @@
                 <a href="account.html"><i class="fa-sharp fa-solid fa-chevron-left fa-sm" style="color: #25a22b;"></i> Back </a>
             </div>
 			<div class="register">
-				<div class="logo">
+				<div class="logo-title">
 					<img src="../assets/images/main/nutrace_logo.png" width="80px" height="80px">
+					<h3>NuTrace</h3>
 				</div>
-				<h3> NuTrace </h3>
 				<hr class="rounded">
 				<h6 class="regTitle">Registration Form</h6>
 			</div>
 			
-			<div class="form">
-				<form action="../server/insertUser.php" name="form" method="post">
+			<form class="form" action="../server/insertUser.php" name="form" method="post">
 					<label>Full Name:</label><br>
 					<input type="text" class="input" name="fullname" id="fullname" placeholder="Your Name" required><br>
 					
@@ -42,8 +37,7 @@
 					<input type="password" class="input" name="password" id="password" placeholder="********"  maxlength="20" required><br>
 					
 					<input type="submit" value="proceed" id="submit" name="submitBtn" class="submitBtn">
-				</form>
-			</div>
+			</form>
 		</div>		
 	</body>
 </html>
