@@ -47,37 +47,37 @@
             </a>
             <ul class="side-menu top">
                 <li>
-                    <a href="./dashboard.html">
+                    <a href="./dashboard.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/home-icon.png" width="25px" height="25px">
                         <span class="text">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./soilnutrient.html">
+                    <a href="./soilnutrient.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/soil-icon.png" width="25px" height="25px">
                         <span class="text">Soil Nutrient</span>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="./inventory.html">
+                    <a href="./inventory.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/green/record-select.png" width="25px" height="25px">
                         <span class="text">Inventory</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./scheduler.html" id="onlink">
+                    <a href="./scheduler.php" id="onlink">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/sched-icon.png" width="25px" height="25px">
                         <span class="text">Scheduler</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./about.html">
+                    <a href="./about.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/about-icon.png" width="25px" height="25px">
                         <span class="text">About Us</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./how-to.html">
+                    <a href="./how-to.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/how-to-icon.png" width="25px" height="25px">
                         <span class="text">How to use?</span>
                     </a>
@@ -85,7 +85,7 @@
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="../account-form/login.html" class="logout">
+                    <a href="../account-form/login.php" class="logout">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
                         <span class="text">Logout</span>
                     </a>

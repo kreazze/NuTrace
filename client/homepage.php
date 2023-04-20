@@ -27,7 +27,7 @@
                         website which offers dashboard, crop harvest inventory, and farm task calendar where farmers can easily 
                         access and monitor their farm records in just several clicks.</p>
                     <div>
-                        <a href="./dashboard.html"><button class="proceed">PROCEED</button></a>
+                        <a href="./dashboard.php"><button class="proceed">PROCEED</button></a>
                     </div>  
                 </div>
                 <div class="home-pic">
@@ -35,8 +35,8 @@
                         <img src="../assets/images/duran5.jpg">
                     </div>
                     <div>
-                        <a href="./how-to.html"><button class="learn">LEARN MORE</button></a>
-                        <a href="./about.html"><button class="about">ABOUT US</button></a>
+                        <a href="./how-to.php"><button class="learn">LEARN MORE</button></a>
+                        <a href="./about.php"><button class="about">ABOUT US</button></a>
                     </div>   
                 </div>
             </main>

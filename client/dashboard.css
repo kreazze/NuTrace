@@ -24,6 +24,7 @@
     src: url('../assets/font/Poppins-Regular.ttf');
 }
 
+/* content */
 *{
 	margin: 0;
 	padding: 0;
@@ -198,7 +199,7 @@ body {
 	left: 0;
 	border-radius: 50%;
 }
-#content nav .profile  {
+#content nav #profile  {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;

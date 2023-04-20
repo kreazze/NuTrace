@@ -51,6 +51,8 @@ body {
 	overflow-y: auto;
 	position: sticky;
 }
+
+/* sidebar */
 #sidebar {
 	position: fixed;
 	top: 0;

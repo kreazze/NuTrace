@@ -15,7 +15,7 @@
                 <label class="nav-title">NuTrace</label>
             </nav>
             <main class="main-content">
-                <a href="../client/homepage.html"><button>BACK</button></a>
+                <a href="../client/homepage.php"><button>BACK</button></a>
                 <p>About NuTrace</p>
                 <p class="p4">(Tungkol sa NuTrace?)</p>
                 <div id="first-content">

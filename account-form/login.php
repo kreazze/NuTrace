@@ -22,9 +22,9 @@
 				<hr class="rounded">
 			</div>
             <form class="form" action="#" method="post">
-                <label>Email:</label><br>
+                <label class="tb-title">Email:</label><br>
 				<input type="email" class="input" name="email" placeholder="juandelacruz@gmail.com" required><br>
-				<label>Password:</label><br>
+				<label class="tb-title">Password:</label><br>
 				<input type="password" class="input" name="password" placeholder="********"  maxlength="20" required><br>
                 <!-- 
                 <p class="p1"><u><a href="#" onclick="openforgotPass()">Forgot Password</u></p></a>
