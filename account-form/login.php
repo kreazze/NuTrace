@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Register in NuTrace</title>
+		<title>NuTrace</title>
 		<link rel="stylesheet" type="text/css" href="../account-form/login.css">
 		<link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -80,7 +80,7 @@
                     // }
                 ?>
 			</div>
-            <!--For Popup-->
+            <!--For Popup
             <div class="forgotPass" id="forgotPass">
                 <h3>Forgot Password</h3>
                 <p>(Nakalimutan ang password)</p>
@@ -88,7 +88,7 @@
                 <p class="popup">Enter your contact number</p>
                 <input type="text" name="contact" placeholder="09XXXXXXXXX" required><br>
                 <button class="continueBtn" onclick="closeforgotPass()">Continue</button>
-            </div>
+            </div> -->
 		</div>		
     </body>
     <script>
