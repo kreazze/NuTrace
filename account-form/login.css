@@ -66,7 +66,7 @@ p {
 
 body{
 	/*background: linear-gradient(to bottom left, #25A22B, #FFFFFF);*/
-    background-image: url("../assets/images/login-bg.jpg");
+    background-image: url("../assets/images/reg-bg.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     background-position: 100%;
