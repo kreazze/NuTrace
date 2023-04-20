@@ -215,6 +215,7 @@ body {
 
 /* content */
 .main-content {
+	align-items: center;
 	font-size: 40px;
 	line-height: 2.5rem;
 	margin-top: 10px;
@@ -254,7 +255,29 @@ body {
 	color: white;
 	background-color: #25a22b;
 }
-#add-btn:hover {
+#refresh-btn {
+	height: fit-content;
+	margin-left: 50px;
+	margin-right: 10px;
+	margin-top: 8px;
+	padding: 5px 15px 5px;
+	font-size: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: none;
+	align-items: left;
+	font-family: 'Poppins-Bold';
+	color: white;
+	background-color: #25a22b;
+}
+.refresh{
+	font-size: 20px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	text-align: center;
+	color: red;
+}
+
+#add-btn:hover, #refresh-btn:hover {
 	background-color: #8f8f8f;
 }
 #dl-btn {
@@ -417,9 +440,7 @@ h6 {
 .select-menu.active .options{
     display: block;
 }
-.arrow {
-	text-align: end;
-}
+
 .options .option{
     display: flex;
     cursor: pointer;
@@ -440,13 +461,6 @@ h6 {
 	font-family: 'Poppins-Regular';
 }
 form label {
-	font-size: 18px;
-	font-family: 'Poppins-SemiBold';
-	margin-top: -10px;
-	margin-bottom: -10px;
-	font-family: "poppins";
-}
-form label {
 	font-size: 15px;
 	font-family: "poppins semibold", sans-serif;
 	padding-left: 5px;
@@ -456,7 +470,7 @@ form label {
 	font-family: 'Poppins-Regular';
 	font-size: 15px;
 }
-input[type=text], [type=date], select {
+input[type=text], [type=date], [type=number], select {
 	width: 95%;
 	font-family: 'Poppins-Regular';
 	padding: 12px;
@@ -501,7 +515,9 @@ input[type=text], [type=date], select {
 	margin: 20px;
 }
 #inventory-table {
+	align-items: center;
 	min-width: 500px;
+	width: 1450px;
 	margin: 25px 0;
 	border: #8f8f8f solid 1px;
 	border-collapse: collapse;
@@ -521,6 +537,11 @@ input[type=text], [type=date], select {
 #table-titleslash {
 	font-size: 15px;
 	font-style: italic;
+	font-family: 'Poppins-Regular';
+}
+.table-contents{
+	font-size: 17px;
+	text-align: center;
 	font-family: 'Poppins-Regular';
 }
 

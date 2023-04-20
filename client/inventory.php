@@ -1,26 +1,30 @@
 <?php
-session_start();
-include('../server/connect.php');
-if(isset($_POST['add']))
-{
-    $date       = $_POST['date'];
-    $croptype   = $_POST['croptype'];
-    $quantity   = $_POST['quantity'];
-    $harvester  = $_POST['harvester'];
+    session_start();
+    include('../server/connect.php');
 
-    $query = "INSERT INTO tbl_inventory (date, croptype, quantity, harvester) VALUES ('$date','$croptype','$quantity','$harvester')";
-
-    $query_run = mysqli_query($conn, $query);
-    if($query_run)
+    $sql = "SELECT * FROM tbl_inventory";
+    $crops = mysqli_query($conn, $sql);
+    $rowcount = mysqli_num_rows($crops);
+    if(isset($_POST['add']))
     {
-        $alert ="<script>alert('Added Successfully!');</script>";
-			echo $alert;
+        $date       = $_POST['date'];
+        $croptype   = $_POST['croptype'];
+        $quantity   = $_POST['quantity'];
+        $harvester  = $_POST['harvester'];
+
+        $query = "INSERT INTO tbl_inventory (date, croptype, quantity, harvester) VALUES ('$date','$croptype','$quantity','$harvester')";
+
+        $query_run = mysqli_query($conn, $query);
+        if($query_run)
+        {
+            $alert ="<script>alert('Added Successfully!');</script>";
+                echo $alert;
+        }
+        else{
+            $alert ="<script>alert('An Error Occured.');</script>";
+                echo $alert;
+        }
     }
-    else{
-        $alert ="<script>alert('An Error Occured.');</script>";
-			echo $alert;
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,8 +103,9 @@ if(isset($_POST['add']))
                 <p id="datetime"></p>
                 <p class="p4">Crop Harvest Inventory</p>
                 <div id="buttons">
-                    <a href="#divAdd"><button id="add-btn">+ ADD</button></a>
+                    <a href="#divAdd"><button class=tableBtn id="add-btn">+ ADD</button></a>
                     <button id="dl-btn"><img id='dl-img' src="../assets/images/sidebar/white/download-icon.png" width="25px" height="25px"></button>
+                    <button class="tableBtn" type="button" id="refresh-btn">Refresh</button>
                     <div class="overlay" id="divAdd">
                         <div class="wrapper"> 
                             <a class="close" href="#">&times;</a>
@@ -110,9 +115,9 @@ if(isset($_POST['add']))
                                 <div class="popup-container">
                                     <form class="add-pop" method="POST">
                                         <label>Date</label> <label class="tagalog">(Petsa)</label>
-                                        <input placeholder="MM/DD/YYYY" type="date" name="date" require>
+                                        <input placeholder="MM/DD/YYYY" type="date" name="date" required>
                                         <label>Crop Type</label> <label class="tagalog">(Uri ng Tanim)</label>
-                                        <select class="sBtn-text" name="croptype"id="croptype">
+                                        <select class="sBtn-text" name="croptype"id="croptype" required>
                                                 <option class="options"> Select Crop </option>
                                                 <option value="kamatis"> Kamatis </option>
                                                 <option value="mais"> Mais </option>
@@ -122,11 +127,11 @@ if(isset($_POST['add']))
                                         </select>
                                         <label>Quantity</label> <label class="tagalog">(Dami)</label>
                                         <div class="qty">
-                                            <input type="text" name="quantity"><span class="unit" require>kg</span>
+                                            <input type="number" name="quantity" placeholder="In Kilogram (kg)" required>
                                         </div>
                                         
                                         <label>Name of harvester</label><label class="tagalog">(Pangalan ng umani)</label>
-                                        <input placeholder="First Name & Last Name" name="harvester" type="text" require>
+                                        <input placeholder="First Name & Last Name" name="harvester" type="text" required>
                                         <button type="submit" class="add" name="add">ADD</button>
                                         <button class="cancel" onclick="close()">CANCEL</button>
                                     </form>
@@ -146,8 +151,31 @@ if(isset($_POST['add']))
                                 <th id="table-title">Action <span id="table-titleslash">(Maaaring Gawin)</span></th>
                             </tr>
                         </thead>
+                        <tbody class="table-contents">
+                            <?php
+                                foreach($crops as $row){
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $row['date']; ?></td>
+                                            <td><?php echo $row['croptype']; ?></td>
+                                            <td><?php echo $row['quantity']; ?></td>
+                                            <td><?php echo $row['harvester']; ?></td>
+                                            <td>
+                                                <button class="btn btn-warning mb-1" id="editItemBtn">Edit Info</button>
+                                                <button class="btn btn-danger mb-1" id="deleteBtn">Delete</button>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                }
+                            ?>
+                        </tbody>
                     </table>
+                    <p class="referesh"><strong>Total: <?php echo $rowcount; ?></strong></p>
+                    <iframe name="content"></iframe>
                 </div>
+                <p class="refresh">***Manually Refresh Table when change is made***</p>
+                
+                <?php mysqli_close($conn); ?>
             </main>
         </section>
         <script src="../js-files/sidebar.js"></script>
