@@ -20,7 +20,7 @@
 h1 {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 4rem;
+    font-size: 60px;
     font-family:'Poppins-Black';
 }
 h2 {
@@ -37,7 +37,7 @@ p {
 }
 body {
 	/*background: linear-gradient(to bottom left, #25A22B, #FFFFFF);*/
-    background-image: url("../assets/images/reg-bg.png");
+    background-image: url("../assets/images/reg-bg.jpg");
     background-image: url("../assets/images/account-bg.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -51,14 +51,14 @@ body {
 	max-width: 500px;
 	height: 600px;
 	margin: 55px auto;
-height: auto;
+    height: auto;
 	width: 100%;
 	background-color: whitesmoke;
 	margin: 30px auto;
-    margin-top: 95px;
+    margin-top: 50px;
 	padding: 5px auto;
 	border-radius: 10px;
-	box-shadow: 8px 8px 8px rgba(0,0,0,0.5);
+	box-shadow: -8px 8px 8px #43434380;  
     font-size: 1.345rem;
 	font-weight: 700;
 	margin-bottom: 5px;
@@ -121,7 +121,6 @@ button {
     padding-left: 108px;
     padding-right: 108px;
     margin-bottom: 50px;
-
 }
 .btn3 {
     padding-left: 54px;
