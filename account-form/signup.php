@@ -2,7 +2,7 @@
 
     if(isset($_POST['submit']))
     {
-		$conn = new mysqli('localhost','root','', 'nutrace_server');
+		$conn = new mysqli("localhost", "root", "", "nutrace_server");
 
         $fullname   = $_POST["fullname"];
 		$contact    = $_POST["contact"];
@@ -11,25 +11,23 @@
 		$cpassword	= md5($_POST["cpassword"]);
 		$user_type	= $_POST["user_type"];
 
-		$select  = "SELECT * FROM tbl_users WHERE email = '$email' && password ='$password' ";
-		$result 	= mysqli_query($conn,$select);
+		$select = "SELECT * FROM tbl_users WHERE email = '$email' OR password = '$password'";
+		$result = mysqli_query($conn, $select);
 
-		if(mysqli_num_rows($result) > 0){
-			$error[] = 'User Already Exist!';
+		if(mysqli_num_rows($result) > 0) {
+			$error[] = "User Already Exist!";
 		}
-		else{
-			if($password != $cpassword){
+		else {
+			if ($password != $cpassword) {
 			   $error[] = 'Password do not matched!';
 			}
-			else{
+			else {
 			   $insert = "INSERT INTO tbl_users (fullname, contact, email, password, cpassword, user_type) VALUES ('$fullname','$contact','$email','$password','$cpassword','$user_type')";
 
 			   mysqli_query($conn, $insert);
-			   $alert ="<script>alert('Registered Successfully!'');</script>";
+			   $alert ="<script>alert('Registered Successfully!');</script>";
 					echo $alert;
 			   header('location:../account-form/login.php');
-
-			   
 			}
 		 }
 	}
