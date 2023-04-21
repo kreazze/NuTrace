@@ -63,12 +63,11 @@ body{
     color: #25a22b;
 }
 .back a:hover{
-	color: black;
+	color: #8f8f8f;
 	text-decoration:underline;
 }
 .register {
 	font-size: 2.5rem;
-	font-weight: 700;
 	margin-bottom: 3px;
 	color: #25a22b;
 	text-align: center;
@@ -124,7 +123,7 @@ body{
 	margin-top: 10px;
     margin-left: 125px;
     padding: 5px;
-	border-radius: 20px;
+	border-radius: 50px;
     font-size: 1.5rem;
 	background-color: #25a22b;
 	color: white;

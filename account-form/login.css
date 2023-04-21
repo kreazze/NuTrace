@@ -25,6 +25,9 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+}
 p {
     font-size: 1rem;
     margin-top: 0;
@@ -77,13 +80,14 @@ body{
 	height: 600px;
     padding: 60px auto;
 	margin: 55px auto;
+    padding-top: 30px;
 	border-radius: 10px;
-	box-shadow: 8px 8px 8px rgba(0,0,0,0.5);
+	box-shadow: 8px 8px 5px #43434380;
     background-color: whitesmoke;
 }
 .back {
     margin-left: 20px;
-    padding: 10px;
+
     font-family: 'Poppins-Regular';
     color: #25a22b;
 }
@@ -92,13 +96,14 @@ body{
     color: #25a22b;
 }
 .back a:hover {
-	color: black;
+	color: #8f8f8f;
 	text-decoration: underline;
 }
 .login {
 	font-size: 2.5rem;
 	font-weight: 700;
 	margin-bottom: 3px;
+    padding-top: 10px;
 	color: #25a22b;
 	text-align: center;
 	font-family:'Poppins-Black';
@@ -119,7 +124,7 @@ body{
 .tb-title {
 	width: 150px;
 	margin-right: 10px;
-	font-size: 1.5rem;
+	font-size: 20px;
     font-family: 'Poppins-SemiBold';
     color: #25a22b;
 }
@@ -132,10 +137,10 @@ body{
 }
 .input {
     width: 400px;
-	padding: 5px;
+	padding: 8px;
 	border: none;
     outline: none;
-	border-radius: 8px;
+	border-radius: 10px;
 	text-indent: 10px;
     font-size: 1rem;
     font-family: 'Poppins-Regular';
@@ -143,7 +148,7 @@ body{
     background-color: rgb(224, 217, 217);
 }
 .checkPass {
-    margin-top: 10px;
+    margin-top: -15px;
     margin-left: 330px;
     margin-right: 5px;
     font-size: 0.8rem;
@@ -153,8 +158,9 @@ body{
 	width: 150px;
     margin-top: 60px;
     margin-left: 170px;
+    margin-bottom: 6px;
     padding: 5px;
-	border-radius: 20px;
+	border-radius: 30px;
     font-size: 1.5rem;
     font-family: 'Poppins-Black';
     border: none;

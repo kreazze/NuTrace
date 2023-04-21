@@ -40,7 +40,7 @@
     </head>
     <body>
         <section id="sidebar">
-            <a href="homepage.html" class="brand">
+            <a href="homepage.php" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
                 <span>NuTrace</span>
             </a>
@@ -86,7 +86,7 @@
                             <h3 class="q2">(Sigurado ka ba na nais mong umalis dito?)</h3>
                             <div class="content">
                                 <div class="buttons">
-                                    <a href="../account-form/login.html"><button class="yes">YES</button></a>
+                                    <a href="../account-form/login.php"><button class="yes">YES</button></a>
                                     <a href="soilnutrient.php"><button class="no">NO</button></a>
                                 </div>
                             </div>
