@@ -43,9 +43,6 @@
             <ul class="side-menu">
                 <li>
                     <a href="../account-form/login.php" class="logout">
-            </ul>
-            <ul class="side-menu">
-                <li>
                     <div class="box">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
                         <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
@@ -67,9 +64,9 @@
         </section>
     
         <section id="content">
-            <nav id="profile">  
-                <img id="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">          
-                <a id="user" href="#">Hello, User!</a>
+            <nav class="profile">      
+                <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">      
+                <a class="user" href="#">Hello, User!</a>
             </nav>
             <main id="main-content">
                 <p id="p4">Magandang Araw!</p>

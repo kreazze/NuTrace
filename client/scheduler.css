@@ -27,6 +27,7 @@
 	font-family: 'Poppins-ExtraLight';
 	src: url('../assets/font/Poppins-ExtraLight.ttf');
 }
+
 :root {
 	--primary-clr: #0cab19;
   }
@@ -35,10 +36,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-
-h1{
-	font-size: 2.5rem;
 }
 html {
 	overflow-x: hidden;
@@ -60,7 +57,7 @@ body {
 	max-height: calc(100vh - 56px);
 	overflow-y: auto;
 	position: sticky;
-	background-color: #0b032d;
+	background-color: #f7f7f7;
 }
 
 /* sidebar */
@@ -740,7 +737,7 @@ main .add-event-footer .add-event-btn:hover {
 #sidebar .side-menu li {
 	height: 48px;
 	background: transparent;
-	margin-left: 6px;
+	margin-left: 10px;
 	border-radius: 48px 0 0 48px;
 	padding: 4px;
 }

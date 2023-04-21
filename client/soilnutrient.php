@@ -3,7 +3,7 @@
     session_start();
     include('../server/connect.php');
 
-    $sql = "SELECT * FROM tbl_soilnutrients";
+    $sql = "SELECT * FROM soil_nutrients";
     $nutrients = mysqli_query($conn, $sql);
     //$rowcount = mysqli_num_rows($nutrients);
     if(isset($_POST['add']))

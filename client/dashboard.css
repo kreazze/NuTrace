@@ -23,7 +23,14 @@
     font-family: 'Poppins-Regular';
     src: url('../assets/font/Poppins-Regular.ttf');
 }
+@font-face {
+	font-family: 'Poppins-ExtraLight';
+	src: url('../assets/font/Poppins-ExtraLight.ttf');
+}
 
+:root {
+	--primary-clr: #0cab19;
+  }
 /* content */
 *{
 	margin: 0;
@@ -107,7 +114,7 @@ body {
 #sidebar .side-menu li {
 	height: 48px;
 	background: transparent;
-	margin-left: 6px;
+	margin-left: 10px;
 	border-radius: 48px 0 0 48px;
 	padding: 4px;
 }
@@ -199,16 +206,16 @@ body {
 	left: 0;
 	border-radius: 50%;
 }
-#content nav #profile  {
+#content nav .profile  {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
 	object-fit: cover;
 }
-#menu-pic {
+.menu-pic {
 	cursor: pointer;
 }
-#user {
+.user {
 	font-size: 20px;
 	color: white;
 	font-family: "Poppins-Bold";

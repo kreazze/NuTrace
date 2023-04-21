@@ -1,3 +1,35 @@
+<?php
+
+    if(isset($_POST['submit']))
+    {
+		$conn = new mysqli('localhost','root','', 'nutrace_server');
+
+        // $fullname   = $_POST["fullname"];
+		// $contact    = $_POST["contact"];
+		$email      = $_POST["email"];
+		$password   = md5($_POST["password"]);
+		// $cpassword	= md5($_POST["cpassword"]);
+		// $user_type	= $_POST["user_type"];
+
+		$select  = "SELECT * FROM tbl_users WHERE email = '$email' && password ='$password' ";
+		$result 	= mysqli_query($conn,$select);
+
+		if(mysqli_num_rows($result) > 0){
+			$row = mysqli_fetch_array($result);
+
+            if($row["user_type"] === 'admin'){
+                $_SESSION['admin_name'] = $row["fullname"];
+                header('location:admin_dashboard.php');
+            }
+            elseif($row["user_type"] === 'user'){
+                $_SESSION["user_name"] = $row["fullname"];
+                header('location:dashboard.php');
+            }
+		}else{
+            $error[]    = 'Incorrect email or password!!';
+        }
+	}
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -21,86 +53,41 @@
                 </div> 
 				<hr class="rounded">
 			</div>
-            <form class="form" action="#" method="post">
+            <form class="form" method="post">
+                    <div class="error">
+						<?php
+						if(isset($error)){
+							foreach($error as $error){
+								echo '<span class="error-msg">'.$error.'</span>';
+							};
+						}
+						?>
+					</div>
                 <label class="tb-title">Email:</label><br>
 				<input type="email" class="input" name="email" placeholder="juandelacruz@gmail.com" required><br>
 				<label class="tb-title">Password:</label><br>
 				<input type="password" class="input" name="password" placeholder="********"  maxlength="20" required><br>
-                <!-- 
-                <p class="p1"><u><a href="#" onclick="openforgotPass()">Forgot Password</u></p></a>
-                <p class="p2">Nakalimutan ang password</p>
-                -->
-			</form>
-            <div class="checkPass">
-                <label>Show Password &nbsp;</label>
-                <input type="checkbox" onclick="showPassword()">
-            </div>
-            <script>
-                function showPassword() {
-                    var show = document.getElementById('showPass');
-                    if (show.type == 'password') {
-                        show.type = 'text';
+			
+                <div class="checkPass">
+                    <label>Show Password &nbsp;</label>
+                    <input type="checkbox" onclick="showPassword()">
+                </div>
+                <script>
+                    function showPassword() {
+                        var show = document.getElementById('showPass');
+                        if (show.type == 'password') {
+                            show.type = 'text';
+                        }
+                        else {
+                            show.type = 'password';
+                        }
                     }
-                    else {
-                        show.type = 'password';
-                    }
-                }
-            </script>
-            <div>
-                <input type="submit" value="LOGIN" class="submitBtn">
-                <p class="p3">No account? <a href="../account-form/signup.php">Sign up here</a></p><br>
-			</div>
-			<div class="form">
-                <?php
-                    // if (isset($_POST['email']) && isset($_POST['password'])){
-                    //     function validate($data){
-                    //         $data = trim($data);
-                    //         $data = stripslashes($data);
-                    //         $data = htmlspecialchars($data);
-                    //         return $data;
-                    //     }
-                    //     $email      = validate($_POST['email']);
-                    //     $password   = validate($_POST['password']);
-
-                    //     if (empty($email)){
-                    //         header("Location: login.php?error=Email is required.");
-                    //         exit();
-                    //     }
-                    //     else if(empty($password)){
-                    //         header("Location: login.php?error=Password is required.");
-                    //         exit();
-                    //     }
-                    //     else{
-                    //         echo 'Valid input';
-                    //     }
-                    // }
-                    // else{
-                    //     header("Location: login.php");
-                    //     exit();
-                    // }
-                ?>
-			</div>
-            <!--For Popup
-            <div class="forgotPass" id="forgotPass">
-                <h3>Forgot Password</h3>
-                <p>(Nakalimutan ang password)</p>
-                <br>
-                <p class="popup">Enter your contact number</p>
-                <input type="text" name="contact" placeholder="09XXXXXXXXX" required><br>
-                <button class="continueBtn" onclick="closeforgotPass()">Continue</button>
-            </div> -->
+                </script>
+                <div>
+                    <input type="submit" value="LOGIN" name="submit" class="submitBtn">
+                    <p class="p3">No account? <a href="../account-form/signup.php">Sign up here</a></p><br>
+                </div>
+            </form>
 		</div>		
     </body>
-    <script>
-        let forgotPass = document.getElementById("forgotPass");
-
-        function openforgotPass()
-        {
-            forgotPass.classList.add("open-forgotPass");
-        }
-        function closeforgotPass()
-        {
-            forgotPass.classList.remove("open-forgotPass");
-        }
-    </script>
 </html> 

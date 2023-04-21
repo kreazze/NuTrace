@@ -175,39 +175,20 @@ body{
 	background-color: #8f8f8f;
 }
 
-/*Popup for forgot password
-.forgotPass{
-    padding: 10px 10px;
-    width: 400px;
-    background:rgb(0, 0, 0);
-    border-radius: 10px;
-    position: absolute;
-    top:0;
-    left: 50%;
-    transform: translate(-50%,-50%)scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: #25a22b;
-    font-family: 'Poppins-Bold', sans-serif;
-    visibility: hidden;
-    transition: transform 0.4s, top0.4s;
-}
-.forgotPass .popup{
-    color: #ffffff;
-    top: 10px;
-}
-.continueBtn{
-    background-color: #25a22b;
-    color: white;
-    margin-top: 9px;;
-    border: none;
-    padding: 5px 5px;
-    border-radius: 3px;
+/**for error msg**/
+.container .form .error-msg{
+	margin-bottom: 10px;
+	width: 400px;
+	padding: 5px;
+	border: none;
+	outline: none;
+	border-radius: 8px;
+	text-indent: 10px;
     font-size: 1rem;
-    cursor: pointer;
+    font-family: 'Poppins-Regular';
+	background: crimson;
+	color:#fff;
+	padding:10px;
+	margin-bottom: 5px;
+	display: block;
 }
-.open-forgotPass{
-    visibility: visible;
-    top: 50%; 
-    transform: translate(-50%,-50%)scale(1);
-} */
