@@ -54,7 +54,7 @@
 				<hr class="rounded">
 			</div>
             <form class="form" method="post">
-                    <div class="error">
+                <div class="error">
 						<?php
 						if(isset($error)){
 							foreach($error as $error){
@@ -62,32 +62,29 @@
 							};
 						}
 						?>
-					</div>
+				</div>
                 <label class="tb-title">Email:</label><br>
 				<input type="email" class="input" name="email" placeholder="juandelacruz@gmail.com" required><br>
 				<label class="tb-title">Password:</label><br>
-				<input type="password" class="input" name="password" placeholder="********"  maxlength="20" required><br>
-			
-                <div class="checkPass">
-                    <label>Show Password &nbsp;</label>
-                    <input type="checkbox" onclick="showPassword()">
-                </div>
+				<input type="password" class="input" id="showPass" name="password" placeholder="********"  maxlength="20" required>
+			    <input type="checkbox" onclick="showPassword()">
                 <script>
                     function showPassword() {
-                        var show = document.getElementById('showPass');
-                        if (show.type == 'password') {
-                            show.type = 'text';
+                        var show = document.getElementById("showPass");
+                        if (show.type === "password") {
+                            show.type = "text";
                         }
                         else {
-                            show.type = 'password';
+                            show.type = "password";
                         }
                     }
                 </script>
-                <div>
-                    <input type="submit" value="LOGIN" name="submit" class="submitBtn">
-                    <p class="p3">No account? <a href="../account-form/signup.php">Sign up here</a></p><br>
-                </div>
+                <label class="displayPass">Show Password &nbsp;</label>
+                <br>
+                <input type="submit" value="LOGIN" name="submit" class="submitBtn">
+                <p class="p3">No account? <a href="../account-form/signup.php">Sign up here</a></p><br>
+                
             </form>
-		</div>		
+		</div>
     </body>
 </html> 
