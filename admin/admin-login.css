@@ -25,6 +25,9 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+}
 p {
     font-size: 1rem;
     margin-top: 0;
@@ -40,6 +43,11 @@ p {
     font-family: 'Poppins-Medium';
     text-emphasis: none;
 }
+.greet
+{
+    margin-top: 10px;
+    margin-bottom: -40px;
+}
 .p1:hover {
     color: #5fec5f;
 }
@@ -54,16 +62,19 @@ p {
 }
 .p3{
     margin-top: 5px;
-    font-size: 0.75rem;
+    font-size: 0.80rem;
     color: black;
     text-align: center;
     font-family: 'Poppins-Regular';
+    margin-left: -90px;
 }
 .p3 a:hover {
     color: #5fec5f;
 }
 
-body {
+
+body{
+	/*background: linear-gradient(to bottom left, #25A22B, #FFFFFF);*/
     background-image: url("../assets/images/reg-bg.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -72,16 +83,16 @@ body {
 }
 .container { 
 	max-width: 500px;
-	height: 500px;
+	height: fit-content;
     padding: 60px auto;
-	margin: 35px auto;
+	margin: 55px auto;
+    padding-top: 30px;
 	border-radius: 10px;
-	box-shadow: 8px 8px 8px rgba(0,0,0,0.5);
+	box-shadow: 8px 8px 5px #43434380;
     background-color: whitesmoke;
 }
 .back {
     margin-left: 20px;
-    padding: 10px;
     font-family: 'Poppins-Regular';
     color: #25a22b;
 }
@@ -90,13 +101,14 @@ body {
     color: #25a22b;
 }
 .back a:hover {
-	color: black;
+	color: #8f8f8f;
 	text-decoration: underline;
 }
 .login {
 	font-size: 2.5rem;
 	font-weight: 700;
 	margin-bottom: 3px;
+    padding-top: 10px;
 	color: #25a22b;
 	text-align: center;
 	font-family:'Poppins-Black';
@@ -117,43 +129,41 @@ body {
 .tb-title {
 	width: 150px;
 	margin-right: 10px;
-	font-size: 1.5rem;
+	font-size: 20px;
     font-family: 'Poppins-SemiBold';
     color: #25a22b;
 }
 .form {
     width: 100%;
-	height: max-content;
-    margin-top: 20px;
+	height: auto;
+    margin-top: 50px;
     margin-left: 50px;
     font-size: 1.5rem;
 }
 .input {
     width: 400px;
-	padding: 5px;
+	padding: 8px;
 	border: none;
     outline: none;
-	border-radius: 8px;
+	border-radius: 10px;
 	text-indent: 10px;
     font-size: 1rem;
     font-family: 'Poppins-Regular';
 	display: flex;
     background-color: rgb(224, 217, 217);
 }
-.checkPass {
-    margin-top: 0px;
-    margin-left: 330px;
-    margin-right: 5px;
-    font-size: 0.8rem;
+.displayPass{
+    font-size: 0.70rem;
     font-family: 'Poppins-Regular';
+    margin-top: 15px;
 }
-
 .submitBtn {
 	width: 150px;
     margin-top: 20px;
-    margin-left: 170px;
+    margin-left: 130px;
+    margin-bottom: 6px;
     padding: 5px;
-	border-radius: 20px;
+	border-radius: 30px;
     font-size: 1.5rem;
     font-family: 'Poppins-Black';
     border: none;
@@ -167,43 +177,21 @@ body {
     color: white;
 	background-color: #8f8f8f;
 }
-.login .adminGreet{
-    margin-top: 10px;
-}
 
-/*Popup for forgot password
-.forgotPass{
-    padding: 10px 10px;
-    width: 400px;
-    background:rgb(0, 0, 0);
-    border-radius: 10px;
-    position: absolute;
-    top:0;
-    left: 50%;
-    transform: translate(-50%,-50%)scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: #25a22b;
-    font-family: 'Poppins-Bold', sans-serif;
-    visibility: hidden;
-    transition: transform 0.4s, top0.4s;
-}
-.forgotPass .popup{
-    color: #ffffff;
-    top: 10px;
-}
-.continueBtn{
-    background-color: #25a22b;
-    color: white;
-    margin-top: 9px;;
-    border: none;
-    padding: 5px 5px;
-    border-radius: 3px;
+/**for error msg**/
+.container .form .error-msg{
+	margin-bottom: 10px;
+	width: 400px;
+	padding: 5px;
+	border: none;
+	outline: none;
+	border-radius: 8px;
+	text-indent: 10px;
     font-size: 1rem;
-    cursor: pointer;
+    font-family: 'Poppins-Regular';
+	background: crimson;
+	color:#fff;
+	padding:10px;
+	margin-bottom: 5px;
+	display: block;
 }
-.open-forgotPass{
-    visibility: visible;
-    top: 50%; 
-    transform: translate(-50%,-50%)scale(1);
-} */
