@@ -44,7 +44,7 @@
     <body>
         <div class="container">
         <div class="back">
-                <a href="account.php"><i class="fa-sharp fa-solid fa-chevron-left fa-sm" style="color: #25a22b;"></i> Back </a>
+                <a href="../account-form/account.php"><i class="fa-sharp fa-solid fa-chevron-left fa-sm" style="color: #25a22b;"></i> Back </a>
             </div>
 			<div class="login">
 				<div class="logo-title">

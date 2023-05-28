@@ -50,7 +50,7 @@
             </div>
 			<div class="register">
 				<div class="logo-title">
-					<img src="../assets/images/main/nutrace_logo.png" width="80px" height="80px">
+					<img src="../assets/images/main/nutrace_logo.png" width="60px" height="60px">
 					<h3>NuTrace</h3>
 				</div>
 				<hr class="rounded">
@@ -83,7 +83,9 @@
 					<label>Confirm Password:</label><br>
 					<input type="password" class="input" name="cpassword" id="password" placeholder="Confirm your password"  maxlength="20" required><br>
 
-					<select name="user_type">
+					<label>Account Type:</label><br>
+					<select name="user_type" class="user_type">
+							<option value="default" selected>Choose an account type..</option>
 							<option value="user" class="user">User</option>
 							<option value="admin" class="admin">Admin</option>
 					</select>

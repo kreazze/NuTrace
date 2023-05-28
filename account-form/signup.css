@@ -90,7 +90,7 @@ body{
 .regTitle {
 	font-size: 1.8rem;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 	text-align: center;
     font-family:'Poppins-ExtraLight';
 }
@@ -123,6 +123,7 @@ body{
 .proceedBtn {
 	width: 150px;
 	margin-top: 10px;
+	margin-bottom: 10px;
     margin-left: 125px;
     padding: 5px;
 	border-radius: 50px;
