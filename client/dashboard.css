@@ -319,25 +319,31 @@ h3 {
 /* content */
 #main-content {
 	margin-top: 10px;
-	text-align: center;
+}
+.datetime {
+	margin-bottom: 20px;
+	margin-left: 10px;
 }
 #datetime {
 	font-size: 1rem;
 	margin-top: 15px; 
-	margin-right: 15px; 
+	margin-left: 3px; 
 	line-height: 1rem;
-	text-align: right;
+	text-align: left;
 	color: black; 
 	font-family: 'Poppins-Bold';
 }
 #p4 {
 	font-size: 50px;
+	text-align: center;
 	color: #25a22b;
 	font-family: 'Poppins-Black';
 }
 #p5 {
 	margin: 0px 100px 40px;
-	font-size: 18px;
+	font-size: 20px;
+	text-align: justify;
+	text-indent: 5rem;
 	color: black;
 	font-family: 'Poppins-Regular';
 }
@@ -385,11 +391,53 @@ h3 {
 	padding-top: 10px;
 	text-align: left;
 }
+.nut-divider {
+	margin-bottom: 20px;
+}
+progress {
+	margin-top: 5px;
+	width: 350px;
+	height: 25px;
+	border-radius: 50px;
+}
+progress::-webkit-progress-bar {
+	background-color: #d9d9d9;
+	border-radius: 50px;
+}
+.prog1::-webkit-progress-value {
+	background-color: #ff9292;
+	border-radius: 50px;
+}
+.prog2::-webkit-progress-value {
+	background-color: #df3333;
+	border-radius: 50px;
+}
+.prog3::-webkit-progress-value {
+	background-color: #ecbf1e;
+	border-radius: 50px;
+}
+.prog4::-webkit-progress-value {
+	background-color: #7cd7f5;
+	border-radius: 50px;
+}
+.prog5::-webkit-progress-value {
+	background-color: #75e363;
+	border-radius: 50px;
+}
+.prog6::-webkit-progress-value {
+	background-color: #ecf02f;
+	border-radius: 50px;
+}
+
+
+
+  
 
 /* weather */
 #container {
 	margin-bottom: 50px;
 	margin-right: 60px;
+	text-align: center;
 }
 #weather-content {
 	line-height: 1.5rem;

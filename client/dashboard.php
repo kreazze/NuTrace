@@ -42,7 +42,7 @@
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="../account-form/login.php" class="logout">
+                    <a href=" " class="logout">
                     <div class="box">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
                         <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
@@ -70,9 +70,10 @@
             </nav>
             <main id="main-content">
                 <p id="p4">Magandang Araw!</p>
-                <p id="p5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                    laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p id="p5"> Welcome to NuTrace, where innovation meets sustainable agriculture. This website is officially 
+                            managed by Duran Farm located in San Idelfonso, Bulacan. NuTrace provided an integrated platform 
+                            that combines advanced soil monitoring technology with comprehensive farm management tools to help 
+                            farms go beyond their production capability.</p>
                 <div id="upper-content">
                     <div id="main-left">
                         <!--Weather-->
@@ -107,25 +108,31 @@
                     <div id="main-right">
                         <p id="title">Eggplant Soil Nutrient Report</p>
                         <div id="description">
-                            <p>As of <span id="datetime"></span></p>
+                            <p class="datetime">As of <span id="datetime"></span></p>
                             <div id="variables">
-                                <div>
+                                <div class="nut-divider">
                                     <p>Nitrogen</p>
+                                    <progress class="prog1" value="50" max="100"></progress>
                                 </div>
-                                <div>
+                                <div class="nut-divider">
                                     <p>Phosphorus</p>
+                                    <progress class="prog2" value="20" max="100"></progress>
                                 </div>
-                                <div>
+                                <div class="nut-divider">
                                     <p>Potassium</p>
+                                    <progress class="prog3" value="30" max="100"></progress>
                                 </div>
-                                <div>
+                                <div class="nut-divider">
                                     <p>Soil Moisture</p>
+                                    <progress class="prog4" value="80" max="100"></progress>
                                 </div>
-                                <div>
+                                <div class="nut-divider">
                                     <p>Temperature</p>
+                                    <progress class="prog5" value="60" max="100"></progress>
                                 </div>
-                                <div>
+                                <div class="nut-divider">
                                     <p>pH Level</p>
+                                    <progress class="prog6" value="70" max="100"></progress>
                                 </div>
                             </div>
                         </div>
