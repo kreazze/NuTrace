@@ -99,15 +99,58 @@
                         <!--Today's task-->
                         <div id="text-left2">
                             <p id="title">Today's Task</p>
-                            <div id="description">
-                                <p>Paragraph 1. Device description. By students of PUP eme eme. Features. Why we come up to this study. Objectives.</p>
+                            <div id="description-task">
+                                <div id="section-task">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                            <th>Task</th>
+                                            <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td id="task">Maglagay ng fertilizer</td>
+                                            <td class="status completed">Completed</td>
+                                            </tr>
+                                            <tr>
+                                            <td id="task">Umani ng okra</td>
+                                            <td class="status pending">Pending</td>
+                                            </tr>
+                                            <tr>
+                                            <td id="task">Training registration</td>
+                                            <td class="status pending">Pending</td>
+                                            </tr>
+                                            <tr>
+                                            <td id="task">Magbungkal ng lupa</td>
+                                            <td class="status completed">Completed</td>
+                                            </tr>
+                                            <tr>
+                                            <td id="task">Compute plan production</td>
+                                            <td class="status completed">Completed</td>
+                                            </tr>
+                                            <tr>
+                                            <td id="task">Put fertilizer</td>
+                                            <td class="status pending">Pending</td>
+                                            </tr>
+                                            <tr>
+                                            <td id="task">Eggplant soil monitoring</td>
+                                            <td class="status completed">Completed</td>
+                                            </tr>
+                                            <tr>
+                                            <td id="task">Harvest</td>
+                                            <td class="status completed">Completed</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div> 
                             </div>
                         </div>
                     </div>
                     <!--Eggplant Soil Nutrient Report-->
                     <div id="main-right">
                         <p id="title">Eggplant Soil Nutrient Report</p>
-                        <div id="description">
+                        <div id="description-soil">
                             <p class="datetime">As of <span id="datetime"></span></p>
                             <div id="variables">
                                 <div class="nut-divider">
@@ -143,10 +186,31 @@
                 <div id="lower-content">
                     <div id="text-down">
                         <p id="title">Progress Report of the Week</p>
-                        <div id="description">
-                            <p>Paragraph 1. Device description. By students of PUP eme eme.  
-                                Features. Why we come up to this study. Objectives.</p>
-                                <br><br><br><br><br><br><br><br><br>
+                        <div id="description-progress">
+                            <div class="bar-graph">
+                                <div class="bar" style="height: 120px;">
+                                    <div class="indicator">Talong</div>
+                                </div>
+                                <div class="bar" style="height: 80px;">
+                                    <div class="indicator">Okra</div>
+                                </div>
+                                <div class="bar" style="height: 160px;">
+                                    <div class="indicator">Patola</div>
+                                </div>
+                                <div class="bar" style="height: 40px;">
+                                    <div class="indicator">Mais</div>
+                                </div>
+                                <div class="bar" style="height: 40px;">
+                                    <div class="indicator">Kamatis</div>
+                                </div>
+                                <div class="bar" style="height: 40px;">
+                                    <div class="indicator">Crop-B</div>
+                                </div>
+                                <div class="bar" style="height: 40px;">
+                                    <div class="indicator">Crop-C</div>
+                                </div>
+                                <!-- Add more bars as needed -->
+                            </div>
                         </div> 
                     </div>
                 </div>

@@ -320,19 +320,6 @@ h3 {
 #main-content {
 	margin-top: 10px;
 }
-.datetime {
-	margin-bottom: 20px;
-	margin-left: 10px;
-}
-#datetime {
-	font-size: 1rem;
-	margin-top: 15px; 
-	margin-left: 3px; 
-	line-height: 1rem;
-	text-align: left;
-	color: black; 
-	font-family: 'Poppins-Bold';
-}
 #p4 {
 	font-size: 50px;
 	text-align: center;
@@ -365,73 +352,11 @@ h3 {
 	padding-left: 10px;
 	margin-bottom: 10px;
     border-radius: 40px;
-    color: white;
 	width: fit-content;
     font-family:'Poppins-Bold';
+	color: white;
     background-color: #25A22B;
 }
-#description {
-	line-height: 1.5rem;
-	padding: 20px;
-	margin-bottom: 10px;
-	border-radius: 30px;
-	width: fit-content;
-	font-family: 'Poppins-Regular';
-	color: black;
-	background-color: #ebebeb;
-	box-shadow: -2px 5px 5px #8f8f8f;
-}
-#lower-content {
-	margin: 50px 100px 100px;
-}
-
-/* eggplant soil nutrient report */
-#variables {
-	margin: 10px;
-	padding-top: 10px;
-	text-align: left;
-}
-.nut-divider {
-	margin-bottom: 20px;
-}
-progress {
-	margin-top: 5px;
-	width: 350px;
-	height: 25px;
-	border-radius: 50px;
-}
-progress::-webkit-progress-bar {
-	background-color: #d9d9d9;
-	border-radius: 50px;
-}
-.prog1::-webkit-progress-value {
-	background-color: #ff9292;
-	border-radius: 50px;
-}
-.prog2::-webkit-progress-value {
-	background-color: #df3333;
-	border-radius: 50px;
-}
-.prog3::-webkit-progress-value {
-	background-color: #ecbf1e;
-	border-radius: 50px;
-}
-.prog4::-webkit-progress-value {
-	background-color: #7cd7f5;
-	border-radius: 50px;
-}
-.prog5::-webkit-progress-value {
-	background-color: #75e363;
-	border-radius: 50px;
-}
-.prog6::-webkit-progress-value {
-	background-color: #ecf02f;
-	border-radius: 50px;
-}
-
-
-
-  
 
 /* weather */
 #container {
@@ -488,6 +413,187 @@ progress::-webkit-progress-bar {
 	padding-left: 10px;
 	width: 180px;
 	height: 180px;
+}
+
+/* today's task */
+#description-task {
+	width: fit-content;
+	max-height: 400px;
+	margin-bottom: 10px;
+	padding: 20px 30px;
+	line-height: 1.5rem;
+	border-radius: 30px;
+	font-family: 'Poppins-Regular';
+	color: black;
+	background-color: #ebebeb;
+	box-shadow: -2px 5px 5px #8f8f8f;
+	top: 0;
+	left: 0;
+	position: sticky;
+}
+#section-task {
+	width: fit-content;
+	height: 310px;
+	margin-bottom: 15px;
+	font-family: 'Poppins-Regular';
+	color: black;
+	background-color: #ebebeb;
+	overflow-y: auto;
+}
+#section-task::-webkit-scrollbar {
+	width: 0.5rem;
+	height: 0.2rem;
+}
+#section-task::-webkit-scrollbar-thumb {
+	border-radius: 5rem;
+	background-color: #8f8f8f;
+	visibility: hidden;
+}
+#section-task:hover::-webkit-scrollbar-thumb {
+	visibility: visible;
+}
+table {
+	width: fit-content;
+	height: 180px;
+	border-spacing: 15px;
+}
+thead th {
+	top: 0;
+	left: 0;
+	font-size: 20px;
+	margin-bottom: 10px;
+	text-align: left;
+	position: sticky;
+	border-collapse: collapse;
+	background-color: #ebebeb;
+}
+tbody #task {
+	width: 320px;
+	font-size: 18px;
+	padding-bottom: 5px;
+	text-align: left;
+}
+.status {
+	padding: 3px 15px;
+	border-radius: 2rem;
+	text-align: center;
+}
+.status.completed {
+	background-color: #a6e29c;
+	color: #06710b;
+}
+.status.pending {
+	background-color: #f6b5b5;
+	color: #b32e2e;
+}
+#lower-content {
+	margin: 50px 100px 100px;
+}
+
+/* eggplant soil nutrient report */
+#description-soil {
+	width: fit-content;
+	line-height: 1.5rem;
+	padding: 30px;
+	margin-bottom: 10px;
+	border-radius: 30px;
+	font-family: 'Poppins-Regular';
+	color: black;
+	background-color: #ebebeb;
+	box-shadow: -2px 5px 5px #8f8f8f;
+	overflow: auto;
+}
+.datetime {
+	margin-bottom: 25px;
+	margin-left: 10px;
+	font-size: 20px;
+}
+#datetime {
+	font-size: 20px;
+	margin-top: 15px; 
+	margin-left: 2px; 
+	line-height: 1rem;
+	text-align: left;
+	color: black; 
+	font-family: 'Poppins-Bold';
+}
+#variables {
+	font-size: 20px;
+	margin: 10px;
+	padding-top: 10px;
+	text-align: left;
+}
+.nut-divider {
+	margin-bottom: 50px;
+}
+progress {
+	margin-top: 5px;
+	width: 420px;
+	height: 25px;
+	border-radius: 50px;
+}
+progress::-webkit-progress-bar {
+	background-color: #d9d9d9;
+	border-radius: 50px;
+}
+.prog1::-webkit-progress-value {
+	background-color: #ff9292;
+	border-radius: 50px;
+}
+.prog2::-webkit-progress-value {
+	background-color: #df3333;
+	border-radius: 50px;
+}
+.prog3::-webkit-progress-value {
+	background-color: #ecbf1e;
+	border-radius: 50px;
+}
+.prog4::-webkit-progress-value {
+	background-color: #7cd7f5;
+	border-radius: 50px;
+}
+.prog5::-webkit-progress-value {
+	background-color: #75e363;
+	border-radius: 50px;
+}
+.prog6::-webkit-progress-value {
+	background-color: #ecf02f;
+	border-radius: 50px;
+}
+
+/* progress report of the week */
+#description-progress {
+	width: fit-content;
+	line-height: 1.5rem;
+	padding: 30px;
+	margin-bottom: 10px;
+	border-radius: 30px;
+	font-family: 'Poppins-Regular';
+	color: black;
+	background-color: #ebebeb;
+	box-shadow: -2px 5px 5px #8f8f8f;
+	overflow: auto;
+}
+.bar-graph {
+	width: fit-content; /* Adjust the width as desired */
+    height: 200px; /* Adjust the height as desired */
+	padding: 10px;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid #ccc;
+}
+.bar {
+    width: 100px; /* Adjust the width of each bar as desired */
+	position: relative;
+	background-color: #4caf50; /* Adjust the bar color as desired */
+}
+.indicator {
+    bottom: -20px; /* Adjust the indicator position as desired */
+    left: 50%;
+    transform: translateX(-50%);
+	position: absolute;
+    font-size: 12px; /* Adjust the indicator font size as desired */
+    color: black;
 }
 
 /* footer */
