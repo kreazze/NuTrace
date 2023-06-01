@@ -87,7 +87,7 @@
                             <div class="content">
                                 <div class="buttons">
                                     <a href="../account-form/login.php"><button class="yes">YES</button></a>
-                                    <a href="soilnutrient.php"><button class="no">NO</button></a>
+                                    <a href="../client/soilnutrient.php"><button class="no">NO</button></a>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
         <section id="content">
             <nav class="profile">
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">            
-                <a class="user" href="#">Hello, User!</a>
+                <a class="user" href="#">Hello, <?php echo $_SESSION["fullname"]; ?>!</a>
             </nav>
             <div class="head-title">
                 <div class="left">

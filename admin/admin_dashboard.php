@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -53,8 +57,8 @@
                             <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
                             <div class="content">
                                 <div name="button" class="buttons">
-                                    <a href="../admin/admin-login.php"><button class="yes">YES</button></a>
-                                    <a href="../admin/admin-dashboard.php"><button class="no">NO</button></a>
+                                    <a href="../admin/admin_login.php"><button class="yes">YES</button></a>
+                                    <a href="../admin/admin_dashboard.php"><button class="no">NO</button></a>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +70,7 @@
         <section id="content">
             <nav class="profile">      
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">      
-                <a class="user" href="#">Hello, Admin!</a>
+                <a class="user" href="#">Hello, Admin <?php echo $_SESSION["fullname"]; ?>!</a>
             </nav>
             <main id="main-content">
                 <p id="p4">Magandang Araw!</p>

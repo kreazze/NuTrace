@@ -96,7 +96,7 @@
         <section id="content">
             <nav class="profile">   
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">         
-                <a class="user" href="#">Hello, Admin!</a>
+                <a class="user" href="#">Hello, Admin <?php echo $_SESSION["fullname"]; ?>!</a>
             </nav>
             <main class="main-content">
                 <title>Inventory</title>

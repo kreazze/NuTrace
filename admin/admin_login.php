@@ -3,7 +3,8 @@
 
     if (isset($_POST['submit'])) {
         $email = $_POST["email"];
-        $password = md5($_POST["password"]); // Hash the password using md5
+        $password = md5($_POST["password"]);
+        $fullname = $_POST["fullname"];
 
         $conn = new mysqli("localhost", "root", "", "nutrace_server");
         $email = $conn->real_escape_string($email); // Sanitize the email input
@@ -17,6 +18,7 @@
         if ($result1->num_rows > 0) {
             $row = $result1->fetch_assoc();
             $_SESSION["email"] = $row["email"];
+            $_SESSION["fullname"] = $row["fullname"];
             header('Location: http://localhost/NuTrace/admin/admin_dashboard.php');
             exit();
         }   else if ($result1 == $result) {
