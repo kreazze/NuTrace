@@ -1,37 +1,34 @@
 <?php
+    session_start();
 
-    if(isset($_POST['submit']))
-    {
-		$conn = new mysqli('localhost','root','', 'nutrace_server');
+    if (isset($_POST['submit'])) {
+        $email = $_POST["email"];
+        $password = md5($_POST["password"]); // Hash the password using md5
 
-        // $fullname   = $_POST["fullname"];
-		// $contact    = $_POST["contact"];
-		$email      = $_POST["email"];
-		$password   = md5($_POST["password"]);
-		// $cpassword	= md5($_POST["cpassword"]);
-		// $user_type	= $_POST["user_type"];
+        $conn = new mysqli("localhost", "root", "", "nutrace_server");
+        $email = $conn->real_escape_string($email); // Sanitize the email input
 
-		$select  = "SELECT * FROM tbl_users WHERE email = '$email' && password ='$password' ";
-		$result 	= mysqli_query($conn,$select);
+        $select = "SELECT * FROM tbl_admin WHERE email = '$email' AND password = '$password'";
+        $result = $conn->query($select);
 
-		if(mysqli_num_rows($result) > 0){
-			$row = mysqli_fetch_array($result);
+        $select1 = "SELECT * FROM tbl_admin WHERE email = '$email'";
+		$result1 = mysqli_query($conn, $select1);
 
-            if($row["user_type"] === 'admin'){
-                $_SESSION['admin_name'] = $row["fullname"];
-                header('location:admin_dashboard.php');
-            }
-            elseif($row["user_type"] === 'user'){
-                $_SESSION["user_name"] = $row["fullname"];
-                header('location:dashboard.php');
-            }
-		}else{
-            $error[]    = 'Incorrect email or password!!';
+        if ($result1->num_rows > 0) {
+            $row = $result1->fetch_assoc();
+            $_SESSION["email"] = $row["email"];
+            header('Location: http://localhost/NuTrace/admin/admin_dashboard.php');
+            exit();
+        }   else if ($result1 == $result) {
+            $errorAccount = "The email you entered is an User account!";
+        } 
+        else {
+            $error = "Incorrect email or password!";
         }
-	}
+    }
 ?>
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -54,24 +51,25 @@
 				<hr class="rounded">
                 <p class="greet"> Welcome Back, Admin!</p>
 			</div>
-            <form class="form" method="post">
+            <form action="admin-login.php" class="form" method="post">
                 <div class="error">
-						<?php
-						if(isset($error)){
-							foreach($error as $error){
-								echo '<span class="error-msg">'.$error.'</span>';
-							};
-						}
-						?>
-				</div>
+                    <?php if (!empty($error)): ?>
+                        <div class="error-msg"><?php echo $error; ?></div>
+                    <?php endif; ?>
+                    <?php if (!empty($errorAccount)): ?>
+                        <div class="error-msg"><?php echo $errorAccount; ?></div>
+                    <?php endif; ?>
+                </div>
                 <label class="tb-title">Email:</label><br>
 				<input type="email" class="input" name="email" placeholder="juandelacruz@gmail.com" required><br>
-				<label class="tb-title">Password:</label><br>
-				<input type="password" class="input" id="showPass" name="password" placeholder="********"  maxlength="20" required>
-			    <input type="checkbox" onclick="showPassword()">
+				
+                <label class="tb-title">Password:</label><br>
+				<input type="password" class="input" id="pass" name="password" placeholder="********"  maxlength="20" required>
+			    
+                <input type="checkbox" onclick="showPassword()">
                 <script>
                     function showPassword() {
-                        var show = document.getElementById("showPass");
+                        var show = document.getElementById("pass");
                         if (show.type === "password") {
                             show.type = "text";
                         }
@@ -84,7 +82,6 @@
                 <br>
                 <input type="submit" value="LOGIN" name="submit" class="submitBtn">
                 <p class="p3">No account? <a href="../account-form/signup.php">Sign up here</a></p><br>
-                
             </form>
 		</div>
     </body>

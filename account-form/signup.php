@@ -1,39 +1,79 @@
 <?php
-
-    if(isset($_POST['submit']))
-    {
-		$conn = new mysqli("localhost", "root", "", "nutrace_server");
-
-        $fullname   = $_POST["fullname"];
+	if(isset($_POST['submit']))
+	{
+		$fullname   = $_POST["fullname"];
 		$contact    = $_POST["contact"];
 		$email      = $_POST["email"];
 		$password   = md5($_POST["password"]);
-		$cpassword	= md5($_POST["cpassword"]);
-		$user_type	= $_POST["user_type"];
+		$cpassword  = md5($_POST["cpassword"]);
+		$user_type  = $_POST["user_type"];
 
-		$select = "SELECT * FROM tbl_users WHERE email = '$email' OR password = '$password'";
+		if (empty($_POST["fullname"])) {
+			die("Full name is required");
+		}
+		if (! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+			die("Valid email is required");
+		}
+		if (strlen($_POST["contact"]) !== 11) {
+			die("Invalid contact number");
+		}
+		if (strlen($_POST["password"]) < 8) {
+			die("Password must be at least 8 characters");
+		}
+		if (! preg_match("/[a-z]/i", $_POST["password"])) {
+			die("Password must contain at least one letter");
+		}
+		if (! preg_match("/[0-9]/", $_POST["password"])) {
+			die("Password must contain at least one number");
+		}
+		if ($_POST["password"] !== $_POST["cpassword"]) {
+			die("Password must match");
+		}
+
+		$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+		var_dump($password_hash);
+
+		$conn = new mysqli("localhost", "root", "", "nutrace_server");
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+
+		$select = "SELECT * FROM tbl_users WHERE email = '$email'";
 		$result = mysqli_query($conn, $select);
 
-		if(mysqli_num_rows($result) > 0) {
-			$error[] = "User Already Exist!";
+		$select1 = "SELECT * FROM tbl_admin WHERE email = '$email'";
+		$result1 = mysqli_query($conn, $select1);
+
+		if(mysqli_num_rows($result) > 0 || mysqli_num_rows($result1) > 0) {
+			$error[] = "User Already Exists!";
 		}
 		else {
 			if ($password != $cpassword) {
-			   $error[] = 'Password do not matched!';
+				$error[] = 'Passwords do not match!';
 			}
-			else {
-			   $insert = "INSERT INTO tbl_users (fullname, contact, email, password, cpassword, user_type) VALUES ('$fullname','$contact','$email','$password','$cpassword','$user_type')";
+			elseif ($user_type === "user") {
+				$insert = "INSERT INTO tbl_users (fullname, contact, email, password, cpassword, user_type) VALUES ('$fullname','$contact','$email','$password','$cpassword','$user_type')";
 
-			   mysqli_query($conn, $insert);
-			   $alert ="<script>alert('Registered Successfully!');</script>";
-					echo $alert;
-			   header('location:../account-form/login.php');
+				mysqli_query($conn, $insert);
+				$alert = "<script>alert('Registered Successfully!');</script>";
+				echo $alert;
+				header('location:../account-form/login.php');
+				exit;
 			}
-		 }
+			elseif ($user_type === "admin") {
+				$insert = "INSERT INTO tbl_admin (fullname, contact, email, password, cpassword, user_type) VALUES ('$fullname','$contact','$email','$password','$cpassword','$user_type')";
+
+				mysqli_query($conn, $insert);
+				$alert = "<script>alert('Registered Successfully!');</script>";
+				echo $alert;
+				header('location:../admin/admin-login.php');
+				exit;
+			}
+		}
 	}
 ?>
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -80,8 +120,8 @@
 					<label>Password:</label><br>
 					<input type="password" class="input" name="password" id="password" placeholder="Enter your password"  maxlength="20" required><br>
 
-					<label>Confirm Password:</label><br>
-					<input type="password" class="input" name="cpassword" id="password" placeholder="Confirm your password"  maxlength="20" required><br>
+					<label for="password_confirmation">Confirm Password:</label><br>
+					<input type="password" class="input" name="cpassword" id="c password" placeholder="Confirm your password"  maxlength="20" required><br>
 
 					<label>Account Type:</label><br>
 					<select name="user_type" class="user_type">
