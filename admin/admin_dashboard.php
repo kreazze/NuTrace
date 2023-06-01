@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NuTrace</title>
-        <link rel ="stylesheet" href="../client/dashboard.css">
+        <link rel ="stylesheet" href="../admin/admin_dashboard.css">
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
     </head>
     <body>
@@ -15,25 +15,25 @@
             </a>
             <ul class="side-menu top">
                 <li class="active">
-                    <a href="./dashboard.php">
+                    <a href="../admin/admin_dashboard.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/green/home-select.png" width="25px" height="20px">
                         <span class="text">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./soilnutrient.php">
+                    <a href="../admin/admin_soilnutrient.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/soil-icon.png" width="25px" height="25px">
                         <span class="text">Soil Nutrient</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./inventory.php">
+                    <a href="../admin/admin_inventory.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/record-icon.png" width="25px" height="25px">
                         <span class="text">Inventory</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./scheduler.php" id="onlink">
+                    <a href="../admin/admin_scheduler.php" id="onlink">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/sched-icon.png" width="25px" height="25px">
                         <span class="text">Scheduler</span>
                     </a>
@@ -66,7 +66,7 @@
         <section id="content">
             <nav class="profile">      
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">      
-                <a class="user" href="#">Hello, User!</a>
+                <a class="user" href="#">Hello, Admin!</a>
             </nav>
             <main id="main-content">
                 <p id="p4">Magandang Araw!</p>

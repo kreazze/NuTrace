@@ -66,7 +66,7 @@
 				mysqli_query($conn, $insert);
 				$alert = "<script>alert('Registered Successfully!');</script>";
 				echo $alert;
-				header('location:../admin/admin-login.php');
+				header('location:../admin/admin_login.php');
 				exit;
 			}
 		}

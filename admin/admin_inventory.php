@@ -32,7 +32,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NuTrace</title>
-        <link rel ="stylesheet" href="../client/inventory.css">
+        <link rel ="stylesheet" href="../admin/admin_inventory.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
         <!-- Bootstrap -->
@@ -47,48 +47,48 @@
             </a>
             <ul class="side-menu top">
                 <li>
-                    <a href="./dashboard.php">
+                    <a href="../admin/admin_dashboard.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/home-icon.png" width="25px" height="25px">
                         <span class="text">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./soilnutrient.php">
+                    <a href="../admin/admin_soilnutrient.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/soil-icon.png" width="25px" height="25px">
                         <span class="text">Soil Nutrient</span>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="./inventory.php">
+                    <a href="../admin/admin_inventory.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/green/record-select.png" width="25px" height="25px">
                         <span class="text">Inventory</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./scheduler.php" id="onlink">
+                    <a href="../admin/admin_scheduler.php" id="onlink">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/sched-icon.png" width="25px" height="25px">
                         <span class="text">Scheduler</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./about.php">
-                        <img class="navbar-pic" src="../assets/images/sidebar/white/about-icon.png" width="25px" height="25px">
-                        <span class="text">About Us</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./how-to.php">
-                        <img class="navbar-pic" src="../assets/images/sidebar/white/how-to-icon.png" width="25px" height="25px">
-                        <span class="text">How to use?</span>
                     </a>
                 </li>
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="../account-form/login.php" class="logout">
+                    <div class="box">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
-                        <span class="text">Logout</span>
-                    </a>
+                        <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
+                    </div>
+                    <div class="modal-overlay" id="logout">
+                        <div class="modal-wrapper"> 
+                            <h2>Are you sure you want to log out?</h2>
+                            <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
+                            <div class="content">
+                                <div class="buttons">
+                                    <a href="../account-form/login.php"><button class="yes">YES</button></a>
+                                    <a href="../admin/admin_inventory.php"><button class="no">NO</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </section>
@@ -96,7 +96,7 @@
         <section id="content">
             <nav class="profile">   
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">         
-                <a class="user" href="#">Hello, User!</a>
+                <a class="user" href="#">Hello, Admin!</a>
             </nav>
             <main class="main-content">
                 <title>Inventory</title>
