@@ -15,7 +15,7 @@
                 <label class="nav-title">NuTrace</label>
             </nav>
             <main class="main-content">
-                <a href="../client/homepage.php"><button>BACK</button></a>
+                <a href="../client/homepage.php"><button class="back-btn">Back</button></a>
                 <p>How to use the NuTrace device?</p>
                 <p class="p4">(Paaano gamitin ang NuTrace?)</p>
                 

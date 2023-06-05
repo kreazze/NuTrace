@@ -79,41 +79,16 @@ nav{
 	color: #25a22b;
 	font-family: 'Poppins-Black';
 }
+.back-btn {
+	font-family: 'Poppins-Regular';
+}
 .p4 {
 	margin-bottom: 35px;
 	font-size: 25px;
 	font-family: 'Poppins-Regular';
 }
 
-/* footer */
-#footer {
-	padding: 15px;
-	padding-left: 250px;
-	padding-right: 50px;
-	margin-top: auto;
-	display: flex;
-	color: white;
-	background-image: linear-gradient(to right, #25a22b, #75E463)
-}
-img {
-	margin-right: 5px;
-}
-#footer .footer-text{
-	line-height: 1rem;
-	margin-left: 1rem;
-}
-.p1 {
-	font-size: 15px;
-	font-family: 'Poppins-Bold';
-}
-.p2 {
-	font-size: 13px;
-	font-family: 'Poppins-SemiBold';
-}
-.p3 {
-	font-size: 11px;
-	font-family: 'Poppins-Regular';
-}
+/* content */
 .ac-label {
 	font-size: 30px;
 	font-family: 'Poppins-semibold';
@@ -209,30 +184,62 @@ img {
   .ac-sub-text {
 	padding: 0 1em 0 2em;
   }
-
-.paragraph{
+.paragraph {
 	font-size: 17px;
-	font-family: 'Poppins';
+	font-family: 'Poppins-Regular';
 	color: black;
 	margin-bottom: 10px;
 	padding: 12px 10px 5px;
 	line-height: 1.5;
 }
 
-button{
+button {
 	font-size: 18px;
-	font-family: "poppins semibold";
-	color: white;
-	background: #25A22B;
 	border-radius: 30px;
 	width: 8%;
 	margin-top: 10px;
-	margin-right: 78.5%;
 	margin-bottom: 20px;
-	padding: 5px 15px;
+	margin-right: 85%;
+	padding: 5px 10px;
 	border: none;
-	outline: none;
 	cursor: pointer;
+	font-family: 'Poppins-Regular';
+	color: white;
+	background: #25A22B;
+}
+button:hover {
+	color: #676767;
+    background-color: #d9d9d9;
+}
+
+/* footer */
+#footer {
+	padding: 15px;
+	padding-left: 250px;
+	padding-right: 50px;
+	margin-top: auto;
+	display: flex;
+	color: white;
+	background-image: linear-gradient(to right, #25a22b, #75E463)
+}
+img {
+	margin-right: 5px;
+}
+#footer .footer-text{
+	line-height: 1rem;
+	margin-left: 1rem;
+}
+.p1 {
+	font-size: 15px;
+	font-family: 'Poppins-Bold';
+}
+.p2 {
+	font-size: 13px;
+	font-family: 'Poppins-SemiBold';
+}
+.p3 {
+	font-size: 11px;
+	font-family: 'Poppins-Regular';
 }
 
 @media screen and (max-width: 768px) {

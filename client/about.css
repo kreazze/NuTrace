@@ -193,7 +193,6 @@ nav{
 	font-family: 'Poppins-Regular';
 }
 
-
 /* footer */
 #footer {
 	padding: 15px;
@@ -225,18 +224,21 @@ img {
 }
 button{
 	font-size: 18px;
-	font-family: "poppins semibold";
-	color: white;
-	background: #25A22B;
 	border-radius: 30px;
 	width: 8%;
 	margin-top: 10px;
-	margin-right: 78.5%;
 	margin-bottom: 20px;
-	padding: 5px 15px;
+	margin-right: 85%;
+	padding: 5px 10px;
 	border: none;
-	outline: none;
 	cursor: pointer;
+	font-family: 'Poppins-Regular';
+	color: white;
+	background: #25A22B;
+}
+button:hover {
+	color: #676767;
+    background-color: #d9d9d9;
 }
 
 @media screen and (max-width: 768px) {
