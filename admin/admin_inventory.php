@@ -12,7 +12,7 @@
         $quantity   = $_POST['quantity'];
         $harvester  = $_POST['harvester'];
 
-        $query = "INSERT INTO tbl_inventory (date, croptype, quantity, harvester, action) VALUES ('$date','$croptype','$quantity','$harvester','Pending')";
+        $query = "INSERT INTO tbl_inventory (date, croptype, quantity, harvester, status) VALUES ('$date','$croptype','$quantity','$harvester','Pending')";
 
         $query_run = mysqli_query($conn, $query);
         if($query_run)
@@ -164,11 +164,11 @@
                             <th id="table-title">Crop Type <span id="table-titleslash">(Uri ng Tanim)</span></th>	
                             <th id="table-title">Quantity <span id="table-titleslash">(Dami)</span></th>									
                             <th id="table-title">Name of Harvestor <span id="table-titleslash">(Pangalan ng Umani)</span></th>
-                            <th id="table-title">Action <span id="table-titleslash">(Maaaring Gawin)</span></th>
+                            <th id="table-title">Status <span id="table-titleslash">(Maaaring Gawin)</span></th>
                         </thead>
                         <tbody class="table-contents">
                             <?php
-                                $query = "SELECT * FROM tbl_inventory WHERE action='Pending' ORDER BY id ASC";
+                                $query = "SELECT * FROM tbl_inventory WHERE status='Pending' ORDER BY id ASC";
                                 $result = mysqli_query($conn, $query);
                                 $rowcount = mysqli_num_rows($result);
 
@@ -199,7 +199,7 @@
                     <?php     
                         if (isset($_POST['accept'])) {
                             $id = $_POST['id'];
-                            $select = "UPDATE tbl_inventory SET action='Accepted' WHERE id='$id'";
+                            $select = "UPDATE tbl_inventory SET status='Accepted' WHERE id='$id'";
                             $result = mysqli_query($conn,$select);
                             echo "<script>if (window.history.replaceState) {
                                 window.history.replaceState(null, null, window.location.href);
@@ -209,7 +209,7 @@
                         }
                         if (isset($_POST['decline'])) {
                             $id = $_POST['id'];
-                            $select = "UPDATE tbl_inventory SET action='Declined' WHERE id='$id'";
+                            $select = "UPDATE tbl_inventory SET status='Declined' WHERE id='$id'";
                             $result = mysqli_query($conn,$select);
                             echo "<script>if (window.history.replaceState) {
                                 window.history.replaceState(null, null, window.location.href);
@@ -228,7 +228,7 @@
                             <th id="table-title">Crop Type <span id="table-titleslash">(Uri ng Tanim)</span></th>	
                             <th id="table-title">Quantity <span id="table-titleslash">(Dami)</span></th>									
                             <th id="table-title">Name of Harvestor <span id="table-titleslash">(Pangalan ng Umani)</span></th>
-                            <th id="table-title">Action <span id="table-titleslash">(Maaaring Gawin)</span></th>
+                            <th id="table-title">Status <span id="table-titleslash">(Maaaring Gawin)</span></th>
                         </thead>
                         <tbody class="table-contents">
                             <?php
