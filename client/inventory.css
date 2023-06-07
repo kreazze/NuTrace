@@ -8,6 +8,10 @@
     src: url('../assets/font/Poppins-Bold.ttf');
 }
 @font-face {
+    font-family: 'Poppins-ExtraLight';
+    src: url('../assets/font/Poppins-ExtraLight.ttf');
+}
+@font-face {
     font-family: 'Poppins-Italic';
     src: url('../assets/font/Poppins-Italic.ttf');
 }
@@ -237,7 +241,7 @@ body {
 	text-align: center;
 }
 
-/* content */
+/* buttons */
 #buttons {
 	margin-left: 20px;
 	align-items: left;
@@ -270,13 +274,6 @@ body {
 	color: white;
 	background-color: #25a22b;
 }
-.refresh{
-	font-size: 20px;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	text-align: center;
-	color: red;
-}
-
 #add-btn:hover, #refresh-btn:hover {
 	background-color: #8f8f8f;
 }
@@ -298,12 +295,11 @@ body {
 	background-color: #25a22b;
 }
 
-/*pop up*/
+/* pop up */
 h4 {
 	text-align: center;
 	font-family: 'Poppins-Black';
 	font-size: 30px;
-	font-family: "poppins black", sans-serif;
 	font-size: 40px;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -358,8 +354,15 @@ h6 {
 }
 .wrapper .content {
 	max-height: 350px;
-	overflow: scroll;
-	
+	overflow-y: scroll;
+}
+.wrapper .content::-webkit-scrollbar {
+	width: 0.5rem;
+	height: 0.5rem;
+}
+.wrapper .content::-webkit-scrollbar-thumb {
+	border-radius: 0.5rem;
+	background-color: #0004;
 }
 .add {
 	font-size: 18px;
@@ -463,7 +466,6 @@ h6 {
 }
 form label {
 	font-size: 15px;
-	font-family: "poppins semibold", sans-serif;
 	padding-left: 5px;
 }
 
@@ -475,7 +477,6 @@ input[type=text], [type=date], [type=number], select {
 	width: 95%;
 	font-family: 'Poppins-Regular';
 	padding: 12px;
-	font-family: "poppins";
 	padding: 7px;
 	border: 1px solid #8F8F8F;
 	border-radius: 7px;
@@ -508,17 +509,15 @@ input[type=text], [type=date], [type=number], select {
 	font-size: 10px;
 	font-family: 'Poppins-SemiBold';
 	font-size: 18px;
-	font-family: "poppins", sans-serif;
 }
 
-/* inventory content */
+/* table */
 #inventory-content {
 	margin: 20px;
 }
 #inventory-table {
 	align-items: center;
-	min-width: 500px;
-	width: 1450px;
+	width: 100%;
 	margin: 25px 0;
 	border: #8f8f8f solid 1px;
 	border-collapse: collapse;
@@ -537,8 +536,7 @@ input[type=text], [type=date], [type=number], select {
 }
 #table-titleslash {
 	font-size: 15px;
-	font-style: italic;
-	font-family: 'Poppins-Regular';
+    font-family: 'Poppins-ExtraLight';
 }
 .table-contents{
 	font-size: 17px;
@@ -548,14 +546,12 @@ input[type=text], [type=date], [type=number], select {
 /*popup*/
 h2 {
 	text-align: center;
-	font-family: "poppins black", sans-serif;
 	font-size: 25px;
 	margin-top: 10px;
 	margin-bottom: 23px;
 }
 h3 {
 	font-style: italic;
-	font-family: "poppins", sans-serif;
 	text-align: center;
 	font-size: 15px;
     font-weight: 400;
@@ -596,7 +592,6 @@ h3 {
 
 .yes {
 	font-size: 18px;
-	font-family: "poppins semibold", sans-serif;
 	color: white;
 	background: #25A22B;
 	border-radius: 10px;

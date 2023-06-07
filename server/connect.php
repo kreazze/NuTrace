@@ -1,13 +1,12 @@
 <?php
-$hostname     = "localhost";
-$username     = "root";
-$password     = "";
-$databasename = "nutrace_server";
+  $hostname     = "localhost";
+  $username     = "root";
+  $password     = "";
+  $databasename = "nutrace_server";
 
-$conn = new mysqli($hostname, $username, $password, $databasename);
+  $conn = new mysqli($hostname, $username, $password, $databasename);
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+  if ($conn->connect_error) {
+    $error_message = "Connection failed: " . $conn->connect_error;
+  }
 ?>

@@ -12,20 +12,32 @@
         $quantity   = $_POST['quantity'];
         $harvester  = $_POST['harvester'];
 
-        $query = "INSERT INTO tbl_inventory (date, croptype, quantity, harvester) VALUES ('$date','$croptype','$quantity','$harvester')";
+        $query = "INSERT INTO tbl_inventory (date, croptype, quantity, harvester, action) VALUES ('$date','$croptype','$quantity','$harvester','Pending')";
 
         $query_run = mysqli_query($conn, $query);
         if($query_run)
         {
-            $alert ="<script>alert('Added Successfully!');</script>";
-                echo $alert;
+            $_SESSION['alert'] = 'The item is under review.';
+            echo "<script>if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }</script>";
+            echo "<script>window.location.reload();</script>";        
         }
         else{
-            $alert ="<script>alert('An Error Occured.');</script>";
-                echo $alert;
+            $_SESSION['alert'] = 'An error occurred.';
+            echo "<script>if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }</script>";
+            echo "<script>window.location.reload();</script>";        
         }
+
+        if (isset($_SESSION['alert'])) {
+            $alertMessage = $_SESSION['alert'];
+            unset($_SESSION['alert']);
+        }        
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -96,7 +108,7 @@
         <section id="content">
             <nav class="profile">   
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">         
-                <a class="user" href="#">Hello, Admin <?php echo $_SESSION["fullname"]; ?>!</a>
+                <a class="user" href="#">Hello, Admin!</a>
             </nav>
             <main class="main-content">
                 <title>Inventory</title>
@@ -106,6 +118,11 @@
                     <a href="#divAdd"><button class=tableBtn id="add-btn">+ ADD</button></a>
                     <button id="dl-btn"><img id='dl-img' src="../assets/images/sidebar/white/download-icon.png" width="25px" height="25px"></button>
                     <button class="tableBtn" type="button" id="refresh-btn">Refresh</button>
+                    <script>
+                        document.getElementById('refresh-btn').addEventListener('click', function() {
+                            location.reload();
+                        });
+                    </script>
                     <div class="overlay" id="divAdd">
                         <div class="wrapper"> 
                             <a class="close" href="#">&times;</a>
@@ -113,7 +130,7 @@
                             <h6>(Magdagdag sa listahan)</h6>
                             <div class="content">
                                 <div class="popup-container">
-                                    <form class="add-pop" method="POST">
+                                    <form class="add-pop"method="POST">
                                         <label>Date</label> <label class="tagalog">(Petsa)</label>
                                         <input placeholder="MM/DD/YYYY" type="date" name="date" required>
                                         <label>Crop Type</label> <label class="tagalog">(Uri ng Tanim)</label>
@@ -129,7 +146,6 @@
                                         <div class="qty">
                                             <input type="number" name="quantity" placeholder="In Kilogram (kg)" required>
                                         </div>
-                                        
                                         <label>Name of harvester</label><label class="tagalog">(Pangalan ng umani)</label>
                                         <input placeholder="First Name & Last Name" name="harvester" type="text" required>
                                         <button type="submit" class="add" name="add">ADD</button>
@@ -143,38 +159,102 @@
                 <div id="inventory-content">
                     <table id="inventory-table">
                         <thead>
-                            <tr>
-                                <th id="table-title">Date <span id="table-titleslash">(Petsa)</span></th>      
-                                <th id="table-title">Crop Type <span id="table-titleslash">(Uri ng Tanim)</span></th>	
-                                <th id="table-title">Quantity <span id="table-titleslash">(Dami)</span></th>									
-                                <th id="table-title">Name of Harvestor <span id="table-titleslash">(Pangalan ng Umani)</span></th>
-                                <th id="table-title">Action <span id="table-titleslash">(Maaaring Gawin)</span></th>
-                            </tr>
+                            <th id="table-title">ID <span id="table-titleslash">(Pagkakakilanlan)</span></th>      
+                            <th id="table-title">Date <span id="table-titleslash">(Petsa)</span></th>      
+                            <th id="table-title">Crop Type <span id="table-titleslash">(Uri ng Tanim)</span></th>	
+                            <th id="table-title">Quantity <span id="table-titleslash">(Dami)</span></th>									
+                            <th id="table-title">Name of Harvestor <span id="table-titleslash">(Pangalan ng Umani)</span></th>
+                            <th id="table-title">Action <span id="table-titleslash">(Maaaring Gawin)</span></th>
                         </thead>
                         <tbody class="table-contents">
                             <?php
-                                foreach($crops as $row){
-                                    ?>
+                                $query = "SELECT * FROM tbl_inventory WHERE action='Pending' ORDER BY id ASC";
+                                $result = mysqli_query($conn, $query);
+                                $rowcount = mysqli_num_rows($result);
+
+                                if ($rowcount > 0) {
+                                    while ($row = mysqli_fetch_array($result)) { ?>
                                         <tr>
+                                            <th scope="row"><?php echo $row['id'];?></th>
                                             <td><?php echo $row['date']; ?></td>
                                             <td><?php echo $row['croptype']; ?></td>
                                             <td><?php echo $row['quantity']; ?></td>
                                             <td><?php echo $row['harvester']; ?></td>
                                             <td>
-                                                <button class="btn btn-warning mb-1" id="editItemBtn">Edit Info</button>
-                                                <button class="btn btn-danger mb-1" id="deleteBtn">Delete</button>
-                                            </td>
+                                                <form action="../admin/admin_inventory.php" method="POST">
+                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                                                    <input type="submit" name="accept" value="approve">
+                                                    <input type="submit" name="decline" value="decline">    
+                                                </form>
+                                            </td>    
                                         </tr>
-                                    <?php
-                                }
-                            ?>
+                                        <?php
+                                    } 
+                                } else {
+                                ?>  <tr> <td colspan="6">There are no entries.</td></tr>  
+                                    <?php   
+                                } ?>
                         </tbody>
                     </table>
-                    <p class="referesh"><strong>Total: <?php echo $rowcount; ?></strong></p>
-                    <iframe name="content"></iframe>
-                </div>
-                <p class="refresh">***Manually Refresh Table when change is made***</p>
-                
+                    <?php     
+                        if (isset($_POST['accept'])) {
+                            $id = $_POST['id'];
+                            $select = "UPDATE tbl_inventory SET action='Accepted' WHERE id='$id'";
+                            $result = mysqli_query($conn,$select);
+                            echo "<script>if (window.history.replaceState) {
+                                window.history.replaceState(null, null, window.location.href);
+                            }</script>";
+                            echo "<script>window.location.reload();</script>";
+                        
+                        }
+                        if (isset($_POST['decline'])) {
+                            $id = $_POST['id'];
+                            $select = "UPDATE tbl_inventory SET action='Declined' WHERE id='$id'";
+                            $result = mysqli_query($conn,$select);
+                            echo "<script>if (window.history.replaceState) {
+                                window.history.replaceState(null, null, window.location.href);
+                            }</script>";
+                            echo "<script>window.location.reload();</script>";
+                        
+                        }
+                    ?>
+                </div>                
+
+                <div id="inventory-content">
+                    <table id="inventory-table">
+                        <thead>
+                            <th id="table-title">ID <span id="table-titleslash">(Pagkakakilanlan)</span></th>      
+                            <th id="table-title">Date <span id="table-titleslash">(Petsa)</span></th>      
+                            <th id="table-title">Crop Type <span id="table-titleslash">(Uri ng Tanim)</span></th>	
+                            <th id="table-title">Quantity <span id="table-titleslash">(Dami)</span></th>									
+                            <th id="table-title">Name of Harvestor <span id="table-titleslash">(Pangalan ng Umani)</span></th>
+                            <th id="table-title">Action <span id="table-titleslash">(Maaaring Gawin)</span></th>
+                        </thead>
+                        <tbody class="table-contents">
+                            <?php
+                                $query = "SELECT * FROM tbl_inventory";
+                                $result = mysqli_query($conn,$query);
+                                $rowcount = mysqli_num_rows($result);
+
+                                while ($row = mysqli_fetch_array($result)) { ?>
+                                    <tr>
+                                        <th scope="row"><?php echo $row['id'];?></th>
+                                        <td><?php echo $row['date']; ?></td>
+                                        <td><?php echo $row['croptype']; ?></td>
+                                        <td><?php echo $row['quantity']; ?></td>
+                                        <td><?php echo $row['harvester']; ?></td>
+                                        <td><?php echo $row['action']; ?></td>
+                                    </tr>
+                                    <?php 
+                                } if (mysqli_num_rows($result) == 0) {
+                                    ?>
+                                    <tr> <td colspan="6">There are no entries.</tr>  
+                                    <?php
+                                } ?>
+                        </tbody>
+                    </table>
+                    <p class="refresh"><strong>Total: <?php echo $rowcount; ?></strong></p>
+                </div> 
                 <?php mysqli_close($conn); ?>
             </main>
         </section>
@@ -182,6 +262,7 @@
         <script src="../js-files/realtime.js"></script>
         <script src="../js-files/popup-add.js"></script>
     </body>
+
     <footer id="footer">
         <img class="pup-logo" src="../assets/images/main/pup-logo.png" width="50px" height="50px">
         <img class="ce-logo" src="../assets/images/main/ce-logo.png" width="50px" height="50px">
