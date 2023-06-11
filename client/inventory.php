@@ -1,35 +1,6 @@
 <?php
     session_start();
     include('../server/connect.php');
-
-    $sql = "SELECT * FROM tbl_inventory";
-    $crops = mysqli_query($conn, $sql);
-    $rowcount = mysqli_num_rows($crops);
-
-    // Add
-    if(isset($_POST['add']))
-    {
-        $date       = $_POST['date'];
-        $croptype   = $_POST['croptype'];
-        $quantity   = $_POST['quantity'];
-        $harvester  = $_POST['harvester'];
-
-        $query = "INSERT INTO tbl_inventory (date, croptype, quantity, harvester, action) VALUES ('$date','$croptype','$quantity','$harvester','Pending')";
-
-        $query_run = mysqli_query($conn, $query);
-        if($query_run)
-        {
-            $_SESSION['alert'] = 'The item is under review.';
-        }
-        else{
-            $_SESSION['alert'] = 'An error occurred.';
-        }
-
-        if (isset($_SESSION['alert'])) {
-            $alertMessage = $_SESSION['alert'];
-            unset($_SESSION['alert']);
-        }  
-    }
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +80,12 @@
                 <div id="buttons">
                     <a href="#divAdd"><button class=tableBtn id="add-btn">+ ADD</button></a>
                     <button id="dl-btn"><img id='dl-img' src="../assets/images/sidebar/white/download-icon.png" width="25px" height="25px"></button>
-                    <button class="tableBtn" type="button" id="refresh-btn">Refresh</button>
+                    <button class="tableBtn" type="button" id="refresh-btn">REFRESH</button>
+                    <script>
+                        document.getElementById('refresh-btn').addEventListener('click', function() {
+                            location.reload();
+                        });
+                    </script>
                 </div>
 
                 <!-- Add item -->
@@ -144,18 +120,92 @@
                             </div>
                         </div>
                     </div>
+                    <?php
+                        $sql = "SELECT * FROM tbl_inventory";
+                        $crops = mysqli_query($conn, $sql);
+                        $rowcount = mysqli_num_rows($crops);
+                    
+                        if(isset($_POST['add']))
+                        {
+                            $date       = $_POST['date'];
+                            $croptype   = $_POST['croptype'];
+                            $quantity   = $_POST['quantity'];
+                            $harvester  = $_POST['harvester'];
+                    
+                            $query = "INSERT INTO tbl_inventory (date, croptype, quantity, harvester, status) VALUES ('$date','$croptype','$quantity','$harvester','Pending')";
+                    
+                            $query_run = mysqli_query($conn, $query);
+                            if($query_run)
+                            {
+                                $_SESSION['alert'] = 'The item is under review.';
+                            }
+                            else{
+                                $_SESSION['alert'] = 'An error occurred.';
+                            }
+                    
+                            if (isset($_SESSION['alert'])) {
+                                $alertMessage = $_SESSION['alert'];
+                                unset($_SESSION['alert']);
+                            }  
+                        }
+                    ?>
                 </div>
 
-                               
+                <!-- Edit item -->
+                <?php
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        if (isset($_POST['edit'])) {
+                            $id = $_POST['id'];
+                            $query = "SELECT * FROM tbl_inventory WHERE id = '$id'";
+                            $query_run = mysqli_query($conn, $query);
+
+                            foreach ($query_run as $row) { ?>
+                                <div class="overlay" id="divEdit">
+                                    <div class="wrapper"> 
+                                        <a class="close" href="#">&times;</a>
+                                        <h4>Edit Item</h4>
+                                        <div class="content">
+                                            <div class="popup-container">
+                                                <form class="add-pop" action="../client/inventory-edit.php" method="POST">
+                                                    <label>Date</label> <label class="tagalog">(Petsa)</label>
+                                                    <input placeholder="MM/DD/YYYY" type="date" name="edit_date" value="<?php echo $row['date']; ?>" required>
+                                                    <label>Crop Type</label> <label class="tagalog">(Uri ng Tanim)</label>
+                                                    <select class="sBtn-text" name="edit_croptype" id="croptype" required>
+                                                        <option value="kamatis" <?php if ($row['croptype'] == 'kamatis') echo 'selected'; ?>>Kamatis</option>
+                                                        <option value="mais" <?php if ($row['croptype'] == 'mais') echo 'selected'; ?>>Mais</option>
+                                                        <option value="okra" <?php if ($row['croptype'] == 'okra') echo 'selected'; ?>>Okra</option>
+                                                        <option value="patola" <?php if ($row['croptype'] == 'patola') echo 'selected'; ?>>Patola</option>
+                                                        <option value="talong" <?php if ($row['croptype'] == 'talong') echo 'selected'; ?>>Talong</option>
+                                                    </select>
+                                                    <label>Quantity</label> <label class="tagalog">(Dami)</label>
+                                                    <div class="qty">
+                                                        <input type="number" name="edit_quantity" placeholder="In Kilogram (kg)" value="<?php echo $row['quantity']; ?>" required>
+                                                    </div>
+                                                    <label>Name of harvester</label> <label class="tagalog">(Pangalan ng umani)</label>
+                                                    <input placeholder="Full Name (e.g. John Dela Cruz)" name="edit_harvester" type="text" value="<?php echo $row['harvester']; ?>" required>
+                                                    <button type="submit" class="edit" name="edit">EDIT</button>
+                                                    <button class="cancel" onclick="close()">CANCEL</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        }
+                    }
+                ?>
+
                 <div id="inventory-content">
                     <table id="inventory-table">
                         <thead>
-                            <th id="table-title">ID <span id="table-titleslash">(Pagkakakilanlan)</span></th>      
-                            <th id="table-title">Date <span id="table-titleslash">(Petsa)</span></th>      
-                            <th id="table-title">Crop Type <span id="table-titleslash">(Uri ng Tanim)</span></th>	
-                            <th id="table-title">Quantity <span id="table-titleslash">(Dami)</span></th>									
-                            <th id="table-title">Name of Harvestor <span id="table-titleslash">(Pangalan ng Umani)</span></th>
+                            <th id="table-title">ID</th>      
+                            <th id="table-title">Date</th>      
+                            <th id="table-title">Crop Type</th>	
+                            <th id="table-title">Quantity</th>									
+                            <th id="table-title">Name of Harvestor</th>
                             <th id="table-title">Status</th>
+                            <th id="table-title">Action <button class="notice"><img src="../assets/images/sidebar/notice.png"></button></th>
                         </thead>
                         <tbody class="table-contents">
                             <?php
@@ -165,23 +215,63 @@
 
                                 while ($row = mysqli_fetch_array($result)) { ?>
                                     <tr>
-                                        <th scope="row"><?php echo $row['id'];?></th>
+                                        <td scope="row"><?php echo $row['id'];?></td>
                                         <td><?php echo $row['date']; ?></td>
                                         <td><?php echo $row['croptype']; ?></td>
                                         <td><?php echo $row['quantity']; ?></td>
                                         <td><?php echo $row['harvester']; ?></td>
                                         <td><?php echo $row['status']; ?></td>
+                                        <td>
+                                            <?php if ($row['status'] === 'Pending') { ?>
+                                                <form action="#divEdit" method="POST">
+                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                                                    <input type="submit" name="edit" id="edit-btn" value="EDIT">                                                
+                                                </form>
+                                            <?php } elseif ($row['status'] === 'Declined') { ?>
+                                                <form action="#divEdit" method="POST" style="display: inline;">
+                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                                                    <input type="submit" name="edit" id="edit-btn" value="EDIT">                                                
+                                                </form>
+                                                <?php 
+
+                                                ?>
+                                                <form action="" method="POST" style="display: inline;">
+                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                                                    <input type="submit" name="delete" id="delete-btn" value="DELETE">
+                                                </form>
+                                                <?php } 
+                                                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                                                        if(isset($_POST['delete'])) {
+                                                            $id = $_POST['id'];
+                                                            
+                                                            // Perform the necessary actions to delete the declined record from the database
+                                                            $query = "DELETE FROM tbl_inventory WHERE id='$id'";
+                                                            $result = mysqli_query($conn, $query);
+
+                                                            if ($result) {
+                                                                echo "Record deleted successfully.";
+                                                            } else {
+                                                                echo "Error deleting record: " . mysqli_error($conn);
+                                                            }
+                                                            echo "<script>if (window.history.replaceState) {
+                                                                window.history.replaceState(null, null, window.location.href);
+                                                            }</script>";
+                                                            echo "<script>window.location.reload();</script>";
+                                                        }
+                                                    }
+                                                ?>
+                                        </td>
                                     </tr>
                                     <?php 
                                 } if (mysqli_num_rows($result) == 0) {
                                     ?>
-                                    <tr> <td colspan="6">There are no entries.</tr>  
+                                    <tr> <td colspan="7">There are no entries.</tr>  
                                     <?php
                                 } ?>
                         </tbody>
                     </table>
-                    <p class="refresh"><strong>Total: <?php echo $rowcount; ?></strong></p>
-                </div>               
+                    <strong id="total-entries">TOTAL ENTRIES: <?php echo $rowcount; ?></strong>
+                </div>                
                 <?php mysqli_close($conn); ?>
             </main>
         </section>

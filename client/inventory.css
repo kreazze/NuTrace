@@ -294,6 +294,41 @@ body {
 #dl-btn:hover {
 	background-color: #25a22b;
 }
+#edit-btn {
+	width: 45px;
+	height: 25px;
+	font-size: 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	border: none;
+	text-align: center;
+	font-family: 'Poppins-Medium';
+	color: #826601;
+	background-color: #eacd67;
+}
+#edit-btn:hover {
+	background-color: #8f8f8f;
+}
+#delete-btn {
+	width: 60px;
+	height: 25px;
+	font-size: 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	border: none;
+	text-align: center;
+	font-family: 'Poppins-Medium';
+	color: #b73737;
+	background-color: #f7b5b5;
+}
+#delete-btn:hover {
+	background-color: #8f8f8f;
+}
+#total-entries {
+	font-size: medium;
+	font-family: "Poppins-Bold";
+	color: #0b032d;
+}
 
 /* pop up */
 h4 {
@@ -518,21 +553,29 @@ input[type=text], [type=date], [type=number], select {
 #inventory-table {
 	align-items: center;
 	width: 100%;
-	margin: 25px 0;
 	border: #8f8f8f solid 1px;
 	border-collapse: collapse;
 	color: black;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
 }
 #inventory-table thead tr {
-	text-align: left;
+	text-align: center;
+	background-color: white;
+}
+#inventory-table tbody tr:nth-child(2n) {
 	background-color: white;
 }
 #inventory-table th {
 	padding: 5px 10px;
 }
+#inventory-table td {
+	border-bottom: 1px solid #8f8f8f;
+}
 #table-title {
 	font-size: 18px;
 	font-family: 'Poppins-Bold';
+	border-bottom: 2px solid #8f8f8f;
 }
 #table-titleslash {
 	font-size: 15px;
@@ -543,6 +586,21 @@ input[type=text], [type=date], [type=number], select {
 	text-align: center;
 	font-family: 'Poppins-Regular';
 }
+.notice img {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	margin-top: 5px;
+}
+.notice {
+	width: 20px;
+	height: 10x;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+}
+
 /*popup*/
 h2 {
 	text-align: center;
