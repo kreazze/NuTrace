@@ -29,7 +29,7 @@
 }
 
 :root {
-	--primary-clr: #0cab19;
+	--primary-clr: #25a22b;
   }
 /* content */
 *{
@@ -229,18 +229,20 @@ body {
 main .calendar-of-tasks{
 	color: #0cab19;
 	position: absolute;
+	display: flex;
+	justify-content: stretch;
 	top: 110px;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-size: 40px;
+	font-size: 20px;
 	font-family: 'Poppins-Black';
 }
 main .container{
 	top: 100px;
 	position: relative;
 	justify-content: center;
-	width: 1000px;
-	height: 850px;
+	width: 650px;
+	height: 500px;
 	margin: 0 auto;
 	padding: 5px;
 	color: #fff;
@@ -251,13 +253,12 @@ main .container{
 }
 main .left{
 	width: 80%;
-	padding: 20px;
+	padding: 15px;
 }
 main .calendar{
 	position: relative;
-  width: 100%;
+  width: 93%;
   height: 100%;
-  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -267,12 +268,12 @@ main .calendar{
 }
 main .calendar .month {
 	width: 100%;
-	height: 150px;
+	height: 20%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 50px;
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 	text-transform: capitalize;
 	font-family: 'Poppins-ExtraLight';
@@ -286,13 +287,15 @@ main .calendar .month .next:hover {
   color: var(--primary-clr);
 }
 main .calendar .weekdays{
-  width: 100%;
+  width: 75%;
   height: 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 45px 0px 30px;
-  font-size: 25px;
+  gap: 10px;
+  padding-left: 25px;
+  padding-right: 55px;
+  font-size: 20px;
   font-weight: bold;
   text-transform: capitalize;
   font-family:  "Poppins-Bold";
@@ -310,16 +313,16 @@ main .goto-only{
 	color: black;
 	position: relative;
 	left: 25px;
-	top: 30px;
-	font-size: 25px;
+	top: 50px;
+	font-size: 20px;
 	font-family:"Poppins-ExtraLight";
   }
 main .add-task{
 	color: black;
 	position: relative;
-	left: 630px;
-	top: 47px;
-	font-size: 25px;
+	left: 400px;
+	top: 63px;
+	font-size: 15px;
 	font-family: 'Poppins-ExtraLight';
   }
 main .calendar .days {
@@ -328,14 +331,14 @@ main .calendar .days {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	padding: 0 20px;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	font-family:  "Poppins-Black";
   }
 main .calendar .days .day {
 	width: 14.28%;
-	height: 80px;
+	height: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -366,7 +369,7 @@ main .calendar .days .prev-date,
   }
 main .calendar .days .active {
 	position: relative;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	color: #fff;
 	background-color: var(--primary-clr);
   }
@@ -380,7 +383,7 @@ main .calendar .days .active::before {
 	box-shadow: 0 0 10px 2px var(--primary-clr);
   }
 main .calendar .days .today {
-	font-size: 40px;
+	font-size: 30px;
   }
 main .calendar .days .event {
 	position: relative;
@@ -408,7 +411,7 @@ main .calendar .days .active.event {
   }
 main .calendar .goto-today {
 	width: 100%;
-	height: 50px;
+	height: 100px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -453,8 +456,8 @@ main .calendar .goto-today .goto button {
 	border-radius: 0;
   }
 main .container .right {
-	position: relative;
-	width: 40%;
+	position: sticky;
+	width: 80%;
 	min-height: 100%;
 	padding: 20px 0;
   }
@@ -467,43 +470,41 @@ main .right .today-date {
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 40px;
-	padding-left: 50px;
+	padding-left: 20px;
 	margin-top: 10px;
-	margin-bottom: 75px;
+	margin-bottom: 10px;
 	text-transform: capitalize;
 	font-family: "Poppins-Bold";
 	
   }
 main .right .today-date .event-day {
-	font-size: 40px;
+	font-size: 15px;
 	font-weight: 500;
 	color: black;
   }
 main .right .today-date .event-date {
-	font-size: 30px;
+	font-size: 15px;
 	font-weight: 400;
 	color: black;
   }
 main .events {
 	width: 100%;
-	height: 100%;
+	height: 70%;
 	max-height: 600px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	display: flex;
 	flex-direction: column;
-	padding-left: 4px;
+	
   }
 main .events .event {
 	position: relative;
-	width: 95%;
+	width: 100%;
 	min-height: 70px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	gap: 5px;
-	padding: 0 20px;
-	padding-left: 50px;
 	color: black;
 	background-color:rgb(219, 216, 216);
 	cursor: pointer;
@@ -519,19 +520,18 @@ main .events .event .title {
 	pointer-events: none;
   }
 main .events .event .title .event-title {
-	font-size: 25px;
+	font-size: 15px;
 	font-weight: 400;
-	margin-left: 20px;
+	
   }
 main .events .event i {
 	color: var(--primary-clr);
 	font-size: 0.5rem;
   } 
 main .events .event .event-time {
-	font-size: 15px;
+	font-size: 10px;
 	font-weight: 400;
 	color: black;
-	margin-left: 15px;
 	pointer-events: none;
   }
   
@@ -581,7 +581,7 @@ main .events .no-event {
 	height: 100%;
 	display: flex;
 	position: absolute;
-	top: 400px;
+	top: 200px;
 	justify-content: space-between;
 	font-size: 20px;
 	font-weight: 500;
@@ -852,6 +852,7 @@ h2 {
 	margin-bottom: 3px;
 }
 h3 {
+	
 	font-style: italic;
 	font-family: "poppins", sans-serif;
 	text-align: center;
