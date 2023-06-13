@@ -286,9 +286,37 @@
                         </thead>
                         <tbody class="table-contents">
                             <?php
+                                // get page number
+                                 if (isset($_GET['page_no']) && $_GET['page_no'] !== "") {
+                                    $page_no = $_GET['page_no'];
+                                } else {
+                                    $page_no = 1;
+                                }
+
+                                // total rows to display
+                                $total_records_per_page = 10;
+                                // get the page offset for the LIMIT query;
+                                $offset = ($page_no - 1) * $total_records_per_page;
+                                // get previous page
+                                $previous_page = $page_no - 1;
+                                // get next page;
+                                $next_page = $page_no + 1;
+
+                                //get the total count of records
+                                $result_count = mysqli_query($conn, "SELECT COUNT(*) as total_records FROM nutrace_server.tbl_inventory") or die(mysqli_error($conn));
+                                // total records
+                                $records = mysqli_fetch_array($result_count);
+                                // store total_records to a variable
+                                $total_records = $records['total_records'];
+                                // get total records
+                                $total_no_of_pages = ceil($total_records / $total_records_per_page);
+
                                 $query = "SELECT * FROM tbl_inventory WHERE status = 'Approved' OR status = 'Declined'";
                                 $result = mysqli_query($conn,$query);
                                 $rowcount = mysqli_num_rows($result);
+                                
+                                $sql = "SELECT * FROM tbl_inventory WHERE status != 'Pending' LIMIT $offset, $total_records_per_page";
+                                $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                                 while ($row = mysqli_fetch_array($result)) { ?>
                                     <tr>
@@ -308,6 +336,31 @@
                         </tbody>
                     </table>
                     <strong id="total-entries">TOTAL ENTRIES: <?php echo $rowcount; ?></strong>
+                    <div class="table-pagination">
+                        <div class="pages">
+                                <strong>PAGE <?= $page_no; ?> OF <?= $total_no_of_pages; ?> </strong>
+                        </div>
+                        <div aria-label="...">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a id="prev" class="page-link <?= ($page_no <= 1) ? 'disabled': ''; ?> " <?= ($page_no > 1) ? 'href=?page_no=' . $previous_page: ''; ?>>PREVIOUS</a>
+                                </li>
+
+                                <?php 
+                                    for ($counter = 1; $counter <= $total_no_of_pages; $counter++) { ?>
+                                    <?php if ($page_no != $counter) {?>
+                                            <li class="page-item"><a class="page-link" href="?page_no=<?= $counter; ?>"><?= $counter; ?></a></li>                                    
+                                    <?php } else { ?>
+                                            <li class="page-item"><a class="page-link active"><?= $counter; ?></a></li>
+                                    <?php } ?>
+                                <?php } ?>
+
+                                <li class="page-item">
+                                    <a id="next" class="page-link <?= ($page_no >= $total_no_of_pages) ? 'disabled': ''; ?> " <?= ($page_no < $total_no_of_pages) ? 'href=?page_no='.$next_page: ''; ?>>NEXT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div> 
                 <?php mysqli_close($conn); ?>
             </main>
