@@ -8,30 +8,7 @@
 		$cpassword  = md5($_POST["cpassword"]);
 		$user_type  = $_POST["user_type"];
 
-		if (empty($_POST["fullname"])) {
-			die("Full name is required");
-		}
-		if (! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-			die("Valid email is required");
-		}
-		if (strlen($_POST["contact"]) !== 11) {
-			die("Invalid contact number");
-		}
-		if (strlen($_POST["password"]) < 8) {
-			die("Password must be at least 8 characters");
-		}
-		if (! preg_match("/[a-z]/i", $_POST["password"])) {
-			die("Password must contain at least one letter");
-		}
-		if (! preg_match("/[0-9]/", $_POST["password"])) {
-			die("Password must contain at least one number");
-		}
-		if ($_POST["password"] !== $_POST["cpassword"]) {
-			die("Password must match");
-		}
-
 		$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
-		var_dump($password_hash);
 
 		$conn = new mysqli("localhost", "root", "", "nutrace_server");
 		if ($conn->connect_error) {
@@ -46,17 +23,35 @@
 
 		if(mysqli_num_rows($result) > 0 || mysqli_num_rows($result1) > 0) {
 			$error[] = "User Already Exists!";
+
+			if (!isset($_POST["fullname"]) || trim($_POST["fullname"]) === '') {
+				$errorOne = "Full name is required";
+			}
+			elseif (! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+				$errorTwo = "Valid email is required";
+			}
+			elseif (strlen($_POST["contact"]) !== 11) {
+				$errorThree = "Invalid contact number";
+			}
+			elseif (strlen($_POST["password"]) < 8) {
+					$errorFour = "Password must be at least 8 characters";
+			}
+			elseif (! preg_match("/[a-z]/i", $_POST["password"])) {
+				$errorFive = "Password must contain at least one letter";			
+			}
+			elseif (! preg_match("/[0-9]/", $_POST["password"])) {
+				$errorSix = "Password must contain at least one number";
+			}
+			elseif ($_POST["password"] !== $_POST["cpassword"]) {
+				$errorSeven = "Password must match";
+			}
 		}
 		else {
-			if ($password != $cpassword) {
-				$error[] = 'Passwords do not match!';
-			}
-			elseif ($user_type === "user") {
+			if ($user_type === "user") {
 				$insert = "INSERT INTO tbl_users (fullname, contact, email, password, cpassword, user_type) VALUES ('$fullname','$contact','$email','$password','$cpassword','$user_type')";
 
 				mysqli_query($conn, $insert);
-				$alert = "<script>alert('Registered Successfully!');</script>";
-				echo $alert;
+				$alert = "Registered Successfully!";
 				header('location:../account-form/login.php');
 				exit;
 			}
@@ -64,8 +59,7 @@
 				$insert = "INSERT INTO tbl_admin (fullname, contact, email, password, cpassword, user_type) VALUES ('$fullname','$contact','$email','$password','$cpassword','$user_type')";
 
 				mysqli_query($conn, $insert);
-				$alert = "<script>alert('Registered Successfully!');</script>";
-				echo $alert;
+				$alert = "Registered Successfully!";
 				header('location:../admin/admin_login.php');
 				exit;
 			}
@@ -106,6 +100,30 @@
 							};
 						}
 						?>
+						<?php if (!empty($errorOne)): ?>
+							<div class="error-msg"><?php echo $errorOne; ?></div>
+						<?php endif; ?>
+						<?php if (!empty($errorTwo)): ?>
+							<div class="error-msg"><?php echo $errorTwo; ?></div>
+						<?php endif; ?>
+						<?php if (!empty($errorThree)): ?>
+							<div class="error-msg"><?php echo $errorThree; ?></div>
+						<?php endif; ?>
+						<?php if (!empty($errorFour)): ?>
+							<div class="error-msg"><?php echo $errorFour; ?></div>
+						<?php endif; ?>
+						<?php if (!empty($errorFive)): ?>
+							<div class="error-msg"><?php echo $errorFive; ?></div>
+						<?php endif; ?>
+						<?php if (!empty($errorSix)): ?>
+							<div class="error-msg"><?php echo $errorSix; ?></div>
+						<?php endif; ?>
+						<?php if (!empty($errorSeven)): ?>
+							<div class="error-msg"><?php echo $errorSeven; ?></div>
+						<?php endif; ?>
+						<?php if (!empty($alert)): ?>
+							<div class="success-msg"><?php echo $alert; ?></div>
+						<?php endif; ?>
 					</div>
 			
 					<label>Full Name:</label><br>

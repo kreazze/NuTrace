@@ -1,6 +1,7 @@
 <?php
     session_start();
     include('../server/connect.php');
+    include('../sections/inventory-export.php');
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +48,12 @@
                         <span class="text">Scheduler</span>
                     </a>
                 </li>
+                <li>
+                    <a href="../admin/admin_how-to.php">
+                        <img class="navbar-pic" src="../assets/images/sidebar/white/how-to-icon.png" width="25px" height="25px">
+                        <span class="text">Learn More</span>
+                    </a>
+                </li>
             </ul>
             <ul class="side-menu">
                 <li>
@@ -73,7 +80,49 @@
         <section id="content">
             <nav class="profile">   
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">         
-                <a class="user" href="#">Hello, Admin!</a>
+                <a class="user" href="#">Hello, Admin <?php echo $_SESSION["fullname"]; ?>!</a>
+                <a href="../sections/about.php" class="about-div">
+                    <button class="about-btn" onmouseover="showPopup()" onmouseout="hidePopup()">
+                        <img src="../assets/images/sidebar/white/about-icon.png" width="25px" height="25px">
+                    </button>
+                </a>
+                <div id="popup">
+                    <p>About Us</p>
+                </div>          
+                <style>
+                    #popup {                        
+                        right: 0;
+                        padding: 5px;
+                        margin-right: 70px;
+                        border-radius: 3px;
+                        font-family: 'Poppins-Bold';
+                        display: none;
+                        position: absolute;
+                        background: #f1f1f1;
+                    }
+                    #popup::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: -15px;
+                        width: 0;
+                        height: 0;
+                        border-top: 14px solid transparent;
+                        border-bottom: 20px solid transparent;
+                        border-left: 16px solid #f1f1f1; /* Adjust the color if needed */
+                    }
+                </style>
+                <script>
+                    function showPopup() {
+                        var popup = document.getElementById('popup');
+                        popup.style.display = 'block';
+                    }
+
+                    function hidePopup() {
+                        var popup = document.getElementById('popup');
+                        popup.style.display = 'none';
+                    }
+                </script>
             </nav>
             <main class="main-content">
                 <title>Inventory</title>
@@ -81,7 +130,9 @@
                 <p class="p4">Crop Harvest Inventory</p>
                 <div id="buttons">
                     <a href="#divAdd"><button class=tableBtn id="add-btn">+ ADD</button></a>
-                    <button id="dl-btn"><img id='dl-img' src="../assets/images/sidebar/white/download-icon.png" width="25px" height="25px"></button>
+                    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">					
+                        <button type="submit" id="dl-btn" name='export_data'><img id='dl-img' src="../assets/images/sidebar/white/download-icon.png" width="25px" height="25px"></button>
+                    </form>
                     <button class="tableBtn" type="button" id="refresh-btn">REFRESH</button>
                     <script>
                         document.getElementById('refresh-btn').addEventListener('click', function() {
@@ -181,15 +232,16 @@
                                         <div class="content">
                                             <div class="popup-container">
                                                 <form class="add-pop" action="../admin/admin_inventory-edit.php" method="POST">
+                                                    <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
                                                     <label>Date</label> <label class="tagalog">(Petsa)</label>
                                                     <input placeholder="MM/DD/YYYY" type="date" name="edit_date" value="<?php echo $row['date']; ?>" required>
                                                     <label>Crop Type</label> <label class="tagalog">(Uri ng Tanim)</label>
                                                     <select class="sBtn-text" name="edit_croptype" id="croptype" required>
-                                                        <option value="kamatis" <?php if ($row['croptype'] == 'kamatis') echo 'selected'; ?>>Kamatis</option>
-                                                        <option value="mais" <?php if ($row['croptype'] == 'mais') echo 'selected'; ?>>Mais</option>
-                                                        <option value="okra" <?php if ($row['croptype'] == 'okra') echo 'selected'; ?>>Okra</option>
-                                                        <option value="patola" <?php if ($row['croptype'] == 'patola') echo 'selected'; ?>>Patola</option>
-                                                        <option value="talong" <?php if ($row['croptype'] == 'talong') echo 'selected'; ?>>Talong</option>
+                                                        <option value="Kamatis" <?php if ($row['croptype'] == 'Kamatis') echo 'selected'; ?>>Kamatis</option>
+                                                        <option value="Mais" <?php if ($row['croptype'] == 'Mais') echo 'selected'; ?>>Mais</option>
+                                                        <option value="Okra" <?php if ($row['croptype'] == 'Okra') echo 'selected'; ?>>Okra</option>
+                                                        <option value="Patola" <?php if ($row['croptype'] == 'Patola') echo 'selected'; ?>>Patola</option>
+                                                        <option value="Talong" <?php if ($row['croptype'] == 'Talong') echo 'selected'; ?>>Talong</option>
                                                     </select>
                                                     <label>Quantity</label> <label class="tagalog">(Dami)</label>
                                                     <div class="qty">
@@ -213,13 +265,12 @@
                 <div id="inventory-content">
                     <table id="inventory-table">
                         <thead>
-                            <th id="table-title">ID</th>      
                             <th id="table-title">Date</th>      
                             <th id="table-title">Crop Type</th>	
                             <th id="table-title">Quantity</th>									
                             <th id="table-title">Name of Harvestor</th>
                             <th id="table-title">Status</th>
-                            <th id="table-title">Action <button class="notice"><img src="../assets/images/sidebar/notice.png"></button></th>
+                            <th id="table-title" class="th-action">Action</th>
                         </thead>
                         <tbody class="table-contents">
                             <?php
@@ -229,7 +280,6 @@
 
                                 while ($row = mysqli_fetch_array($result)) { ?>
                                     <tr>
-                                        <td scope="row"><?php echo $row['id'];?></td>
                                         <td><?php echo $row['date']; ?></td>
                                         <td><?php echo $row['croptype']; ?></td>
                                         <td><?php echo $row['quantity']; ?></td>
@@ -241,9 +291,9 @@
                                                 <input type="submit" name="edit" id="edit" value="EDIT">                                                
                                             </form>                                      
                                             <form action="../admin/admin_inventory.php" method="POST" style="display: inline;"> 
-                                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />          
-                                                <input type="submit" name="approve" id="approve" value="APPROVE">
-                                                <input type="submit" name="decline" id="decline" value="DECLINE">
+                                                <input class="form-action" type="hidden" name="id" value="<?php echo $row['id']; ?>" />          
+                                                <input class="form-action" type="submit" name="approve" id="approve" value="APPROVE">
+                                                <input class="form-action" type="submit" name="decline" id="decline" value="DECLINE">
                                             </form>    
                                         </td>
                                     </tr>
@@ -277,7 +327,6 @@
                 <div id="inventory-content">
                     <table id="inventory-table">
                         <thead>
-                            <th id="table-title">ID</th>      
                             <th id="table-title">Date</th>      
                             <th id="table-title">Crop Type</th>	
                             <th id="table-title">Quantity</th>									
@@ -320,7 +369,6 @@
 
                                 while ($row = mysqli_fetch_array($result)) { ?>
                                     <tr>
-                                        <td scope="row"><?php echo $row['id'];?></td>
                                         <td><?php echo $row['date']; ?></td>
                                         <td><?php echo $row['croptype']; ?></td>
                                         <td><?php echo $row['quantity']; ?></td>

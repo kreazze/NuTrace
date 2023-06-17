@@ -42,6 +42,12 @@
                         <span class="text">Scheduler</span>
                     </a>
                 </li>
+                <li>
+                    <a href="../admin/admin_how-to.php">
+                        <img class="navbar-pic" src="../assets/images/sidebar/white/how-to-icon.png" width="25px" height="25px">
+                        <span class="text">Learn More</span>
+                    </a>
+                </li>
             </ul>
 
             <ul class="side-menu">
@@ -71,6 +77,48 @@
             <nav class="profile">      
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">      
                 <a class="user" href="#">Hello, Admin <?php echo $_SESSION["fullname"]; ?>!</a>
+                <a href="../sections/about.php" class="about-div">
+                    <button class="about-btn" onmouseover="showPopup()" onmouseout="hidePopup()">
+                        <img src="../assets/images/sidebar/white/about-icon.png" width="25px" height="25px">
+                    </button>
+                </a>
+                <div id="popup">
+                    <p>About Us</p>
+                </div>          
+                <style>
+                    #popup {                        
+                        right: 0;
+                        padding: 5px;
+                        margin-right: 70px;
+                        border-radius: 3px;
+                        font-family: 'Poppins-Bold';
+                        display: none;
+                        position: absolute;
+                        background: #f1f1f1;
+                    }
+                    #popup::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: -15px;
+                        width: 0;
+                        height: 0;
+                        border-top: 14px solid transparent;
+                        border-bottom: 20px solid transparent;
+                        border-left: 16px solid #f1f1f1; /* Adjust the color if needed */
+                    }
+                </style>
+                <script>
+                    function showPopup() {
+                        var popup = document.getElementById('popup');
+                        popup.style.display = 'block';
+                    }
+
+                    function hidePopup() {
+                        var popup = document.getElementById('popup');
+                        popup.style.display = 'none';
+                    }
+                </script>
             </nav>
             <main id="main-content">
                 <p id="p4">Magandang Araw!</p>

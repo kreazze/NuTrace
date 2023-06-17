@@ -1,5 +1,8 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+?>
 
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -9,15 +12,117 @@
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
     </head>
     <body>
-        <section id="content">
-            <nav class="profile">            
+        <section id="sidebar">
+            <a href="homepage.php" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
-                <label class="nav-title">NuTrace</label>
+                <span>NuTrace</span>
+            </a>
+            <ul class="side-menu top">
+                <li>
+                    <a href="./dashboard.php">
+                        <img class="navbar-pic" src="../assets/images/sidebar/white/home-icon.png" width="25px" height="20px">
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./soilnutrient.php">
+                        <img class="navbar-pic" src="../assets/images/sidebar/white/soil-icon.png" width="25px" height="25px">
+                        <span class="text">Soil Nutrient</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./inventory.php">
+                        <img class="navbar-pic" src="../assets/images/sidebar/white/record-icon.png" width="25px" height="25px">
+                        <span class="text">Inventory</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./scheduler.php" id="onlink">
+                        <img class="navbar-pic" src="../assets/images/sidebar/white/sched-icon.png" width="25px" height="25px">
+                        <span class="text">Scheduler</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="../client/how-to.php">
+                        <img class="navbar-pic" src="../assets/images/sidebar/green/how-to-select.png" width="25px" height="25px">
+                        <span class="text">Learn More</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="side-menu">
+                <li>
+                    <a href=" " class="logout">
+                        <div class="box">
+                            <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
+                            <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
+                        </div>
+                        <div class="modal-overlay" id="logout">
+                            <div class="modal-wrapper"> 
+                                <h2>Are you sure you want to log out?</h2>
+                                <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
+                                <div class="content">
+                                    <div class="buttons">
+                                        <a href="../account-form/login.php"><button class="yes">YES</button></a>
+                                        <a href="../client/how-to.php"><button class="no">NO</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="content">
+            <nav class="profile">      
+                <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">      
+                <a class="user" href="#">Hello, <?php echo $_SESSION["fullname"]; ?>!</a>
+                <a href="../sections/about.php" class="about-div">
+                    <button class="about-btn" onmouseover="showPopup()" onmouseout="hidePopup()">
+                        <img src="../assets/images/sidebar/white/about-icon.png" width="25px" height="25px">
+                    </button>
+                </a>
+                <div id="popup">
+                    <p>About Us</p>
+                </div>          
+                <style>
+                    #popup {                        
+                        right: 0;
+                        padding: 5px;
+                        margin-right: 70px;
+                        border-radius: 3px;
+                        font-family: 'Poppins-Bold';
+                        display: none;
+                        position: absolute;
+                        background: #f1f1f1;
+                    }
+                    #popup::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: -15px;
+                        width: 0;
+                        height: 0;
+                        border-top: 14px solid transparent;
+                        border-bottom: 20px solid transparent;
+                        border-left: 16px solid #f1f1f1; /* Adjust the color if needed */
+                    }
+                </style>
+                <script>
+                    function showPopup() {
+                        var popup = document.getElementById('popup');
+                        popup.style.display = 'block';
+                    }
+
+                    function hidePopup() {
+                        var popup = document.getElementById('popup');
+                        popup.style.display = 'none';
+                    }
+                </script>
             </nav>
             <main class="main-content">
-                <a href="../client/homepage.php"><button class="back-btn">Back</button></a>
-                <p>How to use the NuTrace device?</p>
-                <p class="p4">(Paaano gamitin ang NuTrace?)</p>
+                <p class="p4">How to use the NuTrace device?</p>
+                <p class="p5">(Paaano gamitin ang NuTrace?)</p>
                 
                 <div class="ac">
                     <input class="ac-input" id="ac-1" name="ac-1" type="checkbox" />

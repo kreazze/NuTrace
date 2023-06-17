@@ -18,9 +18,9 @@
             <hr class="rounded">
             <h2>Welcome!</h2>
             <p>Maligayang Pagbabalik!</p>
-            <a href="../account-form/login.php"><button class="btn1">SIGN IN</button></a><br>
-            <a href="../account-form/signup.php"><button class="btn2">REGISTER</button></a><br>
-            <a href="../admin/admin_login.php"><button class="btn3">ADMINISTRATOR</button></a><br>
+            <a href="../account-form/login.php"><button class="btn1">FARMER</button></a><br>
+            <a href="../admin/admin_login.php"><button class="btn2">ADMINISTRATOR</button></a><br>
+            <a href="../account-form/signup.php"><button class="btn3">REGISTER</button></a><br>
         </div>
     </body>
 </html> 

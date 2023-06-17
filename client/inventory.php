@@ -1,6 +1,7 @@
 <?php
     session_start();
     include('../server/connect.php');
+    include('../sections/inventory-export.php');
 ?>
 
 <!DOCTYPE html>
@@ -44,25 +45,33 @@
                         <span class="text">Scheduler</span>
                     </a>
                 </li>
+                <li>
+                    <a href="../client/how-to.php">
+                        <img class="navbar-pic" src="../assets/images/sidebar/white/how-to-icon.png" width="25px" height="25px">
+                        <span class="text">Learn More</span>
+                    </a>
+                </li>
             </ul>
             <ul class="side-menu">
                 <li>
-                    <div class="box">
-                        <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
-                        <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
-                    </div>
-                    <div class="modal-overlay" id="logout">
-                        <div class="modal-wrapper"> 
-                            <h2>Are you sure you want to log out?</h2>
-                            <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
-                            <div class="content">
-                                <div class="buttons">
-                                    <a href="../account-form/login.php"><button class="yes">YES</button></a>
-                                    <a href="inventory.php"><button class="no">NO</button></a>
+                    <a href=" " class="logout">
+                        <div class="box">
+                            <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
+                            <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
+                        </div>
+                        <div class="modal-overlay" id="logout">
+                            <div class="modal-wrapper"> 
+                                <h2>Are you sure you want to log out?</h2>
+                                <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
+                                <div class="content">
+                                    <div class="buttons">
+                                        <a href="../account-form/login.php"><button class="yes">YES</button></a>
+                                        <a href="../client/inventory.php"><button class="no">NO</button></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </li>
             </ul>
         </section>
@@ -71,6 +80,48 @@
             <nav class="profile">   
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">         
                 <a class="user" href="#">Hello, <?php echo $_SESSION["fullname"]; ?>!</a>
+                <a href="../sections/about.php" class="about-div">
+                    <button class="about-btn" onmouseover="showPopup()" onmouseout="hidePopup()">
+                        <img src="../assets/images/sidebar/white/about-icon.png" width="25px" height="25px">
+                    </button>
+                </a>
+                <div id="popup">
+                    <p>About Us</p>
+                </div>          
+                  <style>
+                    #popup {                        
+                        right: 0;
+                        padding: 5px;
+                        margin-right: 70px;
+                        border-radius: 3px;
+                        font-family: 'Poppins-Bold';
+                        display: none;
+                        position: absolute;
+                        background: #f1f1f1;
+                    }
+                    #popup::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: -15px;
+                        width: 0;
+                        height: 0;
+                        border-top: 14px solid transparent;
+                        border-bottom: 20px solid transparent;
+                        border-left: 16px solid #f1f1f1; /* Adjust the color if needed */
+                    }
+                </style>
+                <script>
+                    function showPopup() {
+                        var popup = document.getElementById('popup');
+                        popup.style.display = 'block';
+                    }
+
+                    function hidePopup() {
+                        var popup = document.getElementById('popup');
+                        popup.style.display = 'none';
+                    }
+                </script>
             </nav>
             <main class="main-content">
                 <title>Inventory</title>
@@ -78,7 +129,9 @@
                 <p class="p4">Crop Harvest Inventory</p>
                 <div id="buttons">
                     <a href="#divAdd"><button class=tableBtn id="add-btn">+ ADD</button></a>
-                    <button id="dl-btn"><img id='dl-img' src="../assets/images/sidebar/white/download-icon.png" width="25px" height="25px"></button>
+                    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">					
+                        <button type="submit" id="dl-btn" name='export_data'><img id='dl-img' src="../assets/images/sidebar/white/download-icon.png" width="25px" height="25px"></button>
+                    </form>
                     <button class="tableBtn" type="button" id="refresh-btn">REFRESH</button>
                     <script>
                         document.getElementById('refresh-btn').addEventListener('click', function() {
@@ -166,15 +219,16 @@
                                         <div class="content">
                                             <div class="popup-container">
                                                 <form class="add-pop" action="../client/inventory-edit.php" method="POST">
+                                                    <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
                                                     <label>Date</label> <label class="tagalog">(Petsa)</label>
                                                     <input placeholder="MM/DD/YYYY" type="date" name="edit_date" value="<?php echo $row['date']; ?>" required>
                                                     <label>Crop Type</label> <label class="tagalog">(Uri ng Tanim)</label>
                                                     <select class="sBtn-text" name="edit_croptype" id="croptype" required>
-                                                        <option value="kamatis" <?php if ($row['croptype'] == 'kamatis') echo 'selected'; ?>>Kamatis</option>
-                                                        <option value="mais" <?php if ($row['croptype'] == 'mais') echo 'selected'; ?>>Mais</option>
-                                                        <option value="okra" <?php if ($row['croptype'] == 'okra') echo 'selected'; ?>>Okra</option>
-                                                        <option value="patola" <?php if ($row['croptype'] == 'patola') echo 'selected'; ?>>Patola</option>
-                                                        <option value="talong" <?php if ($row['croptype'] == 'talong') echo 'selected'; ?>>Talong</option>
+                                                        <option value="Kamatis" <?php if ($row['croptype'] == 'Kamatis') echo 'selected'; ?>>Kamatis</option>
+                                                        <option value="Mais" <?php if ($row['croptype'] == 'Mais') echo 'selected'; ?>>Mais</option>
+                                                        <option value="Okra" <?php if ($row['croptype'] == 'Okra') echo 'selected'; ?>>Okra</option>
+                                                        <option value="Patola" <?php if ($row['croptype'] == 'Patola') echo 'selected'; ?>>Patola</option>
+                                                        <option value="Talong" <?php if ($row['croptype'] == 'Talong') echo 'selected'; ?>>Talong</option>
                                                     </select>
                                                     <label>Quantity</label> <label class="tagalog">(Dami)</label>
                                                     <div class="qty">
@@ -198,13 +252,12 @@
                 <div id="inventory-content">
                     <table id="inventory-table">
                         <thead>
-                            <th id="table-title">ID</th>      
                             <th id="table-title">Date</th>      
                             <th id="table-title">Crop Type</th>	
                             <th id="table-title">Quantity</th>									
                             <th id="table-title">Name of Harvestor</th>
                             <th id="table-title">Status</th>
-                            <th id="table-title">Action <button class="notice"><img src="../assets/images/sidebar/notice.png"></button></th>
+                            <th id="table-title" class="th-action">Action</th>
                         </thead>
                         <tbody class="table-contents">
                             <?php
@@ -242,7 +295,6 @@
 
                                 while ($row = mysqli_fetch_array($result)) { ?>
                                     <tr>
-                                        <td scope="row"><?php echo $row['id'];?></td>
                                         <td><?php echo $row['date']; ?></td>
                                         <td><?php echo $row['croptype']; ?></td>
                                         <td><?php echo $row['quantity']; ?></td>
@@ -326,6 +378,18 @@
                 </div>                
                 <?php mysqli_close($conn); ?>
             </main>
+            <div class="modal-overlay" id="delete-popup">
+                        <div class="modal-wrapper"> 
+                            <h2>Are you sure you want to log out?</h2>
+                            <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
+                            <div class="content">
+                                <div class="buttons">
+                                    <a href="../account-form/login.php"><button class="yes">YES</button></a>
+                                    <a href="inventory.php"><button class="no">NO</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         </section>
         <script src="../js-files/sidebar.js"></script>
         <script src="../js-files/realtime.js"></script>

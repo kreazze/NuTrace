@@ -4,7 +4,6 @@
     if (isset($_POST['submit'])) {
         $email = $_POST["email"];
         $password = md5($_POST["password"]);
-        $fullname = $_POST["fullname"];
 
         $conn = new mysqli("localhost", "root", "", "nutrace_server");
         $email = $conn->real_escape_string($email); // Sanitize the email input

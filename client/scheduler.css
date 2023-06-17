@@ -166,10 +166,21 @@ body {
 	color: white;
 }
 #sidebar .side-menu.top li a:hover {
-	color: black;
+	animation: bounce 0.5s;
 }
-#sidebar .side-menu li a:hover {
-	color: black;
+.logout:hover {
+	color: white;
+	animation: bounce 0.5s;
+}
+@keyframes bounce {
+	0% {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
 #sidebar .side-menu li a .bx {
 	min-width: calc(60px  - ((4px + 6px) * 2));
@@ -200,6 +211,7 @@ body {
 	top: 0;
 	left: 0;
 	z-index: 1000;
+	justify-content: space-between;
 }
 #content nav::before {
 	position: absolute;
@@ -224,6 +236,18 @@ body {
 	color: white;
 	font-family: "Poppins-Bold";
 }
+.about-div {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+.about-btn {
+	padding-top: 5px;
+	justify-content: right;
+	border: none;
+	cursor: pointer;
+	background-color: #25a22b;
+}
 
 /* calendar */
 main .calendar-of-tasks{
@@ -234,7 +258,7 @@ main .calendar-of-tasks{
 	top: 110px;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-size: 20px;
+	font-size: 40px;
 	font-family: 'Poppins-Black';
 }
 main .container{
@@ -933,7 +957,9 @@ h3 {
 	margin-top: -25px;
 	margin-left: 45px;
 }
-
+.logout-text:hover {
+	animation: bounce 0.5s;
+}
 .popup-container {
 	border-radius: 5px;
 	background-color: #ffffff;

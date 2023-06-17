@@ -197,6 +197,7 @@ body {
 	top: 0;
 	left: 0;
 	z-index: 1000;
+	justify-content: space-between;
 }
 #content nav::before {
 	position: absolute;
@@ -219,6 +220,19 @@ body {
 	font-size: 20px;
 	color: white;
 	font-family: "Poppins-Bold";
+	margin-right: auto;
+}
+.about-div {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+.about-btn {
+	padding-top: 5px;
+	justify-content: right;
+	border: none;
+	cursor: pointer;
+	background-color: #25a22b;
 }
 
 /* popup */
@@ -307,6 +321,9 @@ h3 {
 	position: absolute;
 	margin-top: -25px;
 	margin-left: 45px;
+}
+.logout-text:hover {
+	animation: bounce 0.5s;
 }
 .popup-container {
 	border-radius: 5px;

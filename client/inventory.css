@@ -161,10 +161,21 @@ body {
 	color: white;
 }
 #sidebar .side-menu.top li a:hover {
-	color: #25A22B;
+	animation: bounce 0.5s;
 }
-#sidebar .side-menu li a:hover {
-	color: #25A22B;
+.logout:hover {
+	color: white;
+	animation: bounce 0.5s;
+}
+@keyframes bounce {
+	0% {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
 #sidebar .side-menu li a .bx {
 	min-width: calc(60px  - ((4px + 6px) * 2));
@@ -192,6 +203,7 @@ body {
 	top: 0;
 	left: 0;
 	z-index: 1000;
+	justify-content: space-between;
 }
 #content nav::before {
 	position: absolute;
@@ -214,6 +226,18 @@ body {
 	font-size: 20px;
 	color: white;
 	font-family: 'Poppins-Bold';
+}
+.about-div {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+.about-btn {
+	padding-top: 5px;
+	justify-content: left;
+	border: none;
+	cursor: pointer;
+	background-color: #25a22b;
 }
 
 /* content */
@@ -293,9 +317,13 @@ body {
 #dl-btn:hover {
 	background-color: #25a22b;
 }
+input {
+	display: inline-block;
+	margin-right: -2px;
+}
 #edit-btn {
-	width: 45px;
-	height: 25px;
+	width: 50px;
+	height: 28px;
 	font-size: 15px;
 	border-radius: 5px;
 	cursor: pointer;
@@ -306,11 +334,12 @@ body {
 	background-color: #eacd67;
 }
 #edit-btn:hover {
+	color: white;
 	background-color: #8f8f8f;
 }
 #delete-btn {
 	width: 60px;
-	height: 25px;
+	height: 28px;
 	font-size: 15px;
 	border-radius: 5px;
 	cursor: pointer;
@@ -321,6 +350,7 @@ body {
 	background-color: #f7b5b5;
 }
 #delete-btn:hover {
+	color: white;
 	background-color: #8f8f8f;
 }
 #total-entries {
@@ -401,25 +431,25 @@ h6 {
 	padding: 10px 0;
 }
 form label {
-	font-size: 15px;
-	padding-left: 5px;
+	top: 0;
+	font-size: 18px;
+	padding-left: 3px;
 }
-
 .tagalog{
 	font-family: 'Poppins-Regular';
 	font-size: 15px;
 }
 input[type=text], [type=date], [type=number], select {
 	width: 95%;
-	font-family: 'Poppins-Regular';
-	padding: 12px;
 	padding: 7px;
-	border: 1px solid #8F8F8F;
-	border-radius: 7px;
-	box-sizing: border-box;
 	margin-left: 5px;
-	resize: vertical;
 	font-size: 15px;
+	border-radius: 7px;
+	border: 1px solid #8F8F8F;
+	box-sizing: border-box;
+	resize: vertical;
+	font-family: 'Poppins-Regular';
+
 }
 ::placeholder {
 	color: #8F8F8F;
@@ -511,7 +541,7 @@ input[type=text], [type=date], [type=number], select {
 	font-family: 'Poppins-SemiBold';
 	font-size: 18px;
 }
-.add {
+.add, .edit{
 	font-size: 18px;
 	font-family: 'Poppins-SemiBold';
 	color: white;
@@ -540,6 +570,7 @@ input[type=text], [type=date], [type=number], select {
 	transition: 5s ease-in-out;
 }
 
+
 /* table */
 #inventory-content {
 	margin: 20px;
@@ -565,11 +596,13 @@ input[type=text], [type=date], [type=number], select {
 }
 #inventory-table td {
 	border-bottom: 1px solid #8f8f8f;
+	border-right: 1px solid #8f8f8f;
 }
 #table-title {
 	font-size: 18px;
 	font-family: 'Poppins-Bold';
 	border-bottom: 2px solid #8f8f8f;
+	border-right: 1px solid #8f8f8f;
 }
 #table-titleslash {
 	font-size: 15px;
@@ -580,19 +613,8 @@ input[type=text], [type=date], [type=number], select {
 	text-align: center;
 	font-family: 'Poppins-Regular';
 }
-.notice img {
-	width: 100%;
-	height: 100%;
-	top: 0;
-	bottom: 0;
-	margin-top: 5px;
-}
-.notice {
-	width: 20px;
-	height: 10x;
-	border: none;
-	cursor: pointer;
-	background-color: transparent;
+.th-action {
+	width: 150px;
 }
 
 /* pagination */
@@ -722,6 +744,9 @@ h3 {
 	position: absolute;
 	margin-top: -25px;
 	margin-left: 45px;
+}
+.logout-text:hover {
+	animation: bounce 0.5s;
 }
 
 .popup-container {

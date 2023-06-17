@@ -159,10 +159,21 @@ body {
 	color: white;
 }
 #sidebar .side-menu.top li a:hover {
-	color: #25A22B;
+	animation: bounce 0.5s;
 }
-#sidebar .side-menu li a:hover {
-	color: #25A22B;
+.logout:hover {
+	color: white;
+	animation: bounce 0.5s;
+}
+@keyframes bounce {
+	0% {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
 #sidebar .side-menu li a .bx {
 	min-width: calc(60px  - ((4px + 6px) * 2));
@@ -191,6 +202,7 @@ body {
 	top: 0;
 	left: 0;
 	z-index: 1000;
+	justify-content: space-between;
 }
 #content nav::before {
 	position: absolute;
@@ -216,36 +228,53 @@ body {
 	color: white;
 	font-family: "Poppins-Bold";
 }
+.about-div {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+.about-btn {
+	padding-top: 5px;
+	justify-content: right;
+	border: none;
+	cursor: pointer;
+	background-color: #25a22b;
+}
 #content main {
-	width: 90%;
+	width: 45%;
 	margin-left: 50px;
 	margin-top: 15px;
-	padding-left: 70px;
-	padding-bottom: 45px;
+	padding: 20px;
 	background-color: #8F8F8F;
 	border-radius: 20px;
-	align-items: center;
-	justify-content: center;
+	float: left;
 }
 .part1{
 	background-color: #25A22B;
 	border-radius: 30px;
-	width: 37%;
+	width: max-content;
 	margin-left: 50px;
-	margin-top: 40px;
-	padding: 2px;
+	margin-top: 10px;
+	padding: 10px;
 }
 .part1 h1{
 	text-align: center;
 	color: #ffffff;
-	font-size: 22px;
+	font-size: 18px;
 	margin: 5px;
 	font-family: 'Poppins-Bold';
+	text-align: center;
+}
+.date-time {
+	border-radius: 30px;
+	width: 45%;
+	padding: 20px;
 }
 .date-time h2{
 	color: #ffffff;
-	font-size: 25px;
-	padding-top: 30px;
+	font-size: 16px;
+	margin-left: -10px;
+	margin-top: -20px;
 	font-family: 'Poppins-SemiBold';
 }
 .head-title {
@@ -255,124 +284,108 @@ body {
 	flex-wrap: wrap;
 }
 .head-title .left h1 {
-	font-size: 60px;
+	font-size: 50px;
 	font-weight: 600;
 	font-family: 'Poppins-Black';
 	margin-top: 20px;
-	margin-left: 220px;
+	margin-left: 280px;
 	color: #25A22B;
 	text-shadow: -5px 5px 5px #d9d9d9;
+	text-align: center;
 }
-#content main .box-info1 {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-	grid-gap: 24px;
-	margin-top: 20px;
-}
-#content main .box-info1 li {
-	padding: 24px;
-	width: 75%;
-	background: white;
-	border-radius: 20px;
-	display: flex;
-	align-items: center;
-	grid-gap: 24px;
-	box-shadow: -10px 10px 5px #7a7a7a;
-}
-#content main .box-info1 li .text {
-	font-size: 75px;
-	font-weight: 600;
-	font-family: "Poppins-Black";
-	display: inline;
-	margin-left: 20px;
-}
-#content main .box-info1 li .text h3 {
-	display: inline;
-	margin-left: 10px;
-}
-#content main .box-info1 li .text p {
-	font-size: 25px;
-	margin-left: 10px;
-	display: inline;
-} 
-#content main .box-info2 {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-	grid-gap: 24px;
-	margin-top: 36px;
-}
-#content main .box-info2 li {
-	padding: 24px;
-	width: 75%;
-	background: white;
-	border-radius: 20px;
-	display: flex;
-	align-items: center;
-	grid-gap: 24px;
-	box-shadow: -10px 10px 5px #7a7a7a;
-}
-#content main .box-info2 li .text {
-	font-size: 75px;
-	font-weight: 600;
-	font-family: "Poppins-Black";
-	display: inline-block;
-}
-#content main .box-info2 li .text h3,p {
-	display: inline-block;
-	margin-left: 30px;
-}
-#content main .box-info2 li .text p {
-	margin-left: 10px;
-	font-size: 25px;
-}
+
 .part2{
 	margin-left: 30px;
+	margin-bottom: 20px;
 }
 .part2 h1{
 	background-color: #25A22B;
 	border-radius: 30px;
-	width: 24%;
+	width: max-content;
 	margin-left: 20px;
-	margin-top: 40px;
-	padding: 4px;
+	margin-top: 30px;
+	padding: 12px;
 	text-align: center;
 	color: #ffffff;
-	font-size: 22px;
+	font-size: 18px;
 	display: inline-block;
 	font-family: 'Poppins-Bold';
 }
 .part2 i{
-	font-size: 20px;
+	font-size: 18px;
 }
 .btn {
 	background-color: #8f8f8f;
+	width: max-content;
 	color: white;
 	border: none;
 	margin-left: 10px;
 	padding: 10px 15px;
 	cursor: pointer;
 	border-radius: 10px;
+	text-decoration: underline;
 }
-.legend-title{
-	background-color: #8f8f8f;
+.legend {
+	float: left;
+	background-color: #e3e2e2;
 	border-radius: 30px;
-	width: 10%;
-	margin-left: 50px;
+	width: 45%;
 	margin-top: 15px;
-	padding-top: -3px;
-	padding-bottom: 2px
+	margin-left: 20px;
+	padding: 10px;
 }
-.legend-title h1{
+.legend h1{
+	color: #25A22B;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-family: 'Poppins-Black';
 	text-align: center;
-	color: #ffffff;
-	font-size: 25px;
-	margin-top: 10px;	
-	font-family: "Poppins-Bold";
 }
-.legend-img {
-	width: 70%;
-	margin-left: 120px;
+.legend-img{
+	margin: 50% auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: center;
 }
+/*TABLE FORM OF SUMMARY FOR SOIL NUTRIENTS*/
+.summary {
+    border-collapse: separate;
+    border-spacing: 1px;
+    width: max-content;
+    font-family: 'Poppins-SemiBold';
+    margin: 50% auto;
+	margin-top: 25px;
+	margin-bottom: 45px;
+    color: #333;
+	border: black;
+	box-shadow: 3px 3px 5px #000000;
+}
+.head-table, .values {
+    padding: 20px;
+    text-align: center;
+}
+.head-table {
+    background-color: #bababa;
+	color: rgb(0, 0, 0);
+	font-size: 15px;
+	font-family: 'Poppins-SemiBold';
+}
+.values {
+	font-size: 50px;
+	font-family: 'Poppins-SemiBold';
+}
+.fromSensor:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.values:first-child, td:last-child {
+    border-radius: 0px;
+}
+
+.greenline {
+	border: 8px solid green;
+	border-radius: 5px;
+}
+
 *{
 	box-sizing: border-box;
 }
@@ -521,7 +534,9 @@ img {
 	margin-top: -25px;
 	margin-left: 45px;
 }
-
+.logout-text:hover {
+	animation: bounce 0.5s;
+}
 .popup-container {
 	border-radius: 5px;
 	background-color: #ffffff;
