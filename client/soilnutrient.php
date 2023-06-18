@@ -38,7 +38,7 @@
     </head>
     <body>
         <section id="sidebar">
-            <a href="homepage.php" class="brand">
+            <a href="../sections/homepage.php" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
                 <span>NuTrace</span>
             </a>
@@ -88,7 +88,7 @@
                                 <div class="content">
                                     <div class="buttons">
                                         <a href="../account-form/login.php"><button class="yes">YES</button></a>
-                                        <a href="../client/admin.php"><button class="no">NO</button></a>
+                                        <a href="../client/soilnutrient.php"><button class="no">NO</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@
                                         </tr>
                                     </tbody>
                                 </table>  
-                                <table class="summary"> <!--How to change color-->
+                                <table class="summary">
                                     <tbody>
                                         <tr class="fromSensor">
                                             <td class="head-table">Phosphorus</td>
@@ -175,7 +175,7 @@
                                 </table>  
                             </div>
                             <div class="div1">
-                                <table class="summary"> <!--How to change color-->
+                                <table class="summary">
                                     <tbody>
                                         <tr class="fromSensor">
                                             <td class="head-table">Potassium</td>
@@ -185,8 +185,7 @@
                                         </tr>
                                     </tbody>
                                 </table>   
-                                <table class="summary"> <!--How to change color-->
-                                    <tbody>
+                                <table class="summary">
                                         <tr class="fromSensor">
                                             <td class="head-table">Temperature</td>
                                         </tr>
@@ -197,7 +196,7 @@
                                 </table>  
                             </div>
                             <div class="div1">
-                                <table class="summary"> <!--How to change color-->
+                                <table class="summary">
                                     <tbody>
                                         <tr class="fromSensor">
                                             <td class="head-table">Soil Moisture</td>
@@ -207,7 +206,7 @@
                                         </tr>
                                     </tbody>
                                 </table>      
-                                <table class="summary"> <!--How to change color-->
+                                <table class="summary">
                                     <tbody>
                                         <tr class="fromSensor">
                                             <td class="head-table">pH level</td>
@@ -229,9 +228,9 @@
                 </div>
                 <div id="lower-content">
                     <div class="records-table">
-                        <div class="part2">
+                        <div class="lower-header">
                             <p id="title">Soil Monitoring Records</p>
-                            <button class="btn"><i class="fa fa-cloud-download">Download as file</i></button>
+                            <button class="btn">Download</button>
                         </div>
                         <table class="table">
                             <thead>

@@ -13,7 +13,7 @@
     </head>
     <body>
         <section id="sidebar">
-            <a href="homepage.php" class="brand">
+            <a href="../sections/homepage.php" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
                 <span>NuTrace</span>
             </a>

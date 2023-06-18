@@ -9,27 +9,27 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta
-        name="description"
-        content="Stay organized with our user-friendly Calendar featuring events, reminders, and a customizable interface. Built with HTML, CSS, and JavaScript. Start scheduling today!"
+          name="description"
+          content="Stay organized with our user-friendly Calendar featuring events, reminders, and a customizable interface. Built with HTML, CSS, and JavaScript. Start scheduling today!"
         />
         <meta
-        name="keywords"
-        content="calendar, events, reminders, javascript, html, css, open source coding"
+          name="keywords"
+          content="calendar, events, reminders, javascript, html, css, open source coding"
         />
         <title>NuTrace</title>
         <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
         <link rel ="stylesheet" href="../client/scheduler.css">
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
     </head>
     <body>
         <section id="sidebar">
-            <a href="homepage.php" class="brand">
+            <a href="../sections/homepage.php" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
                 <span>NuTrace</span>
             </a>

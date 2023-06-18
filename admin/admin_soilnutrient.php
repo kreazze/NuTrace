@@ -1,5 +1,4 @@
 <?php
-    //wala pang sensor...
     session_start();
     include('../server/connect.php');
 
@@ -16,9 +15,7 @@
         $sn_temperature     = $_POST['sn_nitrogen'];
         $sn_ph              = $_POST['sn_phosphorous'];
 
-
         $query = "INSERT INTO tbl_inventory (sn_date, sn_nitrogen, sn_phosphorous, sn_potassium, sn_moisture, sn_temperature, sn_ph) VALUES ('$sn_date','$sn_nitrogen','$sn_phosphorous','$sn_potassium','$sn_moisture','$sn_temperature','$sn_ph')";
-
         $query_run = mysqli_query($conn, $query);
         if($query_run)
         {
@@ -29,8 +26,8 @@
         }
     }
 ?>
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -41,7 +38,7 @@
     </head>
     <body>
         <section id="sidebar">
-            <a href="homepage.php" class="brand">
+            <a href="../sections/homepage.php" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
                 <span>NuTrace</span>
             </a>
@@ -76,10 +73,6 @@
                         <span class="text">Learn More</span>
                     </a>
                 </li>
-            </ul>
-            <ul class="side-menu">
-                <li>
-                    <a href="../account-form/login.php" class="logout">
             </ul>
             <ul class="side-menu">
                 <li>
@@ -152,134 +145,192 @@
                     }
                 </script>
             </nav>
-            <div class="head-title">
-                <div class="left">
-                    <h1>Soil Nutrient Monitoring</h1>
+            <main id="main-content">
+                <p id="p4">Soil Nutrient Monitoring</p>
+                <div id="upper-content">
+                    <div id="main-left">
+                        <p id="title">Eggplant Soil Nutrient Status</p>
+                        <p id="p5" class="datetime">Date of monitoring: <span id="datetime"></span></p>
+                        <div class="summary-tbl">
+                            <div class="div1">
+                                <table class="summary">
+                                    <tbody>
+                                        <tr class="fromSensor">
+                                            <td class="head-table">Nitrogen</td>
+                                        </tr>
+                                        <tr class="fromSensor">
+                                            <td class="values">20 PPM</td>
+                                        </tr>
+                                    </tbody>
+                                </table>  
+                                <table class="summary">
+                                    <tbody>
+                                        <tr class="fromSensor">
+                                            <td class="head-table">Phosphorus</td>
+                                        </tr>
+                                        <tr class="fromSensor">
+                                            <td class="values">20 PPM</td>
+                                        </tr>
+                                    </tbody>
+                                </table>  
+                            </div>
+                            <div class="div1">
+                                <table class="summary">
+                                    <tbody>
+                                        <tr class="fromSensor">
+                                            <td class="head-table">Potassium</td>
+                                        </tr>
+                                        <tr class="fromSensor">
+                                            <td class="values">20 PPM</td>
+                                        </tr>
+                                    </tbody>
+                                </table>   
+                                <table class="summary">
+                                        <tr class="fromSensor">
+                                            <td class="head-table">Temperature</td>
+                                        </tr>
+                                        <tr class="fromSensor">
+                                            <td class="values">20 °C</td>
+                                        </tr>
+                                    </tbody>
+                                </table>  
+                            </div>
+                            <div class="div1">
+                                <table class="summary">
+                                    <tbody>
+                                        <tr class="fromSensor">
+                                            <td class="head-table">Soil Moisture</td>
+                                        </tr>
+                                        <tr class="fromSensor">
+                                            <td class="values">75 %</td>
+                                        </tr>
+                                    </tbody>
+                                </table>      
+                                <table class="summary">
+                                    <tbody>
+                                        <tr class="fromSensor">
+                                            <td class="head-table">pH level</td>
+                                        </tr>
+                                        <tr class="fromSensor">
+                                            <td class="values">6.5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>       
+                        </div>
+                    </div>
+                    <div id="main-right">
+                        <p id="title">Legend</p>
+                        <div class="legen-content">
+                            <img class="legend-img" src="../assets/images/main/legend-small.png">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <hr>
-            <div class="part1">
-                <h1>Eggplant (Talong) Soil Nutrient Status</h1>
-            </div>
-            <main>
-                <div class="date-time">
-                    <h2>Date of monitoring:</h2><br>
-                    <h2>[date here]</h2>
-                </div>
-                <div class="summary-tbl">
-                    <table class="summary"> <!--How to change color-->
-                        <tr class="fromSensor">
-                            <th class="head-table">Nitrogen</th>                              
-                            <th class="head-table">Soil Temperature</th>
-                        </tr>
-                            <tr class="fromSensor">
-                            <td class="values">20 ppm</td>
-                            <td class="values">20°C</td>
-                        </tr>
-                        <tr class="fromSensor">                              
-                            <th class="head-table">Phosphorus</th>
-                            <th class="head-table">Soil Moisture</th>
-                        </tr>
-                        <tr class="fromSensor">
-                            <td class="values">20 ppm</td>
-                            <td class="values">75%</td>
-                        </tr>
-                        <tr class="fromSensor">                              
-                            <th class="head-table">Potassium</th>
-                            <th class="head-table">Soil pH level</th>
-                        </tr>
-                        <tr class="fromSensor">
-                            <td class="values">20 ppm</td>
-                            <td class="values">6.5</td>
-                        </tr>                              
-                    </table>                
-                </div>
-            </main>
-            <div class="legend">
-                <div class="legend-title">
-                    <h1>Legend</h1>
-                </div>
-                <div class="legend-img">
-                    <img src="../assets/images/main/legend-small.png" alt="legend" width="88%" height="88%">
-                </div>
-            </div>
-            <div class="part2">
-                <h1>Soil Monitoring Records</h1>
-                <button class="btn"><i class="fa fa-cloud-download">Download as file</i></button>
-            </div>
-            <table class="table">
-                <thead>
-                    <tr>
-                     <th>Date</th>
-                     <th>Nitrogen</th>
-                     <th>Phosphorus</th>
-                     <th>Potassium</th>
-                     <th>Moisture</th>
-                     <th>Temp</th>
-                     <th>pH</th>
-                    </tr>
-                </thead>
-                <tbody>
-                            <!-- <?php
-                                //foreach($crops as $row){
-                                    ?>
+                <div id="lower-content">
+                    <div class="records-table">
+                        <div class="lower-header">
+                            <p id="title">Soil Monitoring Records</p>
+                            <button class="btn">Download</button>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th>Date</th>
+                                <th>Nitrogen (N)</th>
+                                <th>Phosphorus (P)</th>
+                                <th>Potassium (K)</th>
+                                <th>Soil Moisture Level</th>
+                                <th>Temperature Level</th>
+                                <th>pH Level</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <?php
+                                    //foreach($crops as $row){ ?>
+                                        <tr>
+                                            <td><?php echo $row['date']; ?></td>
+                                            <td><?php echo $row['croptype']; ?></td>
+                                            <td><?php echo $row['quantity']; ?></td>
+                                            <td><?php echo $row['harvester']; ?></td>
+                                            <td>
+                                            <button class="btn btn-warning mb-1" id="editItemBtn">Edit Info</button>
+                                            <button class="btn btn-danger mb-1" id="deleteBtn">Delete</button>
+                                            </td>
+                                            </tr>
+                                        <?php
+                                    //} ?> -->
                                     <tr>
-                                    <td><?php echo $row['date']; ?></td>
-                                    <td><?php echo $row['croptype']; ?></td>
-                                    <td><?php echo $row['quantity']; ?></td>
-                                    <td><?php echo $row['harvester']; ?></td>
-                                    <td>
-                                    <button class="btn btn-warning mb-1" id="editItemBtn">Edit Info</button>
-                                    <button class="btn btn-danger mb-1" id="deleteBtn">Delete</button>
-                                    </td>
+                                            <td data-label="Date">04/04/23</td>
+                                            <td data-label="Nit">Normal</td>
+                                            <td data-label="Pho">Medium Low</td>
+                                            <td data-label="Pot">Medium High</td>
+                                            <td data-label="Moisture">Extremely Wet</td>
+                                            <td data-label="Temp">High</td>
+                                            <td data-label="pH">Low</td>
                                     </tr>
-                                    <?php
-                                //}
-                            ?> -->
-                      <tr>
-                            <td data-label="Date">04/04/23</td>
-                            <td data-label="Nit">Normal</td>
-                            <td data-label="Pho">Medium Low</td>
-                            <td data-label="Pot">Medium High</td>
-                            <td data-label="Moisture">Extremely Wet</td>
-                            <td data-label="Temp">High</td>
-                            <td data-label="pH">Low</td>
-                      </tr>
-           
-                      <tr>
-                            <td data-label="Date">04/04/23</td>
-                            <td data-label="Nit">Normal</td>
-                            <td data-label="Pho">Medium Low</td>
-                            <td data-label="Pot">Medium High</td>
-                            <td data-label="Moisture">Extremely Wet</td>
-                            <td data-label="Temp">High</td>
-                            <td data-label="pH">Low</td>
-                      </tr>
-           
-                      <tr>
-                            <td data-label="Date">04/04/23</td>
-                            <td data-label="Nit">Normal</td>
-                            <td data-label="Pho">Medium Low</td>
-                            <td data-label="Pot">Medium High</td>
-                            <td data-label="Moisture">Extremely Wet</td>
-                            <td data-label="Temp">High</td>
-                            <td data-label="pH">Low</td>
-                      </tr>
-           
-                      <tr>
-                            <td data-label="Date">04/04/23</td>
-                            <td data-label="Nit">Normal</td>
-                            <td data-label="Pho">Medium Low</td>
-                            <td data-label="Pot">Medium High</td>
-                            <td data-label="Moisture">Extremely Wet</td>
-                            <td data-label="Temp">High</td>
-                            <td data-label="pH">Low</td>
-                      </tr>
-                </tbody>
-              </table>
+                                    <tr>
+                                            <td data-label="Date">04/04/23</td>
+                                            <td data-label="Nit">Normal</td>
+                                            <td data-label="Pho">Medium Low</td>
+                                            <td data-label="Pot">Medium High</td>
+                                            <td data-label="Moisture">Extremely Wet</td>
+                                            <td data-label="Temp">High</td>
+                                            <td data-label="pH">Low</td>
+                                    </tr>
+                                    <tr>
+                                            <td data-label="Date">04/04/23</td>
+                                            <td data-label="Nit">Normal</td>
+                                            <td data-label="Pho">Medium Low</td>
+                                            <td data-label="Pot">Medium High</td>
+                                            <td data-label="Moisture">Extremely Wet</td>
+                                            <td data-label="Temp">High</td>
+                                            <td data-label="pH">Low</td>
+                                    </tr>             
+                                    <tr>
+                                            <td data-label="Date">04/04/23</td>
+                                            <td data-label="Nit">Normal</td>
+                                            <td data-label="Pho">Medium Low</td>
+                                            <td data-label="Pot">Medium High</td>
+                                            <td data-label="Moisture">Extremely Wet</td>
+                                            <td data-label="Temp">High</td>
+                                            <td data-label="pH">Low</td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                        <div class="table-pagination">
+                        <div class="pages">
+                                <strong>PAGE <?= $page_no; ?> OF <?= $total_no_of_pages; ?> </strong>
+                        </div>
+                        <div aria-label="...">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a id="prev" class="page-link <?= ($page_no <= 1) ? 'disabled': ''; ?> " <?= ($page_no > 1) ? 'href=?page_no=' . $previous_page: ''; ?>>PREVIOUS</a>
+                                </li>
+                                
+                                <?php 
+                                    for ($counter = 1; $counter <= $total_no_of_pages; $counter++) { ?>
+                                    <?php if ($page_no != $counter) {?>
+                                            <li class="page-item"><a class="page-link" href="?page_no=<?= $counter; ?>"><?= $counter; ?></a></li>                                    
+                                    <?php } else { ?>
+                                            <li class="page-item"><a class="page-link active"><?= $counter; ?></a></li>
+                                    <?php } ?>
+                                <?php } ?>
+                                
+
+                                <li class="page-item">
+                                    <a id="next" class="page-link <?= ($page_no >= $total_no_of_pages) ? 'disabled': ''; ?> " <?= ($page_no < $total_no_of_pages) ? 'href=?page_no='.$next_page: ''; ?>>NEXT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>  
+                    </div>  
+                </div>                
+            </main>
         </section>
         <script src="../js-files/sidebar.js"></script>
+        <script src="../js-files/realtime.js"></script>
     </body>
+
     <footer id="footer">
         <img class="pup-logo" src="../assets/images/main/pup-logo.png" width="50px" height="50px">
         <img class="ce-logo" src="../assets/images/main/ce-logo.png" width="50px" height="50px">
