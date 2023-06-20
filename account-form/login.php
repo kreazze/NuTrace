@@ -4,15 +4,15 @@
     if (isset($_POST['submit'])) {
         $email = $_POST["email"];
         $password = md5($_POST["password"]);
-        $fullname = $_POST["fullname"];
+        $user_type = $_POST["user_type"];
 
         $conn = new mysqli("localhost", "root", "", "nutrace_server");
         $email = $conn->real_escape_string($email); // Sanitize the email input
 
-        $select = "SELECT * FROM tbl_users WHERE email = '$email' AND password = '$password'";
+        $select = "SELECT * FROM tbl_users WHERE email = '$email' AND user_type = 'user'";
         $result = $conn->query($select);
         
-        $select1 = "SELECT * FROM tbl_admin WHERE email = '$email'";
+        $select1 = "SELECT * FROM tbl_admin WHERE user_type = 'admin'";
 		$result1 = mysqli_query($conn, $select1);
 
         if ($result->num_rows > 0) {

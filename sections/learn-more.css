@@ -23,6 +23,10 @@
     font-family: 'Poppins-Regular';
     src: url('../assets/font/Poppins-Regular.ttf');
 }
+@font-face {
+    font-family: 'Poppins-ExtraLight';
+    src: url('../assets/font/Poppins-ExtraLight.ttf');
+}
 
 *{
 	margin: 0;
@@ -66,10 +70,8 @@ nav{
 	font-size: 30px;
 	color: white;
 }
-.logo-pic{
-	margin-left: 20px;
-	margin-top: 13px;
-}
+
+
 /* overview */
 .main-content {
 	font-size: 40px;
@@ -83,9 +85,14 @@ nav{
 	font-family: 'Poppins-Regular';
 }
 .p4 {
+	font-size: 60px;
+	font-family: 'Poppins-Black';
+}
+.p5 {
 	margin-bottom: 35px;
-	font-size: 25px;
-	font-family: 'Poppins-Regular';
+	letter-spacing: 5px;
+	font-size: 20px;
+	font-family: 'Poppins-ExtraLight';
 }
 
 /* content */
@@ -184,13 +191,88 @@ nav{
   .ac-sub-text {
 	padding: 0 1em 0 2em;
   }
+.logos {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding: 0;
+	text-align: center;
+}
+.sensor-content {
+	margin: 20px;
+}
+.sensor-table {
+	width: fit-content;
+	font-size: 20px;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	border: #8f8f8f solid 1px;
+	border-collapse: collapse;
+	align-items: center;
+	color: black;
+	font-family: 'Poppins-Regular';
+}
+.sensor-table thead tr {
+	text-align: center;
+	background-color: white;
+	border-bottom: 1px solid #8f8f8f;
+}
+.sensor-table th {
+	padding: 5px 10px;
+	border-right: 1px solid #8f8f8f;
+}
+.sensor-table td {
+	text-align: center;
+	padding: 5px 10px;
+	background-color: white;
+	border-bottom: 1px solid #8f8f8f;
+	border-right: 1px solid #8f8f8f;
+}
+.sensors {
+	display: flex;
+}
 .paragraph {
 	font-size: 17px;
 	font-family: 'Poppins-Regular';
-	color: black;
-	margin-bottom: 10px;
-	padding: 12px 10px 5px;
+	text-align: justify;
+	margin: 10px;
+	padding: 0px;
 	line-height: 1.5;
+	color: black;
+}
+.website-paragraph {
+	font-size: 17px;
+	font-family: 'Poppins-Regular';
+	color: black;
+	margin: 10px;
+	margin-left: 10px;
+	margin-bottom: 30px;
+	padding-left: 20px;
+	line-height: 1.5;
+}
+.indented-paragraph {
+	font-size: 17px;
+	font-family: 'Poppins-Regular';
+	color: black;
+	margin: 10px;
+	margin-left: 10px;
+	padding-left: 20px;
+	line-height: 1.5;
+}
+#agreement-paragraph1 {
+	margin-bottom: 20px;
+}
+#agreement-paragraph2 {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.agreement-paragraph {
+	font-size: 17px;
+	font-family: 'Poppins-Regular';
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	line-height: 1.5;
+	color: black;
 }
 
 button {

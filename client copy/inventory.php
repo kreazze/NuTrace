@@ -10,12 +10,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NuTrace</title>
-        <link rel ="stylesheet" href="../admin/admin_inventory.css">
+        <link rel ="stylesheet" href="../client/inventory.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
-        <!-- Bootstrap -->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> 
     </head>
     <body class="container">
         <section id="sidebar">
@@ -25,31 +22,31 @@
             </a>
             <ul class="side-menu top">
                 <li>
-                    <a href="../admin/admin_dashboard.php">
-                        <img class="navbar-pic" src="../assets/images/sidebar/white/home-icon.png" width="25px" height="25px">
+                    <a href="./dashboard.php">
+                        <img class="navbar-pic" src="../assets/images/sidebar/white/home-icon.png" width="25px" height="20px">
                         <span class="text">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../admin/admin_soilnutrient.php">
+                    <a href="./soilnutrient.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/soil-icon.png" width="25px" height="25px">
                         <span class="text">Soil Nutrient</span>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="../admin/admin_inventory.php">
+                    <a href="./inventory.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/green/record-select.png" width="25px" height="25px">
                         <span class="text">Inventory</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../admin/admin_scheduler.php" id="onlink">
+                    <a href="./scheduler.php" id="onlink">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/sched-icon.png" width="25px" height="25px">
                         <span class="text">Scheduler</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../admin/admin_how-to.php">
+                    <a href="../client/how-to.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/how-to-icon.png" width="25px" height="25px">
                         <span class="text">Learn More</span>
                     </a>
@@ -57,22 +54,24 @@
             </ul>
             <ul class="side-menu">
                 <li>
-                    <div class="box">
-                        <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
-                        <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
-                    </div>
-                    <div class="modal-overlay" id="logout">
-                        <div class="modal-wrapper"> 
-                            <h2>Are you sure you want to log out?</h2>
-                            <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
-                            <div class="content">
-                                <div class="buttons">
-                                    <a href="../account-form/login.php"><button class="yes">YES</button></a>
-                                    <a href="../admin/admin_inventory.php"><button class="no">NO</button></a>
+                    <a href=" " class="logout">
+                        <div class="box">
+                            <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
+                            <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
+                        </div>
+                        <div class="modal-overlay" id="logout">
+                            <div class="modal-wrapper"> 
+                                <h2>Are you sure you want to log out?</h2>
+                                <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
+                                <div class="content">
+                                    <div class="buttons">
+                                        <a href="../account-form/login.php"><button class="yes">YES</button></a>
+                                        <a href="../client/inventory.php"><button class="no">NO</button></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </li>
             </ul>
         </section>
@@ -80,8 +79,8 @@
         <section id="content">
             <nav class="profile">   
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">         
-                <a class="user" href="#">Hello, Admin <?php echo $_SESSION["fullname"]; ?>!</a>
-                <a href="../admin/admin_about.php" class="about-div">
+                <a class="user" href="#">Hello, <?php echo $_SESSION["fullname"]; ?>!</a>
+                <a href="../sections/about.php" class="about-div">
                     <button class="about-btn" onmouseover="showPopup()" onmouseout="hidePopup()">
                         <img src="../assets/images/sidebar/white/about-icon.png" width="25px" height="25px">
                     </button>
@@ -89,7 +88,7 @@
                 <div id="popup">
                     <p>About Us</p>
                 </div>          
-                <style>
+                  <style>
                     #popup {                        
                         right: 0;
                         padding: 5px;
@@ -141,7 +140,7 @@
                     </script>
                 </div>
 
-                <!-- Add Item -->
+                <!-- Add item -->
                 <div class="overlay" id="divAdd">
                     <div class="wrapper"> 
                         <a class="close" href="#">&times;</a>
@@ -149,11 +148,11 @@
                         <h6>(Magdagdag sa listahan)</h6>
                         <div class="content">
                             <div class="popup-container">
-                                <form class="add-pop" onSubmit="closeForm()" method="POST">
+                                <form class="add-pop" method="POST">
                                     <label>Date</label> <label class="tagalog">(Petsa)</label>
                                     <input placeholder="MM/DD/YYYY" type="date" name="date" required>
                                     <label>Crop Type</label> <label class="tagalog">(Uri ng Tanim)</label>
-                                    <select class="sBtn-text" name="croptype"id="croptype" required>
+                                    <select class="sBtn-text" name="croptype" id="croptype" required>
                                             <option class="options"> Select Crop </option>
                                             <option value="kamatis"> Kamatis </option>
                                             <option value="mais"> Mais </option>
@@ -165,16 +164,11 @@
                                     <div class="qty">
                                         <input type="number" name="quantity" placeholder="In Kilogram (kg)" required>
                                     </div>
-                                    <label>Name of harvester</label><label class="tagalog">(Pangalan ng umani)</label>
-                                    <input placeholder="First Name & Last Name" name="harvester" type="text" required>
+                                    <label>Name of harvester</label> <label class="tagalog">(Pangalan ng umani)</label>
+                                    <input placeholder="Full Name (e.g. John Dela Cruz)" name="harvester" type="text" required>
                                     <button type="submit" class="add" name="add">ADD</button>
-                                    <button class="cancel" onclick="closeForm()">CANCEL</button>
+                                    <button class="cancel" onclick="close()">CANCEL</button>
                                 </form>
-                                <script>
-                                    function closeForm() {
-                                        document.getElementById('divAdd').style.display = 'none';
-                                    }
-                                </script>
                             </div>
                         </div>
                     </div>
@@ -182,41 +176,34 @@
                         $sql = "SELECT * FROM tbl_inventory";
                         $crops = mysqli_query($conn, $sql);
                         $rowcount = mysqli_num_rows($crops);
-
+                    
                         if(isset($_POST['add']))
                         {
                             $date       = $_POST['date'];
                             $croptype   = $_POST['croptype'];
                             $quantity   = $_POST['quantity'];
                             $harvester  = $_POST['harvester'];
-
+                    
                             $query = "INSERT INTO tbl_inventory (date, croptype, quantity, harvester, status) VALUES ('$date','$croptype','$quantity','$harvester','Pending')";
-
+                    
                             $query_run = mysqli_query($conn, $query);
                             if($query_run)
                             {
                                 $_SESSION['alert'] = 'The item is under review.';
-                                echo "<script>if (window.history.replaceState) {
-                                    window.history.replaceState(null, null, window.location.href);
-                                }</script>";
-                                echo "<script>window.location.reload();</script>";        
                             }
                             else{
                                 $_SESSION['alert'] = 'An error occurred.';
-                                echo "<script>if (window.history.replaceState) {
-                                    window.history.replaceState(null, null, window.location.href);
-                                }</script>";
-                                   echo "<script>window.location.reload();</script>";        
-                                }
+                            }
+                    
                             if (isset($_SESSION['alert'])) {
                                 $alertMessage = $_SESSION['alert'];
                                 unset($_SESSION['alert']);
-                            }        
+                            }  
                         }
                     ?>
                 </div>
 
-                <!-- Edit Item -->
+                <!-- Edit item -->
                 <?php
                     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         if (isset($_POST['edit'])) {
@@ -231,7 +218,7 @@
                                         <h4>Edit Item</h4>
                                         <div class="content">
                                             <div class="popup-container">
-                                                <form class="add-pop" action="../admin/admin_inventory-edit.php" method="POST">
+                                                <form class="add-pop" action="../client/inventory-edit.php" method="POST">
                                                     <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
                                                     <label>Date</label> <label class="tagalog">(Petsa)</label>
                                                     <input placeholder="MM/DD/YYYY" type="date" name="edit_date" value="<?php echo $row['date']; ?>" required>
@@ -274,69 +261,12 @@
                         </thead>
                         <tbody class="table-contents">
                             <?php
-                                $query = "SELECT * FROM tbl_inventory WHERE status='Pending' ORDER BY id ASC";
-                                $result = mysqli_query($conn, $query);
+                                $query = "SELECT * FROM tbl_inventory";
+                                $result = mysqli_query($conn,$query);
                                 $rowcount = mysqli_num_rows($result);
 
-                                while ($row = mysqli_fetch_array($result)) { ?>
-                                    <tr>
-                                        <td><?php echo $row['date']; ?></td>
-                                        <td><?php echo $row['croptype']; ?></td>
-                                        <td><?php echo $row['quantity']; ?></td>
-                                        <td><?php echo $row['harvester']; ?></td>
-                                        <td><?php echo $row['status']; ?></td>
-                                        <td>
-                                            <form action="#divEdit" method="POST" style="display: inline;">
-                                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
-                                                <input type="submit" name="edit" id="edit" value="EDIT">                                                
-                                            </form>                                      
-                                            <form action="../admin/admin_inventory.php" method="POST" style="display: inline;"> 
-                                                <input class="form-action" type="hidden" name="id" value="<?php echo $row['id']; ?>" />          
-                                                <input class="form-action" type="submit" name="approve" id="approve" value="APPROVE">
-                                                <input class="form-action" type="submit" name="decline" id="decline" value="DECLINE">
-                                            </form>    
-                                        </td>
-                                    </tr>
-                                    <?php 
-                            } if (mysqli_num_rows($result) == 0) { ?>
-                                <tr> <td colspan="7">There are no entries.</td></tr>  
-                                <?php   
-                            } ?>
-                            <?php     
-                                if (isset($_POST['approve']) || isset($_POST['decline'])) {
-                                    $id = $_POST['id'];
-                                    $status = isset($_POST['approve']) ? 'Approved' : 'Declined';
-                                    $select = "UPDATE tbl_inventory SET status='$status' WHERE id='$id'";
-                                    $result = mysqli_query($conn, $select);
-                                    if ($result) {
-                                        echo "<script>alert('Status updated to $status.');</script>";
-                                    } else {
-                                        echo "<script>alert('Failed to update status.');</script>";
-                                    }
-                                    echo "<script>if (window.history.replaceState) {
-                                        window.history.replaceState(null, null, window.location.href);
-                                    }</script>";
-                                    echo "<script>window.location.reload();</script>";
-                                }
-                            ?>
-                        </tbody>
-                    </table>
-                    <strong id="total-entries">TOTAL PENDING ENTRIES: <?php echo $rowcount; ?></strong>
-                </div>                
-
-                <div id="inventory-content">
-                    <table id="inventory-table">
-                        <thead>
-                            <th id="table-title">Date</th>      
-                            <th id="table-title">Crop Type</th>	
-                            <th id="table-title">Quantity</th>									
-                            <th id="table-title">Name of Harvestor</th>
-                            <th id="table-title">Status</th>
-                        </thead>
-                        <tbody class="table-contents">
-                            <?php
                                 // get page number
-                                 if (isset($_GET['page_no']) && $_GET['page_no'] !== "") {
+                                if (isset($_GET['page_no']) && $_GET['page_no'] !== "") {
                                     $page_no = $_GET['page_no'];
                                 } else {
                                     $page_no = 1;
@@ -360,11 +290,7 @@
                                 // get total records
                                 $total_no_of_pages = ceil($total_records / $total_records_per_page);
 
-                                $query = "SELECT * FROM tbl_inventory WHERE status = 'Approved' OR status = 'Declined'";
-                                $result = mysqli_query($conn,$query);
-                                $rowcount = mysqli_num_rows($result);
-                                
-                                $sql = "SELECT * FROM tbl_inventory WHERE status != 'Pending' LIMIT $offset, $total_records_per_page";
+                                $sql = "SELECT * FROM tbl_inventory LIMIT $offset, $total_records_per_page";
                                 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                                 while ($row = mysqli_fetch_array($result)) { ?>
@@ -374,16 +300,56 @@
                                         <td><?php echo $row['quantity']; ?></td>
                                         <td><?php echo $row['harvester']; ?></td>
                                         <td><?php echo $row['status']; ?></td>
+                                        <td>
+                                            <?php if ($row['status'] === 'Pending') { ?>
+                                                <form action="#divEdit" method="POST">
+                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                                                    <input type="submit" name="edit" id="edit-btn" value="EDIT">                                                
+                                                </form>
+                                            <?php } elseif ($row['status'] === 'Declined') { ?>
+                                                <form action="#divEdit" method="POST" style="display: inline;">
+                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                                                    <input type="submit" name="edit" id="edit-btn" value="EDIT">                                                
+                                                </form>
+                                                <?php 
+
+                                                ?>
+                                                <form action="" method="POST" style="display: inline;">
+                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                                                    <input type="submit" name="delete" id="delete-btn" value="DELETE">
+                                                </form>
+                                                <?php } 
+                                                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                                                        if(isset($_POST['delete'])) {
+                                                            $id = $_POST['id'];
+                                                            
+                                                            // Perform the necessary actions to delete the declined record from the database
+                                                            $query = "DELETE FROM tbl_inventory WHERE id='$id'";
+                                                            $result = mysqli_query($conn, $query);
+
+                                                            if ($result) {
+                                                                echo "Record deleted successfully.";
+                                                            } else {
+                                                                echo "Error deleting record: " . mysqli_error($conn);
+                                                            }
+                                                            echo "<script>if (window.history.replaceState) {
+                                                                window.history.replaceState(null, null, window.location.href);
+                                                            }</script>";
+                                                            echo "<script>window.location.reload();</script>";
+                                                        }
+                                                    }
+                                                ?>
+                                        </td>
                                     </tr>
-                                    <?php
+                                    <?php 
                                 } if (mysqli_num_rows($result) == 0) {
                                     ?>
-                                    <tr> <td colspan="6">There are no entries.</tr>  
+                                    <tr> <td colspan="7">There are no entries.</tr>  
                                     <?php
                                 } ?>
                         </tbody>
+                        <strong id="total-entries">TOTAL ENTRIES: <?php echo $rowcount; ?></strong>
                     </table>
-                    <strong id="total-entries">TOTAL ENTRIES: <?php echo $rowcount; ?></strong>
                     <div class="table-pagination">
                         <div class="pages">
                                 <strong>PAGE <?= $page_no; ?> OF <?= $total_no_of_pages; ?> </strong>
@@ -409,9 +375,21 @@
                             </ul>
                         </div>
                     </div>
-                </div> 
+                </div>                
                 <?php mysqli_close($conn); ?>
             </main>
+            <div class="modal-overlay" id="delete-popup">
+                        <div class="modal-wrapper"> 
+                            <h2>Are you sure you want to log out?</h2>
+                            <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
+                            <div class="content">
+                                <div class="buttons">
+                                    <a href="../account-form/login.php"><button class="yes">YES</button></a>
+                                    <a href="inventory.php"><button class="no">NO</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         </section>
         <script src="../js-files/sidebar.js"></script>
         <script src="../js-files/realtime.js"></script>

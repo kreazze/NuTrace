@@ -77,7 +77,7 @@
             <nav class="profile">      
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">      
                 <a class="user" href="#">Hello, <?php echo $_SESSION["fullname"]; ?>!</a>
-                <a href="../sections/about.php" class="about-div">
+                <a href="../admin/admin_about.php" class="about-div">
                     <button class="about-btn" onmouseover="showPopup()" onmouseout="hidePopup()">
                         <img src="../assets/images/sidebar/white/about-icon.png" width="25px" height="25px">
                     </button>
@@ -120,62 +120,137 @@
                     }
                 </script>
             </nav>
+
             <main class="main-content">
-                <p class="p4">How to use the NuTrace device?</p>
-                <p class="p5">(Paaano gamitin ang NuTrace?)</p>
+                <p class="p4">NUTRACE</p>
+                <p class="p5">MANUAL AND INFORMATION GUIDE</p>
                 
                 <div class="ac">
                     <input class="ac-input" id="ac-1" name="ac-1" type="checkbox" />
-                    <label class="ac-label" for="ac-1">DEVICE</label>
+                    <label class="ac-label" for="ac-1">KEY INFORMATION</label>
                     
                     <article class="ac-text">
                         <div class="ac-sub">
                             <input class="ac-input" id="ac-2" name="ac-2" type="checkbox" />
-                                <p class="paragraph">1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <p class="paragraph">2. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p class="paragraph"><b>NuTrace</b> is a 2-in-1 device and system that can be utilize for farm management:</p>
+                                <p class="paragraph">1. It has a developed online system for managing the farm data such as inventory and scheduler for crop production and harvest.</p>
+                                <p class="paragraph">2. It offers a soil nutrient monitoring system capable of accurately determining the nutrient and variable levels present in the loam soil utilized for cultivating eggplants.</p>
+                                <p class="indented-paragraph">The following are the elements that are being monitored by NuTrace:</p>
+                                <p class="indented-paragraph">- <b>Soil Nutrients</b>: <i>Nitrogen (N)</i>, <i>Phosphorus (P)</i>, and <i>Potassium (K)</i></p>
+                                <p class="indented-paragraph">- <b>Soil Temperature</b></p>
+                                <p class="indented-paragraph">- <b>Soil Moisture</b></p>
+                                <p class="indented-paragraph">- <b>pH Level</b></p>
                         </div>
                     </article>
                 </div>
                   
                 <div class="ac">
                     <input class="ac-input" id="ac-3" name="ac-3" type="checkbox" />
-                    <label class="ac-label" for="ac-3">WEBSITE</label>
+                    <label class="ac-label" for="ac-3">NUTRACE WEBSITE</label>
                       
                     <article class="ac-text">
                         <div class="ac-sub">
                             <input class="ac-input" id="ac-4" name="ac-4" type="checkbox" />
-                              <p class="paragraph">1. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                              <p class="paragraph">2. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                              <p class="paragraph">3. Pellentesque eu tincidunt tortor aliquam nulla. Molestie a iaculis at erat pellentesque adipiscing commodo elit at.</p>
-                              <p class="paragraph">4. Nibh tellus molestie nunc non. Et tortor consequat id porta nibh venenatis cras sed felis. Rhoncus mattis rhoncus urna neque viverra justo nec. </p>
-                              <p class="paragraph">5. Fermentum leo vel orci porta non pulvinar neque. Eget dolor morbi non arcu.</p>
+                            <p class="paragraph">The NuTrace website has both <u><b>USER</b></u> and <u><b>ADMIN</b></u> account type.</p>
+                            <p class="paragraph"><b>NOTE</b>: Farmer and other staff can only create their account as USER, while an authorized personnel is allowed to create an acccount as ADMIN.</p>
+
+                            <p class="paragraph">To create a <u>USER</u> account:</p>
+                            <div class="website-paragraph">
+                                <p class="paragraph">1. Go to https://www.sitename.com</p>
+                                <p class="paragraph">2. Click the <i>"REGISTER"</i> button, then fill up the details needed.</p>
+                                <p class="paragraph">3. Choose the User as the account type, and you will be automatically redirected to the USER login page.</p>
+                                <p class="paragraph">4. Login with your details, then click <i>"Submit"</i>.</p>
+                            </div>
+
+                            <p class="paragraph">To create an <u>ADMIN</u> account:</p>
+                            <div class="website-paragraph">
+                                <p class="paragraph">1. Go to https://www.sitename.com</p>
+                                <p class="paragraph">2. Click the <i>"REGISTER"</i> button, then fill up the details needed.</p>
+                                <p class="paragraph">3. Choose the User as the account type, and you will be automatically redirected to the ADMIN login page.</p>
+                                <p class="paragraph">4. Login with your details, then click <i>"Submit"</i>.</p>
+                            </div>  
+
+                            <p class="paragraph">Content of NuTrace Website:</p>
+                            <div class="website-paragraph">
+                                <p class="paragraph">• <b>Dashboard</b> - Realtime weather, soil nutrient monitoring, today's task, & progress report</p>
+                                <p class="paragraph">• <b>Soil Nutrient</b> - Detailed monitoring of soil nutrients </p>
+                                <p class="paragraph">• <b>Inventory</b> - Database for crop harvest</p>
+                                <p class="paragraph">• <b>Scheduler</b> - Utilization of calendar for reminding of the crop production.</p>
+                            </div>            
+                            <p class="paragraph"><b>NOTE</b>: All created accounts should be kept confidential and remembered thorougly by its users/admin.</p>            
                         </div>
                     </article>
                 </div>
       
                 <div class="ac">
                     <input class="ac-input" id="ac-5" name="ac-5" type="checkbox" />
-                    <label class="ac-label" for="ac-5">SOIL NUTRIENT SENSOR</label>
+                    <label class="ac-label" for="ac-5">KIOSK DEVICE</label>
                       
                     <article class="ac-text">
                         <div class="ac-sub">
                             <input class="ac-input" id="ac-6" name="ac-6" type="checkbox" />
-                              <p class="paragraph">1. In fermentum et sollicitudin ac orci phasellus egestas.</p>
-                              <p class="paragraph">2. Diam vulputate ut pharetra sit amet aliquam id diam maecenas.</p>
-                        </div>
+                            <div class="sensor-content">
+                                <h1>KEY DESCRIPTION</h1>
+                                <img src="../assets/images/main/key-description.png" width="720px" height="630px">
+                                <table class="sensor-table">
+                                    <thead>
+                                        <tr>
+                                            <th>NuTrace Sensors</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="sensors">NPK + pH Sensor <img class="sensors" src="../assets/images/main/npk_ph-sensor.png" width="200px" height="200px"></td>
+                                            <td>This sensor conduct all the soil nutrients (NPK) and the pH level of the water in the loam soil.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sensors">Soil Temperature Sensor <img class="sensors" src="../assets/images/main/temp-sensor.png" width="200px" height="200px"></td>
+                                            <td>Monitors soil temperature of the loam soil.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sensors">Soil Moisture Sensor <img class="sensors" src="../assets/images/main/moisture-sensor.png" width="200px" height="200px"></td>
+                                            <td>Detects soil moisture particles in the soii.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="paragraph">*All sensors are powered by a microntroller called "<b>ESP32</b>".</p>
+                            </div>
                     </article>
                 </div>
       
                 <div class="ac">
                     <input class="ac-input" id="ac-7" name="ac-7" type="checkbox" />
-                    <label class="ac-label" for="ac-7">OTHERS</label>
+                    <label class="ac-label" for="ac-7">AGREEMENT</label>
                       
                     <article class="ac-text">
                         <div class="ac-sub">
                             <input class="ac-input" id="ac-8" name="ac-8" type="checkbox" />
-                              <p class="paragraph">1. A diam maecenas sed enim ut sem viverra aliquet eget. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada.</p>
-                              <p class="paragraph">2. Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Tortor consequat id porta nibh venenatis cras sed. </p>
-                              <p class="paragraph">3. Ut enim blandit volutpat maecenas. Pulvinar neque laoreet suspendisse interdum.</p>
+                                <div class="logos">
+                                    <img src="../assets/images/main/pup-logo.png" width="100px" height="100px">
+                                    <img src="../assets/images/main/nutrace_logo.png" width="100px" height="100px">
+                                    <img src="../assets/images/main/duranfarm-logo.png" width="100px" height="100px">
+                                </div>
+                                <div id="agreement-paragraph1">
+                                    <p class="agreement-paragraph"><b>Polytechnic University of the Philippines</b></p>
+                                    <p class="agreement-paragraph">A. Mabini Campus, Anonas Street, Sta. Mesa, Manila, Philippines</p>
+                                    <p class="agreement-paragraph">Hereinafter referred to as "<b>PUP</b>"</p>
+                                </div>
+                                <div id="agreement-paragraph1">
+                                    <p class="agreement-paragraph"><b>Duran Farm</b></p>
+                                    <p class="agreement-paragraph">2XRR+FCX, Salupungan-Basuit Road, San Idelfonso, Bulacan</p>
+                                    <p class="agreement-paragraph">Hereinafter referred to as "<b>Duran Farm</b>"</p>
+                                </div>
+                                <div id="agreement-paragraph2">
+                                    <p class="agreement-paragraph">- Collectively referred to as "<b>the Parties</b>" -</p>
+                                </div>
+                                <p class="paragraph">Hereby, the established MOA between the PUP and Duran Farm concludes 
+                                    the deployment of the research study for business sustainability title <b>NuTrace: 
+                                    A Soil Nutrient Monitoring Device/System for Eggplant (Solanum Melongena).</b></p>
+                                <p class="paragraph">The Research Study aims to innovate farming through the use of digitized 
+                                    farm management tool system and monitoring device that utilizes Internet-of-Things (IoT) 
+                                    and cloud-based data for monitoring and tracking farm data. This enables Duran Farm to adapt 
+                                    technological tools for managing their crops and productivity in an innovative way.</p>
                         </div>
                     </article>
                 </div>

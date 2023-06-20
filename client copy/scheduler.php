@@ -1,5 +1,5 @@
-<?php 
-  session_start()
+<?php
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -9,22 +9,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta
-        name="description"
-        content="Stay organized with our user-friendly Calendar featuring events, reminders, and a customizable interface. Built with HTML, CSS, and JavaScript. Start scheduling today!"
+          name="description"
+          content="Stay organized with our user-friendly Calendar featuring events, reminders, and a customizable interface. Built with HTML, CSS, and JavaScript. Start scheduling today!"
         />
         <meta
-        name="keywords"
-        content="calendar, events, reminders, javascript, html, css, open source coding"
+          name="keywords"
+          content="calendar, events, reminders, javascript, html, css, open source coding"
         />
         <title>NuTrace</title>
         <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-        <link rel ="stylesheet" href="../admin/admin_scheduler.css">
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
+        <link rel ="stylesheet" href="../client/scheduler.css">
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
     </head>
     <body>
@@ -35,31 +35,31 @@
             </a>
             <ul class="side-menu top">
                 <li>
-                    <a href="../admin/admin_dashboard.php">
+                    <a href="./dashboard.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/home-icon.png" width="25px" height="20px">
                         <span class="text">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../admin/admin_soilnutrient.php">
+                    <a href="./soilnutrient.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/soil-icon.png" width="25px" height="25px">
                         <span class="text">Soil Nutrient</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../admin/admin_inventory.php">
+                    <a href="./inventory.php">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/record-icon.png" width="25px" height="25px">
                         <span class="text">Inventory</span>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="../admin/admin_scheduler.php" id="onlink">
+                    <a href="./scheduler.php" id="onlink">
                         <img class="navbar-pic" src="../assets/images/sidebar/green/sched-select.png" width="25px" height="25px">
                         <span class="text">Scheduler</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../admin/admin_how-to.php">
+                    <a href="../client/how-to.php" id="onlink">
                         <img class="navbar-pic" src="../assets/images/sidebar/white/how-to-icon.png" width="25px" height="25px">
                         <span class="text">Learn More</span>
                     </a>
@@ -67,23 +67,24 @@
             </ul>
             <ul class="side-menu">
                 <li>
-                  <a href="../account-form/login.php" class="logout">
-                  <div class="box">
-                    <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
-                    <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
-                  </div>
-                  <div class="modal-overlay" id="logout">
-                    <div class="modal-wrapper"> 
-                        <h2>Are you sure you want to log out?</h2>
-                        <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
-                        <div class="content">
-                            <div class="buttons">
-                                <a href="../account-form/login.php"><button class="yes">YES</button></a>
-                                <a href="../admin/admin_scheduler.php"><button class="no">NO</button></a>
+                  <a href=" " class="logout">
+                        <div class="box">
+                            <img class="navbar-pic" src="../assets/images/sidebar/white/logout-icon.png" width="25px" height="25px">
+                            <a href="#logout" class="button"><span class="logout-text">Logout</span></a>
+                        </div>
+                        <div class="modal-overlay" id="logout">
+                            <div class="modal-wrapper"> 
+                                <h2>Are you sure you want to log out?</h2>
+                                <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
+                                <div class="content">
+                                    <div class="buttons">
+                                        <a href="../account-form/login.php"><button class="yes">YES</button></a>
+                                        <a href="../client/scheduler.php"><button class="no">NO</button></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                  </div>
+                    </a>
                 </li>
             </ul>
         </section>
@@ -91,8 +92,8 @@
         <section id="content">
             <nav class="profile">      
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">      
-                <a class="user" href="#">Hello, Admin <?php echo $_SESSION["fullname"]; ?>!</a>
-                <a href="../admin/admin_about.php" class="about-div">
+                <a class="user" href="#">Hello, <?php echo $_SESSION["fullname"]; ?>!</a>
+                <a href="../sections/about.php" class="about-div">
                     <button class="about-btn" onmouseover="showPopup()" onmouseout="hidePopup()">
                         <img src="../assets/images/sidebar/white/about-icon.png" width="25px" height="25px">
                     </button>
@@ -100,7 +101,7 @@
                 <div id="popup">
                     <p>About Us</p>
                 </div>          
-                <style>
+                  <style>
                     #popup {                        
                         right: 0;
                         padding: 5px;

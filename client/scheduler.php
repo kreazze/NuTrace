@@ -93,7 +93,7 @@
             <nav class="profile">      
                 <img class="menu-pic" src="../assets/images/sidebar/white/menu-icon.png" width="25px" height="25px">      
                 <a class="user" href="#">Hello, <?php echo $_SESSION["fullname"]; ?>!</a>
-                <a href="../sections/about.php" class="about-div">
+                <a href="../client/about.php" class="about-div">
                     <button class="about-btn" onmouseover="showPopup()" onmouseout="hidePopup()">
                         <img src="../assets/images/sidebar/white/about-icon.png" width="25px" height="25px">
                     </button>

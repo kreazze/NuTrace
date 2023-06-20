@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NuTrace</title>
-        <link rel ="stylesheet" href="../sections/about.css">
+        <link rel ="stylesheet" href="../client/about.css">
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
     </head>
     <body> 
@@ -16,7 +16,7 @@
             </nav>
             <main class="main-content">
                 <div class="buttons">
-                    <a class="back-button"href="../sections/homepage.php"><button>HOME</button></a>
+                    <a class="back-button"href="../client/dashboard.php"><button>HOME</button></a>
                 </div>
                 <p class="p4">About NuTrace</p>
                 <p class="p5">(Tungkol sa NuTrace?)</p>

@@ -31,7 +31,7 @@
                         <img src="../assets/images/duran5.jpg">
                     </div>
                     <div>
-                        <a href="./how-to.php"><button class="learn">LEARN MORE</button></a>
+                        <a href="./learn-more.php"><button class="learn">LEARN MORE</button></a>
                         <a href="./about.php"><button class="about">ABOUT US</button></a>
                     </div>   
                 </div>
