@@ -176,7 +176,28 @@
                                 <p class="paragraph">• <b>Soil Nutrient</b> - Detailed monitoring of soil nutrients </p>
                                 <p class="paragraph">• <b>Inventory</b> - Database for crop harvest</p>
                                 <p class="paragraph">• <b>Scheduler</b> - Utilization of calendar for reminding of the crop production.</p>
-                            </div>            
+                            </div>   
+                            
+                            <p class="paragraph"><b>INVENTORY RULES</b>:</p>
+                            <div class="website-paragraph">
+                                <p class="paragraph">- Users and admin should be mindful of their entries in the inventory as it will be recorded on a database.</p>
+                                <p class="paragraph">- Users and admin can both download the inventory data as an Excel file (.xlsx) so it can be available also for printing and manual records.</p>
+                            </div>
+
+                            <p class="paragraph">For <u>User</u> Account:</p>
+                            <div class="website-paragraph">
+                                <p class="paragraph">- Users can add item.</p>
+                                <p class="paragraph">- Users can only edit if the status is still '<b>Pending</b>'.</p>
+                                <p class="paragraph">- If the status is '<b>Declined</b>' by the admin, users can either resubmit or delete the entry through the '<i>Edit</i>' and '<i>Delete</i>' button.</p>
+                            </div>
+                            
+                            <p class="paragraph">For <u>Admin</u> Account:</p>
+                            <div class="website-paragraph">
+                                <p class="paragraph">- Admins can add item.</p>
+                                <p class="paragraph">- Admin can monitor the Approved and Declined data on different table data.</p>
+                                <p class="paragraph">- If the status is '<b>Pending</b>', the admin will have three (3) action buttons: <i>Edit, Approve</i> & <i>Delete</i>; which are used for editing, approving and deleting of an entry.</p>
+                            </div>   
+                                     
                             <p class="paragraph"><b>NOTE</b>: All created accounts should be kept confidential and remembered thorougly by its users/admin.</p>            
                         </div>
                     </article>
