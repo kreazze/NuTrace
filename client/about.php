@@ -49,7 +49,7 @@
                 <div class="second-content">
                     <div class="row">
                         <div class="dev-pic1">
-                            <img src="../assets/images/main/delprado.JPG" width="180px" height="180px">
+                            <img src="../assets/images/main/delprado.jpg" width="180px" height="180px">
                         </div>
                         <div class="dev-content1">
                             <p class="name">Kris Anne M. Del Prado</p>
@@ -62,9 +62,9 @@
                         </div>
                         <div class="dev-content1">
                             <p class="name">Dianne Yvory Dioso</p>
-                            <p class="email"></p>
-                            <p class="contact-num"></p>
-                            <a href="url">Facebook Account</a>
+                            <p class="email">dianneyvorydioso@gmail.com</p>
+                            <p class="contact-num">+639454667320</p>
+                            <a href="https://www.facebok.com/dianneyvory">Facebook Account</a>
                         </div>
                     </div>
                     <div class="row">
