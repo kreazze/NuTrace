@@ -136,10 +136,10 @@
 					<input type="email" class="input" name="email" id="email" placeholder="juandelacruz@gmail.com" required><br>
 					
 					<label>Password:</label><br>
-					<input type="password" class="input" name="password" id="password" placeholder="Enter your password"  maxlength="20" required><br>
+					<input type="password" class="input" name="password" id="password" placeholder="Enter your password"  minlength="8" maxlength="20" required><br>
 
 					<label for="password_confirmation">Confirm Password:</label><br>
-					<input type="password" class="input" name="cpassword" id="c password" placeholder="Confirm your password"  maxlength="20" required><br>
+					<input type="password" class="input" name="cpassword" id="c password" placeholder="Confirm your password" minlength="8" maxlength="20" required><br>
 
 					<label>Account Type:</label><br>
 					<select name="user_type" class="user_type">
