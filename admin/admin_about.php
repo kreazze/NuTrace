@@ -26,11 +26,16 @@
                             <p>NuTrace</p>
                         </div>
                         <div class="description">
-                            <p>Paragraph 1. Device description. By students of PUP eme eme.  
-                                Features. Why we come up to this study. Objectives.</p>
+                            <p>NuTrace (a compound word derived from "nutrient" and "trace") is a soil monitoring system developed by Computer 
+                                Engineering students from the Polytechnic University of the Philippines as a partial fulfillment for their 
+                                Design Project. NuTrace mainly focuses on providing a proactive solution to improve farm practices by enhancing 
+                                the soil with the use of soil nutrient monitoring devices, namely the NPK sensor, pH level sensor, soil moisture 
+                                sensor, and soil temperature sensor. These sensors generate data that is sent to a website application. </p>
                             <br><br>
-                            <P>Paragraph 2. Parts of the device siguro? 
-                                Software and hardware part.</P>
+                            <p>The NuTrace Soil Nutrient Monitoring System also includes a website application with different pages, including 
+                                a dashboard, inventory, task scheduler, and its main feature, the soil nutrient monitoring page. This page allows 
+                                farmers to view real-time soil nutrient levels gathered by the sensors. The system aims to introduce a digital 
+                                farming method through the use of technology.</p>
                             <br><br><br><br><br><br><br><br>
                         </div>
                         <div class="title">
@@ -46,32 +51,43 @@
                         <div class="dev-pic1">
                             <img src="../assets/images/main/delprado.JPG" width="180px" height="180px">
                         </div>
+                        <div class="dev-pic1">
+                            <img src="../assets/images/main/delprado.jpg" width="180px" height="180px">
+                        </div>
                         <div class="dev-content1">
-                            <p class="name">Kris Anne Del Prado</p>
-                            <p class="details"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            <p class="name">Kris Anne M. Del Prado</p>
+                            <p class="email">krisannedelprado@gmail.com</p>
+                            <p class="contact-num">+639451322540</p>
+                            <a href="https://www.facebook.com/kreasemdp">Facebook Account</a>
                         </div>
                         <div class="dev-pic2">
                             <img src="../assets/images/main/dioso.png" width="180px" height="180px">
                         </div>
                         <div class="dev-content1">
                             <p class="name">Dianne Yvory Dioso</p>
-                            <p class="details"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            <p class="email">dianneyvorydioso@gmail.com</p>
+                            <p class="contact-num">+639454667320</p>
+                            <a href="https://www.facebok.com/dianneyvory">Facebook Account</a>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="dev-pic1">
+                    <div class="dev-pic1">
                             <img src="../assets/images/main/goyena.jpg" width="180px" height="180px">
                         </div>
                         <div class="dev-content2">
-                            <p class="name">Carla Margarita Goyena</p>
-                            <p class="details"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            <p class="name">Carla Margarita M. Goyena</p>
+                            <p class="email">carlagoyena@gmail.com</p>
+                            <p class="contact-num">+639758839038</p>
+                            <a href="https://www.facebook.com/crlmrgrt">Facebook Account</a>
                         </div>
                         <div class="dev-pic2">
                             <img src="../assets/images/main/llido.jpg" width="180px" height="180px">
                         </div>
                         <div class="dev-content2">
-                            <p class="name">Queennie Marie Llido</p>
-                            <p class="details"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            <p class="name">Queennie Marie S. Llido</p>
+                            <p class="email">llidomariequeennie@gmail.com</p>
+                            <p class="contact-num">+639276841308</p>
+                            <a href="https://www.facebook.com/queenniemariellido">Facebook Account</a>
                         </div>
                     </div>
                 </div>
