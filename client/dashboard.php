@@ -18,6 +18,30 @@
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
     </head>
     <body>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "AIzaSyCH6RkFBG6hvPotKfA7A6YpzExaPfdvtxo",
+                authDomain: "nutrace-71753.firebaseapp.com",
+                databaseURL: "https://nutrace-71753-default-rtdb.asia-southeast1.firebasedatabase.app",
+                projectId: "nutrace-71753",
+                storageBucket: "nutrace-71753.appspot.com",
+                messagingSenderId: "329028247407",
+                appId: "1:329028247407:web:352e03863a647c9e8d929a",
+                measurementId: "G-N22ST53E6B"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+        </script>
         <section id="sidebar">
             <a href="../sections/homepage.php" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
@@ -237,39 +261,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!--Progress Report of the Week-->
-                <div id="lower-content">
-                    <div id="text-down">
-                        <p id="title">Progress Report of the Week</p>
-                        <div id="description-progress">
-                            <div class="bar-graph">
-                                <div class="bar" style="height: 120px;">
-                                    <div class="indicator">Talong</div>
-                                </div>
-                                <div class="bar" style="height: 80px;">
-                                    <div class="indicator">Okra</div>
-                                </div>
-                                <div class="bar" style="height: 160px;">
-                                    <div class="indicator">Patola</div>
-                                </div>
-                                <div class="bar" style="height: 40px;">
-                                    <div class="indicator">Mais</div>
-                                </div>
-                                <div class="bar" style="height: 40px;">
-                                    <div class="indicator">Kamatis</div>
-                                </div>
-                                <div class="bar" style="height: 40px;">
-                                    <div class="indicator">Crop-B</div>
-                                </div>
-                                <div class="bar" style="height: 40px;">
-                                    <div class="indicator">Crop-C</div>
-                                </div>
-                                <!-- Add more bars as needed -->
-                            </div>
-                        </div> 
                     </div>
                 </div>
             </main>

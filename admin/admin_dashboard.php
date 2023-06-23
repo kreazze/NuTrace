@@ -239,39 +239,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!--Progress Report of the Week-->
-                <div id="lower-content">
-                    <div id="text-down">
-                        <p id="title">Progress Report of the Week</p>
-                        <div id="description-progress">
-                            <div class="bar-graph">
-                                <div class="bar" style="height: 120px;">
-                                    <div class="indicator">Talong</div>
-                                </div>
-                                <div class="bar" style="height: 80px;">
-                                    <div class="indicator">Okra</div>
-                                </div>
-                                <div class="bar" style="height: 160px;">
-                                    <div class="indicator">Patola</div>
-                                </div>
-                                <div class="bar" style="height: 40px;">
-                                    <div class="indicator">Mais</div>
-                                </div>
-                                <div class="bar" style="height: 40px;">
-                                    <div class="indicator">Kamatis</div>
-                                </div>
-                                <div class="bar" style="height: 40px;">
-                                    <div class="indicator">Crop-B</div>
-                                </div>
-                                <div class="bar" style="height: 40px;">
-                                    <div class="indicator">Crop-C</div>
-                                </div>
-                                <!-- Add more bars as needed -->
-                            </div>
-                        </div> 
-                    </div>
-                </div>
             </main>
         </section>
         <script src="../js-files/weather.js"></script>
