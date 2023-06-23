@@ -40,6 +40,11 @@
             exit();
         }
     }
+    //IF ALREADY LOGGED IN AND TRYING TO ACCESS LOGIN PAGE..
+    if (isset($_SESSION["fullname"]) && $_SESSION["user_type"] === "admin") {
+        header("Location: admin_dashboard.php");
+        exit();
+    }
 ?>
 
 
