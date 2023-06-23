@@ -4,28 +4,40 @@
     if (isset($_POST['submit'])) {
         $email = $_POST["email"];
         $password = md5($_POST["password"]);
-        $user_type = $_POST["user_type"];
 
         $conn = new mysqli("localhost", "root", "", "nutrace_server");
         $email = $conn->real_escape_string($email); // Sanitize the email input
 
-        $select = "SELECT * FROM tbl_users WHERE email = '$email' AND user_type = 'user'";
+        $select = "SELECT * FROM tbl_users WHERE email = '$email' AND password = '$password'";
         $result = $conn->query($select);
-        
-        $select1 = "SELECT * FROM tbl_admin WHERE user_type = 'admin'";
-		$result1 = mysqli_query($conn, $select1);
 
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
+            $_SESSION['loggedin'] = true;
             $_SESSION["email"] = $row["email"];
-            header('Location: http://localhost/NuTrace/client/dashboard.php');
-            exit();
-        } 
-        else if ($result == $result1) {
-            $errorAccount = "The email you entered is an Admin account!";
-        }
-        else if ($result != $result) {
+            $_SESSION["user_type"] = $row["user_type"]; // Store the user_type in the session
+
+            if ($row["user_type"] == "user") {
+                $_SESSION["fullname"] = $row["fullname"];
+                header('Location: ../client/dashboard.php');
+            } else if ($row["user_type"] == "admin") {
+                $errorAccount = "This login form is for CLIENT only.";
+            }
+        } else {
             $error = "Incorrect email or password!";
+        }
+    } else if (isset($_GET['logout'])) {
+        // Check if the logout query parameter is set
+        if ($_GET['logout'] === 'true') {
+            // Unset all of the session variables
+            $_SESSION = array();
+
+            // Destroy the session
+            session_destroy();
+
+            // Redirect the user to the login page or any other appropriate page
+            header('Location: ../account-form/account.php');
+            exit();
         }
     }
 ?>
