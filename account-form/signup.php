@@ -9,7 +9,7 @@
 		$user_type  = $_POST["user_type"];
 
 		$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
+		//Create a connection 
 		$conn = new mysqli("localhost", "root", "", "nutrace_server");
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
@@ -18,8 +18,9 @@
 		$select = "SELECT * FROM tbl_users WHERE email = '$email'";
 		$result = mysqli_query($conn, $select);
 
-		$select1 = "SELECT * FROM tbl_admin WHERE email = '$email'";
+		$select1 = "SELECT * FROM tbl_users WHERE email = '$email'";
 		$result1 = mysqli_query($conn, $select1);
+		
 
 		if(mysqli_num_rows($result) > 0 || mysqli_num_rows($result1) > 0) {
 			$error[] = "User Already Exists!";
@@ -52,14 +53,16 @@
 
 				mysqli_query($conn, $insert);
 				$alert = "Registered Successfully!";
+				echo '<script>alert("Registered Successfully!")</script>';
 				header('location:../account-form/login.php');
 				exit;
 			}
 			elseif ($user_type === "admin") {
-				$insert = "INSERT INTO tbl_admin (fullname, contact, email, password, cpassword, user_type) VALUES ('$fullname','$contact','$email','$password','$cpassword','$user_type')";
+				$insert = "INSERT INTO tbl_users (fullname, contact, email, password, cpassword, user_type) VALUES ('$fullname','$contact','$email','$password','$cpassword','$user_type')";
 
 				mysqli_query($conn, $insert);
 				$alert = "Registered Successfully!";
+				echo '<script>alert("Registered Successfully!")</script>';
 				header('location:../admin/admin_login.php');
 				exit;
 			}

@@ -1,5 +1,13 @@
 <?php
-    session_start();
+
+    require_once('../server/session.php');
+
+    // Check if user is not logged in, redirect to login page
+    if (!isset($_SESSION["fullname"])) {
+        header("Location: ../sections/homepage.php");
+        exit();
+    }
+
     include('../server/connect.php');
 
     if (isset($_POST['edit'])) {

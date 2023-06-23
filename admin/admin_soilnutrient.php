@@ -1,5 +1,12 @@
 <?php
-    session_start();
+    require_once('../server/session.php');
+
+    // Check if user is not logged in, redirect to login page
+    if (!isset($_SESSION["fullname"])) {
+        header("Location: ../sections/homepage.php");
+        exit();
+    }
+
     include('../server/connect.php');
 
     $sql = "SELECT * FROM soil_nutrients";
@@ -87,7 +94,7 @@
                                 <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
                                 <div class="content">
                                     <div class="buttons">
-                                        <a href="../account-form/login.php"><button class="yes">YES</button></a>
+                                        <a href="../server/logout.php"><button class="yes">YES</button></a>
                                         <a href="../admin/admin_soilnutrient.php"><button class="no">NO</button></a>
                                     </div>
                                 </div>
