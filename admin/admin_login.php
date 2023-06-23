@@ -8,26 +8,45 @@
         $conn = new mysqli("localhost", "root", "", "nutrace_server");
         $email = $conn->real_escape_string($email); // Sanitize the email input
 
-        $select = "SELECT * FROM tbl_admin WHERE email = '$email' AND password = '$password'";
+        $select = "SELECT * FROM tbl_users WHERE email = '$email' AND password = '$password'";
         $result = $conn->query($select);
 
-        $select1 = "SELECT * FROM tbl_admin WHERE email = '$email'";
-		$result1 = mysqli_query($conn, $select1);
-
-        if ($result1->num_rows > 0) {
-            $row = $result1->fetch_assoc();
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $_SESSION['loggedin'] = true;
             $_SESSION["email"] = $row["email"];
-            $_SESSION["fullname"] = $row["fullname"];
-            header('Location: http://localhost/NuTrace/admin/admin_dashboard.php');
-            exit();
-        }   else if ($result1 == $result) {
-            $errorAccount = "The email you entered is an User account!";
-        } 
-        else {
+            $_SESSION["user_type"] = $row["user_type"]; // Store the user_type in the session
+
+            if ($row["user_type"] == "admin") {
+                $_SESSION["fullname"] = $row["fullname"];
+                header('Location: admin_dashboard.php');
+            } else if ($row["user_type"] == "user") {
+                $errorAccount = "This login form is for ADMINISTRATOR only.";
+            }
+        } else {
             $error = "Incorrect email or password!";
         }
+    } else if (isset($_GET['logout'])) {
+        // Check if the logout query parameter is set
+        if ($_GET['logout'] === 'true') {
+            // Unset all of the session variables
+            $_SESSION = array();
+
+            // Destroy the session
+            session_destroy();
+
+            // Redirect the user to the login page or any other appropriate page
+            header('Location: ../account-form/account.php');
+            exit();
+        }
+    }
+    //IF ALREADY LOGGED IN AND TRYING TO ACCESS LOGIN PAGE..
+    if (isset($_SESSION["fullname"]) && $_SESSION["user_type"] === "admin") {
+        header("Location: admin_dashboard.php");
+        exit();
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +84,7 @@
 				<input type="email" class="input" name="email" placeholder="juandelacruz@gmail.com" required><br>
 				
                 <label class="tb-title">Password:</label><br>
-				<input type="password" class="input" id="pass" name="password" placeholder="********"  maxlength="20" required>
+				<input type="password" class="input" id="pass" name="password" placeholder="********" maxlength="20" required>
 			    
                 <input type="checkbox" onclick="showPassword()">
                 <script>

@@ -1,5 +1,11 @@
 <?php
-    session_start();
+    require_once('../server/session.php');
+
+    // Check if user is not logged in, redirect to login page
+    if (!isset($_SESSION["fullname"])) {
+        header("Location: ../sections/homepage.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +69,7 @@
                             <h3>(Sigurado ka ba na nais mong umalis dito?)</h3>
                             <div class="content">
                                 <div name="button" class="buttons">
-                                    <a href="../admin/admin_login.php"><button class="yes">YES</button></a>
+                                    <a href="../server/logout.php"><button class="yes">YES</button></a>
                                     <a href="../admin/admin_dashboard.php"><button class="no">NO</button></a>
                                 </div>
                             </div>
