@@ -327,6 +327,27 @@ body {
 	text-align: center;
 	color: #25a22b;
 }
+.low {
+	color: #eaff2c;
+}
+.medium-low .dry{
+	color: #ffdf2c;
+}
+.normal .moist{
+	color: #10dc3c;
+}
+.medium-high {
+	color: #e56626;
+}
+.high {
+	color: #e52626;
+}
+.wet {
+	color: #26bce5;
+}
+.xtrm-wet {
+	color: #2643e5;
+}
 .fromSensor:nth-child(even) {
     background-color: #f9f9f9;
 }
