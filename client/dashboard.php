@@ -17,7 +17,7 @@
         <link rel ="stylesheet" href="../client/dashboard.css">
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
     </head>
-    <body>
+    <body class="container">
         <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
@@ -236,32 +236,126 @@
                             <p class="datetime">As of <span id="datetime"></span></p>
                             <div id="variables">
                                 <div class="nut-divider">
-                                    <p>Nitrogen</p>
-                                    <progress class="prog1" value="50" max="100"></progress>
+                                    <div class="display">
+                                        <p><b>Nitrogen</b> -</p>
+                                        <span id="progress-nitrogen-text" class="progress-text">0%</span>
+                                    </div>
+                                    <progress id="progress-nitrogen" class="prog1" value="0" max="100"></progress>
                                 </div>
                                 <div class="nut-divider">
-                                    <p>Phosphorus</p>
-                                    <progress class="prog2" value="20" max="100"></progress>
+                                    <div class="display">
+                                        <p><b>Phosphorus</b> -</p>
+                                        <span id="progress-phosphorus-text" class="progress-text">0%</span>
+                                    </div>
+                                    <progress id="progress-phosphorus" class="prog2" value="0" max="100"></progress>
                                 </div>
                                 <div class="nut-divider">
-                                    <p>Potassium</p>
-                                    <progress class="prog3" value="30" max="100"></progress>
+                                    <div class="display">
+                                        <p><b>Potassium</b> -</p>
+                                        <span id="progress-potassium-text" class="progress-text">0%</span>
+                                    </div>
+                                    <progress id="progress-potassium" class="prog3" value="0" max="100"></progress>
                                 </div>
                                 <div class="nut-divider">
-                                    <p>Soil Moisture</p>
-                                    <progress class="prog4" value="80" max="100"></progress>
+                                    <div class="display">
+                                        <p><b>Soil Moisture</b> -</p>
+                                        <span id="progress-moisture-text" class="progress-text">0%</span>
+                                    </div>
+                                    <progress id="progress-moisture" class="prog4" value="0" max="100"></progress>
                                 </div>
                                 <div class="nut-divider">
-                                    <p>Temperature</p>
-                                    <progress class="prog5" value="60" max="100"></progress>
+                                    <div class="display">
+                                        <p><b>Temperature</b> -</p>
+                                        <span id="progress-temp-text" class="progress-text">0%</span>
+                                    </div>
+                                    <progress id="progress-temp" class="prog5" value="0" max="100"></progress>
                                 </div>
                                 <div class="nut-divider">
-                                    <p>pH Level</p>
-                                    <progress class="prog6" value="70" max="100"></progress>
+                                    <div class="display">
+                                        <p><b>pH Level</b> -</p>
+                                        <span id="progress-ph-text" class="progress-text">0%</span>
+                                    </div>
+                                    <progress id="progress-ph" class="prog6" value="0" max="100"></progress>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <script>
+                        // Initialize Firebase
+                        var firebaseConfig = {
+                            apiKey: "AIzaSyCH6RkFBG6hvPotKfA7A6YpzExaPfdvtxo",
+                            authDomain: "nutrace-71753.firebaseapp.com",
+                            databaseURL: "https://nutrace-71753-default-rtdb.asia-southeast1.firebasedatabase.app",
+                            projectId: "nutrace-71753",
+                            storageBucket: "nutrace-71753.appspot.com",
+                            messagingSenderId: "329028247407",
+                            appId: "1:329028247407:web:f47c5b574053215e8d929a",
+                            measurementId: "G-K2M665SDHS"
+                        };
+                        firebase.initializeApp(firebaseConfig);
+
+                        // Get a reference to the database
+                        var database = firebase.database().ref("Sensors");
+
+                        // Read data from the Firebase Realtime Database
+                        database.on("value", function(snapshot) {
+                            var data = snapshot.val();
+
+                            // Update the datetime element
+                            var datetimeElement = document.getElementById("datetime");
+                            var currentDatetime = new Date();
+                            datetimeElement.textContent = currentDatetime.toLocaleString();
+
+                            // Update the progress bars for each parameter
+                            updateProgressBar("Nitrogen", data["Nitrogen"], "progress-nitrogen", "progress-nitrogen-text");
+                            updateProgressBar("Phosphorus", data["Phosphorus"], "progress-phosphorus", "progress-phosphorus-text");
+                            updateProgressBar("Potassium", data["Potassium"], "progress-potassium", "progress-potassium-text");
+                            updateProgressBar("SoilMoisture", data["SoilMoisture"], "progress-moisture", "progress-moisture-text");
+                            updateProgressBar("SoilTemp", data["SoilTemp"], "progress-temp", "progress-temp-text");
+                            updateProgressBar("pH", data["pH"], "progress-ph", "progress-ph-text");
+                        });
+
+                        // Function to update the progress bar for a given parameter
+                        function updateProgressBar(parameter, value, progressBarId, progressTextId) {
+                            var progressBar = document.getElementById(progressBarId);
+                            var progressText = document.getElementById(progressTextId);
+
+                            // Convert value to percentage
+                            var percentage = Math.round((value / keyMaxValue(parameter)) * 100);
+                            progressBar.value = percentage;
+                            progressText.textContent = percentage + "%";
+
+                            // Set the CSS class based on the percentage value
+                            progressBar.classList.add(getAmountClass(percentage));
+                        }
+
+                        // Function to determine the maximum value for a given parameter
+                        function keyMaxValue(key) {
+                            if (key === "Nitrogen" || key === "Phosphorus" || key === "Potassium") {
+                                return 100; // Maximum value for Nitrogen, Phosphorus, and Potassium
+                            } else if (key === "SoilMoisture") {
+                                return 200; // Maximum value for Soil Moisture
+                            } else if (key === "SoilTemp") {
+                                return 50; // Maximum value for Soil Temperature
+                            } else if (key === "pH") {
+                                return 10; // Maximum value for pH
+                            }
+                            return 0; // Default maximum value
+                        }
+
+                        // Function to determine the CSS class based on the percentage value
+                        function getAmountClass(percentage) {
+                            if (percentage <= 25) {
+                                return "low";
+                            } else if (percentage <= 50) {
+                                return "medium-low";
+                            } else if (percentage <= 75) {
+                                return "medium-high";
+                            } else {
+                                return "high";
+                            }
+                        }
+                    </script>
                 </div>
             </main>
         </section>

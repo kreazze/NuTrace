@@ -60,6 +60,9 @@ body {
 }
 
 /* sidebar */
+.container {
+	overflow-x: auto;
+}
 #sidebar {
 	position: fixed;
 	top: 0;
@@ -548,10 +551,18 @@ tbody #task {
 	text-align: left;
 }
 .nut-divider {
+	padding: 0;
 	margin-bottom: 50px;
+}
+.display p {
+	padding-right: 5px;
+}
+.display {
+	display: flex;
 }
 progress {
 	margin-top: 5px;
+	margin-right: 5px;
 	width: 420px;
 	height: 25px;
 	border-radius: 50px;

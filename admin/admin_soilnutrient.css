@@ -56,6 +56,9 @@ body {
 }
 
 /* sidebar */
+.container {
+	overflow-x: auto;
+}
 #sidebar {
 	position: fixed;
 	top: 0;
@@ -307,11 +310,11 @@ body {
 .summary {
 	width: 270px;
 	height: 150px;
-	margin-bottom: 50px;
+	margin-bottom: 40px;
     border-collapse: separate;
     border-spacing: 1px;
     font-family: 'Poppins-SemiBold';
-	border-radius: 5px;
+	border-radius: 30px;
     color: #333;
 	background-color: #f9f9f9;
 }

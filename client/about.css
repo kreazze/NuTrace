@@ -120,10 +120,11 @@ nav{
     background-color: #25A22B;
 }
 .description {
-	font-size: 15px;
+	font-size: 18px;
 	line-height: 1.5rem;
-	padding: 20px;
-	padding-right: 100px;
+	padding: 40px;
+	padding-right: 50px;
+	padding-left: 40px;
 	margin-bottom: 150px;
 	border-top-left-radius: 30px;
 	border-bottom-left-radius: 30px;
@@ -131,6 +132,9 @@ nav{
 	color: black;
 	background-color: #ebebeb;
 	box-shadow: -2px 5px 5px #8f8f8f;
+}
+.paragraph {
+	text-align: justify;
 }
 .prototype {
 	box-shadow: -2px 5px 5px #8f8f8f;
@@ -196,9 +200,15 @@ nav{
 	border-radius: 50%;
 }
 .name {
-	font-size: 20px;
+	font-size: 30px;
 	margin-bottom: 10px;
 	font-family: 'Poppins-Black';
+	color: black;
+	text-shadow: 0px 2px 5px #8f8f8f;
+}
+.email, .contact-num {
+	font-size: 20px;
+	font-family: 'Poppins-Regular';
 }
 .details {
 	padding-left: 50px;

@@ -44,34 +44,42 @@
                 <div class="second-content">
                     <div class="row">
                         <div class="dev-pic1">
-                            <img src="../assets/images/main/delprado.JPG" width="180px" height="180px">
+                            <img src="../assets/images/main/delprado.jpg" width="180px" height="180px">
                         </div>
                         <div class="dev-content1">
-                            <p class="name">Kris Anne Del Prado</p>
-                            <p class="details"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            <a href="https://www.facebook.com/kreasemdp" class="name">Kris Anne M. Del Prado</a>
+                            <p class="email"><i>Computer Engineering Student, PUP-Manila</i></p><br>
+                            <p class="email">krisannedelprado@gmail.com</p>
+                            <p class="contact-num">+639451322540</p>
                         </div>
                         <div class="dev-pic2">
                             <img src="../assets/images/main/dioso.png" width="180px" height="180px">
                         </div>
                         <div class="dev-content1">
-                            <p class="name">Dianne Yvory Dioso</p>
-                            <p class="details"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            <a href="https://www.facebok.com/dianneyvory" class="name">Dianne Yvory E. Dioso</a>
+                            <p class="email"><i>Computer Engineering Student, PUP-Manila</i></p><br>
+                            <p class="email">dianneyvorydioso@gmail.com</p>
+                            <p class="contact-num">+639454667320</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="dev-pic1">
+                    <div class="dev-pic1">
                             <img src="../assets/images/main/goyena.jpg" width="180px" height="180px">
                         </div>
                         <div class="dev-content2">
-                            <p class="name">Carla Margarita Goyena</p>
-                            <p class="details"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            <a href="https://www.facebook.com/crlmrgrt" class="name">Carla Margarita M. Goyena</a>
+                            <p class="email"><i>Computer Engineering Student, PUP-Manila</i></p><br>
+                            <p class="email">carlagoyena@gmail.com</p>
+                            <p class="contact-num">+639758839038</p>
                         </div>
                         <div class="dev-pic2">
                             <img src="../assets/images/main/llido.jpg" width="180px" height="180px">
                         </div>
                         <div class="dev-content2">
-                            <p class="name">Queennie Marie Llido</p>
-                            <p class="details"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            <a href="https://www.facebook.com/queenniemariellido" class="name">Queennie Marie S. Llido</a>
+                            <p class="email"><i>Computer Engineering Student, PUP-Manila</i></p><br>
+                            <p class="email">llidomariequeennie@gmail.com</p>
+                            <p class="contact-num">+639276841308</p>
                         </div>
                     </div>
                 </div>
