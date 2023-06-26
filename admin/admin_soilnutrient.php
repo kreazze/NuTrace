@@ -42,6 +42,10 @@
         <title>NuTrace</title>
         <link rel ="stylesheet" href="../admin/admin_soilnutrient.css">
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
+
+        <!-- Add Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     </head>
     <body>
         <section id="sidebar">
@@ -156,75 +160,120 @@
                 <p id="p4">Soil Nutrient Monitoring</p>
                 <div id="upper-content">
                     <div id="main-left">
-                        <p id="title">Eggplant Soil Nutrient Status</p>
-                        <p id="p5" class="datetime">Date of monitoring: <span id="datetime"></span></p>
-                        <div class="summary-tbl">
-                            <div class="div1">
-                                <table class="summary">
-                                    <tbody>
-                                        <tr class="fromSensor">
-                                            <td class="head-table">Nitrogen</td>
-                                        </tr>
-                                        <tr class="fromSensor">
-                                            <td class="values">20 PPM</td>
-                                        </tr>
-                                    </tbody>
-                                </table>  
-                                <table class="summary">
-                                    <tbody>
-                                        <tr class="fromSensor">
-                                            <td class="head-table">Phosphorus</td>
-                                        </tr>
-                                        <tr class="fromSensor">
-                                            <td class="values">20 PPM</td>
-                                        </tr>
-                                    </tbody>
-                                </table>  
+                            <p id="title">Eggplant Soil Nutrient Status</p>
+                            <p id="p5" class="datetime">Date of monitoring: <span id="datetime"></span></p>
+                            <div class="summary-tbl">
+                                <div class="div1">
+                                    <table class="summary" id="nitrogen-table">
+                                        <thead class="fromSensor">
+                                            <th class="head-table">Nitrogen</th>
+                                        </thead>
+                                        <tbody id="nitrogen-body" class="values">
+                                        </tbody>
+                                    </table>  
+                                    <table class="summary" id="phosphorus-table">
+                                        <thead class="fromSensor">
+                                            <th class="head-table">Phosphorus</th>
+                                        </thead>
+                                        <tbody id="phosphorus-body" class="values">
+                                        </tbody>
+                                    </table>  
+                                </div>
+                                <div class="div1">
+                                    <table class="summary" id="potassium-table">
+                                        <thead class="fromSensor">
+                                            <th class="head-table">Potassium</th>
+                                        </thead>
+                                        <tbody id="potassium-body" class="values">
+                                        </tbody>
+                                    </table>   
+                                    <table class="summary" id="temp-table">
+                                        <thead class="fromSensor">
+                                            <th class="head-table">Temperature</th>
+                                        </thead>
+                                        <tbody id="temp-body" class="values">
+                                        </tbody>
+                                    </table>  
+                                </div>
+                                <div class="div1">
+                                    <table class="summary" id="moisture-table">
+                                            <thead class="fromSensor">
+                                                <th class="head-table">Soil Moisture</th>
+                                            </thead>
+                                            <tbody id="moisture-body" class="values">
+                                            </tbody>
+                                    </table>      
+                                    <table class="summary" id="ph-table">
+                                        <thead class="fromSensor">
+                                            <th class="head-table">pH level</th>
+                                        </thead>
+                                        <tbody id="ph-body" class="values">
+                                        </tbody>
+                                    </table>
+                                </div>       
                             </div>
-                            <div class="div1">
-                                <table class="summary">
-                                    <tbody>
-                                        <tr class="fromSensor">
-                                            <td class="head-table">Potassium</td>
-                                        </tr>
-                                        <tr class="fromSensor">
-                                            <td class="values">20 PPM</td>
-                                        </tr>
-                                    </tbody>
-                                </table>   
-                                <table class="summary">
-                                        <tr class="fromSensor">
-                                            <td class="head-table">Temperature</td>
-                                        </tr>
-                                        <tr class="fromSensor">
-                                            <td class="values">20 °C</td>
-                                        </tr>
-                                    </tbody>
-                                </table>  
-                            </div>
-                            <div class="div1">
-                                <table class="summary">
-                                    <tbody>
-                                        <tr class="fromSensor">
-                                            <td class="head-table">Soil Moisture</td>
-                                        </tr>
-                                        <tr class="fromSensor">
-                                            <td class="values">75 %</td>
-                                        </tr>
-                                    </tbody>
-                                </table>      
-                                <table class="summary">
-                                    <tbody>
-                                        <tr class="fromSensor">
-                                            <td class="head-table">pH level</td>
-                                        </tr>
-                                        <tr class="fromSensor">
-                                            <td class="values">6.5</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>       
                         </div>
+                        <script>
+                        // Initialize Firebase
+                        var firebaseConfig = {
+                        apiKey: "AIzaSyCH6RkFBG6hvPotKfA7A6YpzExaPfdvtxo",
+                        authDomain: "nutrace-71753.firebaseapp.com",
+                        databaseURL: "https://nutrace-71753-default-rtdb.asia-southeast1.firebasedatabase.app",
+                        projectId: "nutrace-71753",
+                        storageBucket: "nutrace-71753.appspot.com",
+                        messagingSenderId: "329028247407",
+                        appId: "1:329028247407:web:f47c5b574053215e8d929a",
+                        measurementId: "G-K2M665SDHS"
+                        };
+                        firebase.initializeApp(firebaseConfig);
+
+                        // Get a reference to the database
+                        var database = firebase.database().ref("Sensors");
+
+                        // Read data from the Firebase Realtime Database
+                        database.on("value", function(snapshot) {
+                        var data = snapshot.val();
+
+                        // Clear the table bodies
+                        var nitrogenBody = document.getElementById("nitrogen-body");
+                        var phosphorusBody = document.getElementById("phosphorus-body");
+                        var potassiumBody = document.getElementById("potassium-body");
+                        var moistureBody = document.getElementById("moisture-body");
+                        var tempBody = document.getElementById("temp-body");
+                        var phBody = document.getElementById("ph-body");
+                        nitrogenBody.innerHTML = "";
+                        phosphorusBody.innerHTML = "";
+                        potassiumBody.innerHTML = "";
+                        moistureBody.innerHTML = "";
+                        tempBody.innerHTML = "";
+                        phBody.innerHTML = "";
+
+                        // Iterate over the data and create table rows for each parameter
+                        for (var key in data) {
+                            if (data.hasOwnProperty(key)) {
+                            var row = document.createElement("tr");
+                            var valueCell = document.createElement("td");
+                            valueCell.textContent = data[key];
+                            row.appendChild(valueCell);
+
+                            // Append the row to the corresponding table based on the parameter
+                            if (key === "Nitrogen") {
+                                nitrogenBody.appendChild(row);
+                            } else if (key === "Phosphorus") {
+                                phosphorusBody.appendChild(row);
+                            } else if (key === "Potassium") {
+                                potassiumBody.appendChild(row);
+                            } else if (key === "SoilMoisture") {
+                                moistureBody.appendChild(row);
+                            } else if (key === "SoilTemp") {
+                                tempBody.appendChild(row);
+                            } else if (key === "pH") {
+                                phBody.appendChild(row);
+                            }
+                            }
+                        }
+                        });
+                    </script>
                     </div>
                     <div id="main-right">
                         <p id="title">Legend</p>
