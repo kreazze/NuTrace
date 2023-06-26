@@ -263,7 +263,7 @@ body {
 	font-size: 20px;
 	margin-top: 20px;
 	margin-bottom: 30px;
-	color: black;
+	color: white;
 	font-family: 'Poppins-Regular';
 }
 #datetime {
@@ -271,7 +271,7 @@ body {
 	margin-top: 15px; 
 	line-height: 1rem;
 	text-align: left;
-	color: black; 
+	color: white; 
 	font-family: 'Poppins-Bold';
 }
 #title {
