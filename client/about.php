@@ -26,7 +26,7 @@
             </nav>
             <main class="main-content">
                 <div class="buttons">
-                    <a class="back-button"href="../client/dashboard.php"><button>HOME</button></a>
+                    <a class="back-button"href="../client/dashboard.php"><button>BACK</button></a>
                 </div>
                 <p class="p4">About NuTrace</p>
                 <p class="p5">(Tungkol sa NuTrace?)</p>
@@ -36,13 +36,13 @@
                             <p>NuTrace</p>
                         </div>
                         <div class="description">
-                            <p><b>NuTrace</b> (a compound word derived from "<i>nutrient</i>" and "<i>trace</i>") is a soil monitoring system developed by Computer 
+                            <p class="paragraph"><b>NuTrace</b> (a compound word derived from "<i>nutrient</i>" and "<i>trace</i>") is a soil monitoring system developed by Computer 
                                 Engineering students from the Polytechnic University of the Philippines as a partial fulfillment for their 
                                 Design Project. NuTrace mainly focuses on providing a proactive solution to improve farm practices by enhancing 
                                 the soil with the use of soil nutrient monitoring devices, namely the NPK sensor, pH level sensor, soil moisture 
                                 sensor, and soil temperature sensor. These sensors generate data that is sent to a website application.</p>
                             <br>
-                            <p>The NuTrace Soil Nutrient Monitoring System also includes a website application with different pages, including 
+                            <p class="paragraph">The <b>NuTrace Soil Nutrient Monitoring System</b> also includes a website application with different pages, including 
                                 a dashboard, inventory, task scheduler, and its main feature, the soil nutrient monitoring page. This page allows 
                                 farmers to view real-time soil nutrient levels gathered by the sensors. The system aims to introduce a digital 
                                 farming method through the use of technology.</p>

@@ -315,7 +315,7 @@
                             } else if (key === "SoilMoisture") {
                                 return 200; // Maximum value for Soil Moisture
                             } else if (key === "SoilTemp") {
-                                return 50; // Maximum value for Soil Temperature
+                                return 100; // Maximum value for Soil Temperature
                             } else if (key === "pH") {
                                 return 10; // Maximum value for pH
                             }

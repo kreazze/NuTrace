@@ -16,6 +16,9 @@
         <title>NuTrace</title>
         <link rel ="stylesheet" href="../client/dashboard.css">
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
+        <!-- Add Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     </head>
     <body class="container">
         <script type="module">
@@ -336,11 +339,11 @@
                             } else if (key === "SoilMoisture") {
                                 return 200; // Maximum value for Soil Moisture
                             } else if (key === "SoilTemp") {
-                                return 50; // Maximum value for Soil Temperature
+                                return 100; // Maximum value for Soil Temperature
                             } else if (key === "pH") {
                                 return 10; // Maximum value for pH
                             }
-                            return 0; // Default maximum value
+                            return 0; // Default max    imum value
                         }
 
                         // Function to determine the CSS class based on the percentage value

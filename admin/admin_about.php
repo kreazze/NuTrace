@@ -16,7 +16,7 @@
             </nav>
             <main class="main-content">
                 <div class="buttons">
-                    <a class="back-button"href="../admin/admin_dashboard.php"><button>HOME</button></a>
+                    <a class="back-button"href="../admin/admin_dashboard.php"><button>BACK</button></a>
                 </div>
                 <p class="p4">About NuTrace</p>
                 <p class="p5">(Tungkol sa NuTrace?)</p>

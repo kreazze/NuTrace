@@ -156,28 +156,20 @@ nav{
 	display: flex;
 }
 .dev-content1 {
-	margin-top: 120px;
-	margin-bottom: 30px;
-	margin-left: 100px;
-	margin-right: 100px;
-	padding-top: 100px;
-	padding-bottom: 25px;
-	padding-left: 5px;
-	padding-right: 5px;
+	width: 800px;
+	height: 300px;
+	margin: 100px 100px;
+	padding: 130px 0px 10px 0px;
 	border-radius: 30px;
 	position: relative;
 	box-shadow: -2px 5px 5px #8f8f8f;
 	background: #ebebeb;
 }
 .dev-content2 {
-	margin-top: 100px;
-	margin-bottom: 30px;
-	margin-left: 100px;
-	margin-right: 100px;
-	padding-top: 120px;
-	padding-bottom: 25px;
-	padding-left: 5px;
-	padding-right: 5px;
+	width: 800px;
+	height: 300px;
+	margin: 100px 100px;
+	padding: 130px 0px 10px 0px;
 	border-radius: 30px;
 	position: relative;
 	box-shadow: -2px 5px 5px #8f8f8f;
@@ -185,13 +177,13 @@ nav{
 }
 .dev-pic1 {
 	margin-top: 20px;
-	margin-left: 280px;
+	margin-left: 300px;
 	z-index: 9;
 	position: absolute;
 }
 .dev-pic2 {
-	margin-top: 20px;
-	margin-left: 69%;
+	margin-top: 15px;
+	margin-left: 1050px;
 	z-index: 9;
 	position: absolute;
 }
