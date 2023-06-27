@@ -263,20 +263,21 @@
                                     ];
                                     var moisture_thresholds = [
                                         { maxValue: 30, className: "low" },
-                                        { maxValue: 45, className: "dry" },
-                                        { maxValue: 85, className: "moist" },
+                                        { maxValue: 59, className: "dry" },
+                                        { maxValue: 90, className: "moist" },
                                         { maxValue: 100, className: "wet" },
                                     ];
                                     var temp_thresholds = [
-                                        { maxValue: 7, className: "low" },
-                                        { maxValue: 10, className: "medium-low" },
-                                        { maxValue: 24, className: "medium-high" },
-                                        { maxValue: 32, className: "high" },
+                                        { maxValue: 15, className: "low" },
+                                        { maxValue: 23, className: "medium-low" },
+                                        { maxValue: 32, className: "normal" },
+                                        { maxValue: 35, className: "medium-high" },
+                                        { maxValue: 100, className: "high" },
                                     ];
                                     var pH_thresholds = [
-                                        { maxValue: 6.5, className: "low" },
-                                        { maxValue: 7.5, className: "normal" },
-                                        { maxValue: 7.6, className: "high" },
+                                        { maxValue: 5.4, className: "low" },
+                                        { maxValue: 6.8, className: "normal" },
+                                        { maxValue: 7.5, className: "high" },
                                     ];
 
                                     // Add CSS class based on amount
