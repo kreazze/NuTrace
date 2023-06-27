@@ -46,7 +46,7 @@
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     </head>
-    <body class="container">
+    <body>
         <section id="sidebar">
             <a href="../sections/homepage.php" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
@@ -159,7 +159,7 @@
                 <p id="p4">Soil Nutrient Monitoring</p>
                 <div id="upper-content">
                     <div id="main-left">
-                        <p id="title">Eggplant Soil Nutrient Status</p>
+                        <p id="eggplant-title">Eggplant Soil Nutrient Status</p>
                         <p id="p5" class="datetime">Date of monitoring: <span id="datetime"></span></p>
                         <div class="summary-tbl">
                             <div class="div1">
@@ -339,101 +339,68 @@
                 </div>
                 <div id="lower-content">
                     <div class="records-table">
-                        <div class="lower-header">
-                            <p id="title">Soil Monitoring Records</p>
-                            <button class="btn">Download</button>
-                        </div>
+                        <p id="title">Soil Nutrient Monitoring Guide</p>
                         <table class="table">
-                            <thead>
-                                <tr>
-                                <th>Date</th>
-                                <th>Nitrogen (N)</th>
-                                <th>Phosphorus (P)</th>
-                                <th>Potassium (K)</th>
-                                <th>Soil Moisture Level</th>
-                                <th>Temperature Level</th>
-                                <th>pH Level</th>
-                                </tr>
-                            </thead>
                             <tbody>
-                                <!-- <?php
-                                    //foreach($crops as $row){ ?>
-                                        <tr>
-                                            <td><?php echo $row['date']; ?></td>
-                                            <td><?php echo $row['croptype']; ?></td>
-                                            <td><?php echo $row['quantity']; ?></td>
-                                            <td><?php echo $row['harvester']; ?></td>
-                                            <td>
-                                            <button class="btn btn-warning mb-1" id="editItemBtn">Edit Info</button>
-                                            <button class="btn btn-danger mb-1" id="deleteBtn">Delete</button>
-                                            </td>
-                                            </tr>
-                                        <?php
-                                    //} ?> -->
-                                    <tr>
-                                            <td data-label="Date">04/04/23</td>
-                                            <td data-label="Nit">Normal</td>
-                                            <td data-label="Pho">Medium Low</td>
-                                            <td data-label="Pot">Medium High</td>
-                                            <td data-label="Moisture">Extremely Wet</td>
-                                            <td data-label="Temp">High</td>
-                                            <td data-label="pH">Low</td>
-                                    </tr>
-                                    <tr>
-                                            <td data-label="Date">04/04/23</td>
-                                            <td data-label="Nit">Normal</td>
-                                            <td data-label="Pho">Medium Low</td>
-                                            <td data-label="Pot">Medium High</td>
-                                            <td data-label="Moisture">Extremely Wet</td>
-                                            <td data-label="Temp">High</td>
-                                            <td data-label="pH">Low</td>
-                                    </tr>
-                                    <tr>
-                                            <td data-label="Date">04/04/23</td>
-                                            <td data-label="Nit">Normal</td>
-                                            <td data-label="Pho">Medium Low</td>
-                                            <td data-label="Pot">Medium High</td>
-                                            <td data-label="Moisture">Extremely Wet</td>
-                                            <td data-label="Temp">High</td>
-                                            <td data-label="pH">Low</td>
-                                    </tr>             
-                                    <tr>
-                                            <td data-label="Date">04/04/23</td>
-                                            <td data-label="Nit">Normal</td>
-                                            <td data-label="Pho">Medium Low</td>
-                                            <td data-label="Pot">Medium High</td>
-                                            <td data-label="Moisture">Extremely Wet</td>
-                                            <td data-label="Temp">High</td>
-                                            <td data-label="pH">Low</td>
-                                    </tr>
-                            </tbody>
-                        </table>
-                        <div class="table-pagination">
-                        <div class="pages">
-                                <strong>PAGE <?= $page_no; ?> OF <?= $total_no_of_pages; ?> </strong>
-                        </div>
-                        <div aria-label="...">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a id="prev" class="page-link <?= ($page_no <= 1) ? 'disabled': ''; ?> " <?= ($page_no > 1) ? 'href=?page_no=' . $previous_page: ''; ?>>PREVIOUS</a>
-                                </li>
-                                
-                                <?php 
-                                    for ($counter = 1; $counter <= $total_no_of_pages; $counter++) { ?>
-                                    <?php if ($page_no != $counter) {?>
-                                            <li class="page-item"><a class="page-link" href="?page_no=<?= $counter; ?>"><?= $counter; ?></a></li>                                    
-                                    <?php } else { ?>
-                                            <li class="page-item"><a class="page-link active"><?= $counter; ?></a></li>
-                                    <?php } ?>
-                                <?php } ?>
-                                
+                                <tr>
+                                    <th class="low-medium4"> </th>
+                                    <th class="low-medium1">LOW TO MEDIUM LOW</th>
+                                    <th class="normal">NORMAL</th>
+                                    <th class="medium-high">MEDIUM HIGH TO HIGH</th>
+                                </tr>
+                                <tr>
+                                    <th>Nitrogen</th>
+                                    <td>To correct a nitrogen deficiency, consider planting nitrogen-rich plants like beans and peas nearby. Adding used and rinsed coffee grounds to the soil to promote nitrogen production. Rinsing the grounds will not affect acid levels of the soil. A plant with plenty of nitrogen available to it will appear leafy green.</td>
+                                    <td>Maintain</td>
+                                    <td>Using <i>Mulch</i> for removing excess Nitrogen in Soil. You can lay mulch over the soil with too much nitrogen to help draw out some of the excess nitrogen in the soil.</td>
+                                </tr>
+                                <tr>
+                                    <th>Phosphorus</th>
+                                    <td>• Add fertilizer such as ammonium phosphate <br>
+                                    • You can add bone meal directly to the soil. You can also add used fish tank water to the soil if it does not contain saltwater.</td>
+                                    <td>Maintain</td>
+                                    <td>Avoiding the addition of phosphorus for several growing seasons will help reduce the amount present in the soil.</td>
+                                </tr>
+                                <tr>
+                                    <th>Potassium</th>
+                                    <td>You can use banana peels and bury it an inch to your soil.</td>
+                                    <td>Maintain</td>
+                                    <td>To reduce potassium in soil, use only products with a low number or a zero in the K position or skip the fertilizer entirely. <br> Loosen the soil with a garden fork or shovel, then water deeply to dissolve and flush out the surplus in potassium-rich soil. Allow the soil to dry completely, then repeat two or three more times.</td>
+                                </tr>
 
-                                <li class="page-item">
-                                    <a id="next" class="page-link <?= ($page_no >= $total_no_of_pages) ? 'disabled': ''; ?> " <?= ($page_no < $total_no_of_pages) ? 'href=?page_no='.$next_page: ''; ?>>NEXT</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>  
+                                <tr>
+                                    <th class="low-medium5"> </th>
+                                    <th class="low-medium2">EXTREMELY DRY TO DRY</th>
+                                    <th class="normal">MOIST</th>
+                                    <th class="medium-high1">WET TO EXTREMELY WET</th>
+                                </tr>
+                                <tr>
+                                    <th>Soil Moisture</th>
+                                    <td>• Cover your soil with a blanket of organic material such as straw, leaves, shredded paper or cardboard, or bark. This will moderate soil temperature, prevent runoff and evaporation, and hold moisture in the for longer periods between waterings.<br>
+                                    • Less frequent, deeper waterings are more effective for most plants than frequent, shallow waterings. Plant roots will grow stronger and healthier, and you will not need to water as often. To check whether it’s time to water, push your finger down into the soil. If it is still moist a knuckle or two deep, then it doesn’t need water yet. If it’s dry, then give the soil a nice long, deep soak so that the water reaches the root zone.
+                                    </td>
+                                    <td>Maintain</td>
+                                    <td>• Stop Watering and Allow Time To Pass<br>
+                                    • Place plants in the windy area and low humidity<br>
+                                    • Ensure There Are Drainage Holes At The Bottom of Your Plant<br>
+                                    • Remove Any Mulch From The Top of The Soil</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="low-medium4"> </th>
+                                    <th class="low-medium1">LOW TO MEDIUM LOW</th>
+                                    <th class="normal">NORMAL</th>
+                                    <th class="medium-high">MEDIUM HIGH TO HIGH</th>
+                                </tr>
+                                <tr>
+                                    <th>Soil Temperature</th>
+                                    <td>The soil temperature under waterlogged soil condition is very low and in order to increase the soil temperature under such condition it is essential to drain out the excess water from the field. The removal of water in this way lowers its specific heat and thus increase the soil temperature.</td>
+                                    <td>Maintain</td>
+                                    <td>• Since the sun is the source of most soil heat, shading the soil keeps it cooler during the day. You can shade soil with ground covers or other plants, or with structures. <br>
+                                    • Water in the soil conducts heat rapidly. Dry surface soil insulates the soil below. Water the soil in the spring to help the day’s heat be conducted to the depths.</td>
+                                </tr>
+                            </tbody>
+                        </table>       
                     </div>  
                 </div>                
             </main>
