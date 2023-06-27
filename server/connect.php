@@ -1,7 +1,7 @@
 <?php
   $hostname     = "localhost";
-  $username     = "root";
-  $password     = "";
+  $username     = "u158858399_nutrace_server", 
+  $password     = "u158858399_root",
   $databasename = "nutrace_server";
 
   $conn = new mysqli($hostname, $username, $password, $databasename);
