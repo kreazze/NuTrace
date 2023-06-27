@@ -51,6 +51,12 @@
             $sheet->getColumnDimension($column)->setAutoSize(true);
         }
 
+        // Set document properties
+        $spreadsheet->getProperties()
+            ->setCreator('Microsoft Excel')
+            ->setTitle('Duran Farm Inventory')
+            ->setSubject('Inventory Data');
+
         // Create a writer and save the spreadsheet
         $writer = new Xlsx($spreadsheet);
 
@@ -63,7 +69,8 @@
         header("Cache-Control: max-age=0");
 
         // Output the file to the browser
-        readfile($filename);
+        $writer->setIncludeCharts(true);
+        $writer->save('php://output');
         exit;
     }
 ?>

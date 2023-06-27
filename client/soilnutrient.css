@@ -266,7 +266,7 @@ body {
 	font-size: 20px;
 	margin-top: 20px;
 	margin-bottom: 30px;
-	color: black;
+	color: white;
 	font-family: 'Poppins-Regular';
 }
 #datetime {
@@ -274,7 +274,7 @@ body {
 	margin-top: 15px; 
 	line-height: 1rem;
 	text-align: left;
-	color: black; 
+	color: white; 
 	font-family: 'Poppins-Bold';
 }
 #title {
@@ -309,34 +309,60 @@ body {
 /* table */
 .summary {
 	width: 270px;
-	margin-bottom: 50px;
+	height: 150px;
+	margin-bottom: 40px;
     border-collapse: separate;
     border-spacing: 1px;
     font-family: 'Poppins-SemiBold';
-	border-radius: 5px;
+	border-radius: 30px;
     color: #333;
 	background-color: #f9f9f9;
 }
 .head-table {
-	font-size: 30px;
+	font-size: 25px;
 	padding: 20px;
 	font-family: 'Poppins-Regular';
 	text-align: left;
 }
+.unit {
+	font-size: 20px;
+}
 .values {
-	font-size: 45px;
-	padding: 20px;
+	font-size: 80px;
+	padding: 15px;
+	display: inline-flex;
 	font-family: 'Poppins-Black';
 	text-align: center;
 	color: #25a22b;
 }
-.fromSensor:nth-child(even) {
+.values:nth-child(even) {
     background-color: #f9f9f9;
 }
 .div1 {
 	display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-gap: 15px;
+}
+.low {
+	color: #DFE400;
+}
+.medium-low .dry{
+	color: #ECBF1E;
+}
+.normal .moist{
+	color: #75E463;
+}
+.medium-high {
+	color: #FF9292;
+}
+.high {
+	color: #DF3333;
+}
+.wet {
+	color: #7CD7F5;
+}
+.xtrm-wet {
+	color: #00789D;
 }
 
 /* legend */
@@ -354,7 +380,7 @@ body {
 }
 .legend-img {
 	width: 400px;
-	height: 25%;
+	height: 100%;
 }
 
 /* records */

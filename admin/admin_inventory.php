@@ -137,7 +137,7 @@
                 <p class="p4">Crop Harvest Inventory</p>
                 <div id="buttons">
                     <a href="#divAdd"><button class=tableBtn id="add-btn">+ ADD</button></a>
-                    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">					
+                    <form action="../sections/inventory-export.php" method="post">					
                         <button type="submit" id="dl-btn" name='export_data'><img id='dl-img' src="../assets/images/sidebar/white/download-icon.png" width="25px" height="25px"></button>
                     </form>
                     <button class="tableBtn" type="button" id="refresh-btn">REFRESH</button>

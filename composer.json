@@ -1,5 +1,10 @@
 {
+    "name": "duran/nutrace",
+    "description": "downloading inventory database",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "beta",
     "require": {
-      "phpoffice/phpspreadsheet": "^1.19"
+        "phpoffice/phpspreadsheet": "^1.29"
     }
-  }
+}

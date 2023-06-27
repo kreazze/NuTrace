@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase": "^9.23.0",
+    "mysql": "^2.18.1"
+  },
+  "name": "nutrace",
+  "description": "A soil-nutrient monitoring device system that does the following:\r • soil detection of \r   - NPK (Nitrogen, Phosphorus, Potassium)\r   - Soil Temperature\r   - Soil Moisture\r   - pH Level\r • Inventory Management\r • Task Scheduler\r • Dashboard of Data Report",
+  "version": "1.0.0",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
