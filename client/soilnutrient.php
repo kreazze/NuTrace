@@ -260,12 +260,14 @@
                                         { maxValue: 20, className: "medium-low" },
                                         { maxValue: 40, className: "normal" },
                                         { maxValue: 60, className: "medium-high" },
+                                        { maxValue: 100, className: "high" },
                                     ];
                                     var moisture_thresholds = [
                                         { maxValue: 30, className: "low" },
                                         { maxValue: 59, className: "dry" },
                                         { maxValue: 90, className: "moist" },
                                         { maxValue: 100, className: "wet" },
+                                        { maxValue: 200, className: "xtrm-wet" },
                                     ];
                                     var temp_thresholds = [
                                         { maxValue: 15, className: "low" },
