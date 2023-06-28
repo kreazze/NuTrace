@@ -7,7 +7,6 @@
         exit();
     }
 
-    include('../server/connect.php');
     include('../sections/inventory-export.php');
 ?>
 

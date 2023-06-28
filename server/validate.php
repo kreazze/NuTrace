@@ -1,7 +1,7 @@
 <?php
     session_start();
     //connection
-    include_once ("connect.php");
+    include_once ("../server/connect.php");
 
     function validate($data){
         $data = trim($data);
@@ -25,6 +25,7 @@
             exit();
         }else {
             $sql = "SELECT * FROM tbl_admin WHERE email='$email' AND password='$pass'";
+            $conn = new mysqli("localhost", "u158858399_root", "?QKZg9PRv4Ns", "u158858399_nutrace_server");
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) === 1) {

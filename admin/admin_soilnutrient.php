@@ -6,31 +6,6 @@
         header("Location: ../sections/homepage.php");
         exit();
     }
-
-    include('../server/connect.php');
-
-    $sql = "SELECT * FROM soil_nutrients";
-    $nutrients = mysqli_query($conn, $sql);
-    //$rowcount = mysqli_num_rows($nutrients);
-    if(isset($_POST['add']))
-    {
-        $nitrogen        = $_POST['nitrogenBody'];
-        $phosphorous     = $_POST['phosphorusBody'];
-        $potassium       = $_POST['potassiumBody'];
-        $moisture        = $_POST['moistureBody'];
-        $temperature     = $_POST['temperatureBody'];
-        $ph              = $_POST['phBody'];
-
-        $query = "INSERT INTO tbl_inventory (nitrogen, phosphorus, potassium, soil_moisture, soil_temperature, ph) VALUES ('$nitrogen','$phosphorous','$potassium','$moisture','$temperature','$sn_ph')";
-        $query_run = mysqli_query($conn, $query);
-        if($query_run)
-        {
-            
-        }
-        else{
-            //insert code to inform that sensor is NOT working
-        }
-    }
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +20,7 @@
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     </head>
-    <body>
+    <body class="container">
         <section id="sidebar">
             <a href="../sections/homepage.php" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">

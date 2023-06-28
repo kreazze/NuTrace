@@ -10,7 +10,7 @@
 
 		$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 		//Create a connection 
-		$conn = new mysqli("localhost", "u158858399_nutrace_server", "u158858399_root", "nutrace_server");
+        $conn = new mysqli("localhost", "u158858399_root", "?QKZg9PRv4Ns", "u158858399_nutrace_server");
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}

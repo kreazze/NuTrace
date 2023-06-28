@@ -17,8 +17,7 @@
             </nav>
             <main>
                 <div class="home-content">
-                    <h1>Welcome to</h1>
-                    <h2>NuTrace!</h2>
+                    <h2>Welcome to NuTrace!</h2>
                     <h3>A Soil Nutrient Monitoring System</h3>
                     <p>NuTrace, a compound word from "<i>Nutrient</i>" and "<i>Trace</i>", is a portable Soil Nutrient Monitoring System. 
                         The NuTrace is a kiosk which primarily features soil nutrient monitoring device. The kiosk holds a 

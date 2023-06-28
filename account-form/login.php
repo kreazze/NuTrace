@@ -5,7 +5,7 @@
         $email = $_POST["email"];
         $password = md5($_POST["password"]);
 
-        $conn = new mysqli("localhost", "u158858399_nutrace_server", "u158858399_root", "nutrace_server");
+        $conn = new mysqli("localhost", "u158858399_root", "?QKZg9PRv4Ns", "u158858399_nutrace_server");
         $email = $conn->real_escape_string($email); // Sanitize the email input
 
         $select = "SELECT * FROM tbl_users WHERE email = '$email' AND password = '$password'";

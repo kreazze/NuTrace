@@ -33,7 +33,7 @@
     $email      = $_POST['email'];
     $password   = $_POST['password'];
 
-    $conn = new mysqli('localhost','root','', 'nutrace_server');
+    $conn = new mysqli("localhost", "u158858399_nutrace_server", "u158858399_root", "nutrace_server");
 
     // Check connection and add to db
     if ($conn->connect_error) {
