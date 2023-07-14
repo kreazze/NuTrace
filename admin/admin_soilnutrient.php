@@ -230,30 +230,30 @@
                                     valueCell.id = key + "-value"; // Set ID for value cell
 
                                     var npk_thresholds = [
-                                        { maxValue: 10, className: "low" },
-                                        { maxValue: 20, className: "medium-low" },
-                                        { maxValue: 40, className: "normal" },
-                                        { maxValue: 60, className: "medium-high" },
-                                        { maxValue: 100, className: "high" },
+                                        { maxValue: 10, className: "low", color: "#DFE400" },
+                                        { maxValue: 20, className: "medium-low", color: "#ECBF1E" },
+                                        { maxValue: 40, className: "normal", color: "#75E463" },
+                                        { maxValue: 60, className: "medium-high", color: "#FF9292" },
+                                        { maxValue: 100, className: "high", color: "#DF3333" },
                                     ];
                                     var moisture_thresholds = [
-                                        { maxValue: 30, className: "low" },
-                                        { maxValue: 59, className: "dry" },
-                                        { maxValue: 90, className: "moist" },
-                                        { maxValue: 100, className: "wet" },
-                                        { maxValue: 200, className: "xtrm-wet" },
+                                        { maxValue: 30, className: "low", color: "#DFE400" },
+                                        { maxValue: 59, className: "dry", color: "#ECBF1E" },
+                                        { maxValue: 90, className: "moist", color: "#75E463" },
+                                        { maxValue: 100, className: "wet", color: "#7CD7F5" },
+                                        { maxValue: 200, className: "xtrm-wet", color: "#00789D" },
                                     ];
                                     var temp_thresholds = [
-                                        { maxValue: 15, className: "low" },
-                                        { maxValue: 23, className: "medium-low" },
-                                        { maxValue: 32, className: "normal" },
-                                        { maxValue: 35, className: "medium-high" },
-                                        { maxValue: 100, className: "high" },
+                                        { maxValue: 15, className: "low", color: "#DFE400" },
+                                        { maxValue: 23, className: "medium-low", color: "#ECBF1E" },
+                                        { maxValue: 32, className: "normal", color: "#75E463" },
+                                        { maxValue: 35, className: "medium-high", color: "#FF9292" },
+                                        { maxValue: 100, className: "high", color: "#DF3333" },
                                     ];
                                     var pH_thresholds = [
-                                        { maxValue: 5.4, className: "low" },
-                                        { maxValue: 6.8, className: "normal" },
-                                        { maxValue: 7.5, className: "high" },
+                                        { maxValue: 5.4, className: "low", color: "#DFE400" },
+                                        { maxValue: 6.8, className: "normal", color: "#75E463" },
+                                        { maxValue: 10, className: "high", color: "#DF3333" },
                                     ];
 
                                     // Add CSS class based on amount
@@ -306,7 +306,7 @@
                     <div id="main-right">
                         <p id="title">Legend</p>
                         <div class="legen-content">
-                            <img class="legend-img" src="../assets/images/main/legend-small.png">
+                            <img class="legend-img" src="../assets/images/main/legend.png">
                         </div>
                     </div>
                 </div>

@@ -307,7 +307,7 @@
                     <div id="main-right">
                         <p id="title">Legend</p>
                         <div class="legen-content">
-                            <img class="legend-img" src="../assets/images/main/legend-small.png">
+                            <img class="legend-img" src="../assets/images/main/legend.png">
                         </div>
                     </div>
                 </div>

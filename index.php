@@ -11,7 +11,7 @@
     <header class="main-header">
         <div class="header-top">
             <a href="./sections/homepage.php">
-                <h1 class="logo"><img id="logo-pic" src="./assets/images/main/nutrace_logo.png" width="200px" height="200px"></h1>
+                <h1 class="logo"><img id="logo-pic" src="./assets/images/main/nutrace_logo.png" width="150px" height="150px"></h1>
                 <div class="header-content">
                     <h1>NuTrace</h1>
                     <h4>Soil Nutrient Monitoring System</h4>

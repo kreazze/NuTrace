@@ -218,7 +218,7 @@
                             <input class="ac-input" id="ac-6" name="ac-6" type="checkbox" />
                             <div class="sensor-content">
                                 <h1>KEY DESCRIPTION</h1>
-                                <img src="../assets/images/main/key-description.png" width="720px" height="630px">
+                                <img class="key-description" src="../assets/images/main/key-description.png" width="100%" height="100%">
                                 <table class="sensor-table">
                                     <thead>
                                         <tr>

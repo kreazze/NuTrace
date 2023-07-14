@@ -47,16 +47,16 @@
                                 farmers to view real-time soil nutrient levels gathered by the sensors. The system aims to introduce a digital 
                                 farming method through the use of technology.</p>
                         </div>
-                        <div class="title">
-                            <p>NuTrace Team</p>
-                        </div>
                     </div>
                     <div class="img-right">
                         <img class="prototype" src="../assets/images/main/3d-prototype.png" width="370px" height="470px">
                     </div>
                 </div>
                 <div class="second-content">
-                    <div class="row">
+                        <div class="title-team">
+                            <p>NuTrace Team</p>
+                        </div>
+                        <div class="row">
                         <div class="dev-pic1">
                             <img src="../assets/images/main/delprado.jpg" width="180px" height="180px">
                         </div>

@@ -6,8 +6,6 @@
         header("Location: ../sections/homepage.php");
         exit();
     }
-
-    include('../sections/inventory-export.php');
 ?>
 
 <!DOCTYPE html>
@@ -135,9 +133,6 @@
                 <p class="p4">Crop Harvest Inventory</p>
                 <div id="buttons">
                     <a href="#divAdd"><button class=tableBtn id="add-btn">+ ADD</button></a>
-                    <form action="../sections/inventory-export.php" method="post">					
-                        <button type="submit" id="dl-btn" name='export_data'><img id='dl-img' src="../assets/images/sidebar/white/download-icon.png" width="25px" height="25px"></button>
-                    </form>
                     <button class="tableBtn" type="button" id="refresh-btn">REFRESH</button>
                     <script>
                         document.getElementById('refresh-btn').addEventListener('click', function() {
@@ -180,6 +175,7 @@
                     </div>
                     <?php
                         $sql = "SELECT * FROM tbl_inventory";
+                        $conn = new mysqli("localhost", "u158858399_root", "?QKZg9PRv4Ns", "u158858399_nutrace_server");
                         $crops = mysqli_query($conn, $sql);
                         $rowcount = mysqli_num_rows($crops);
                     
@@ -191,7 +187,7 @@
                             $harvester  = $_POST['harvester'];
                     
                             $query = "INSERT INTO tbl_inventory (date, croptype, quantity, harvester, status) VALUES ('$date','$croptype','$quantity','$harvester','Pending')";
-                    
+                            $conn = new mysqli("localhost", "u158858399_root", "?QKZg9PRv4Ns", "u158858399_nutrace_server");
                             $query_run = mysqli_query($conn, $query);
                             if($query_run)
                             {
@@ -215,6 +211,7 @@
                         if (isset($_POST['edit'])) {
                             $id = $_POST['id'];
                             $query = "SELECT * FROM tbl_inventory WHERE id = '$id'";
+                            $conn = new mysqli("localhost", "u158858399_root", "?QKZg9PRv4Ns", "u158858399_nutrace_server");
                             $query_run = mysqli_query($conn, $query);
 
                             foreach ($query_run as $row) { ?>
@@ -268,6 +265,7 @@
                         <tbody class="table-contents">
                             <?php
                                 $query = "SELECT * FROM tbl_inventory";
+                                $conn = new mysqli("localhost", "u158858399_root", "?QKZg9PRv4Ns", "u158858399_nutrace_server");
                                 $result = mysqli_query($conn,$query);
                                 $rowcount = mysqli_num_rows($result);
 
@@ -288,7 +286,7 @@
                                 $next_page = $page_no + 1;
 
                                 //get the total count of records
-                                $result_count = mysqli_query($conn, "SELECT COUNT(*) as total_records FROM nutrace_server.tbl_inventory") or die(mysqli_error($conn));
+                                $result_count = mysqli_query($conn, "SELECT COUNT(*) as total_records FROM tbl_inventory") or die(mysqli_error($conn));
                                 // total records
                                 $records = mysqli_fetch_array($result_count);
                                 // store total_records to a variable
@@ -297,6 +295,7 @@
                                 $total_no_of_pages = ceil($total_records / $total_records_per_page);
 
                                 $sql = "SELECT * FROM tbl_inventory LIMIT $offset, $total_records_per_page";
+                                $conn = new mysqli("localhost", "u158858399_root", "?QKZg9PRv4Ns", "u158858399_nutrace_server");
                                 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                                 while ($row = mysqli_fetch_array($result)) { ?>
@@ -331,6 +330,7 @@
                                                             
                                                             // Perform the necessary actions to delete the declined record from the database
                                                             $query = "DELETE FROM tbl_inventory WHERE id='$id'";
+                                                            $conn = new mysqli("localhost", "u158858399_root", "?QKZg9PRv4Ns", "u158858399_nutrace_server");
                                                             $result = mysqli_query($conn, $query);
 
                                                             if ($result) {

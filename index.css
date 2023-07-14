@@ -92,3 +92,74 @@ ul {
     line-height: 1rem;
     font-family: 'Poppins-ExtraLight';
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    h1, h4 {
+        line-height: 3rem;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    ul {
+        list-style: none;
+    }
+    #logo-pic {
+       cursor: pointer;
+    }
+    
+    /*header section*/
+    .main-header {
+        width: 960px;
+        height: 550px;
+        position: relative;
+        background: url(./assets/images/landing-bg.jpg) no-repeat center center/cover;
+    }
+    .main-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 960px;
+        height: 550px;
+        background: rgba(55, 58, 55, 0.76);
+        z-index: 1;
+    }
+    .header-top {
+        position: fixed;
+        height: 10%;
+        z-index: 2;
+    }
+    @keyframes bounce {
+        65%, 80% {
+            transform: translateY(-15px);
+        }
+    }
+    .header-top:hover{
+        animation: bounce 1s linear;
+    }
+    .header-top .logo {
+        margin: 13rem 30rem;
+        position: fixed;
+        transform: translate(-50%,-50%);
+    }
+    .header-content {
+        margin-top: 20rem;
+        margin-left: 19rem;
+        z-index: 2;
+        position: fixed;
+        display: block;
+        text-align: center;
+    }
+    .header-content h1 {
+        font-size: 5rem;
+        line-height: 1.3rem;
+        margin: 0 0 2rem;
+        font-family: 'Poppins-Black';
+    }
+    .header-content h4 {
+        font-size: 1.48rem;
+        line-height: 1rem;
+        font-family: 'Poppins-ExtraLight';
+    }
+}

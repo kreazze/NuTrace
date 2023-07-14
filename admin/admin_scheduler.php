@@ -142,7 +142,7 @@
                 </script>
             </nav>
             <main>
-                <div class = "calendar-of-tasks">
+                <div class="calendar-of-tasks">
                     <h1>Calendar of Tasks</h1>
                   </div>
                   <div class="container">

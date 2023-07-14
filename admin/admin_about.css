@@ -119,6 +119,20 @@ nav{
     font-family:'Poppins-Black';
     background-color: #25A22B;
 }
+.title-team {
+	font-size: 30px;
+	padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+	padding-left: 20px;
+	margin-bottom: 10px;
+	margin-left: 100px;
+    border-radius: 40px;
+    color: white;
+	width: fit-content;
+    font-family:'Poppins-Black';
+    background-color: #25A22B;
+}
 .description {
 	font-size: 18px;
 	line-height: 1.5rem;
@@ -137,13 +151,14 @@ nav{
 	text-align: justify;
 }
 .prototype {
+	margin-top: 60px;
 	box-shadow: -2px 5px 5px #8f8f8f;
 }
 
 /* developer */
 .second-content {
 	margin-bottom: 25px;
-	display: block;
+	display: flex;
 	color: black;
 	text-align: center;
 	justify-content: center;
@@ -159,7 +174,7 @@ nav{
 	width: 800px;
 	height: 300px;
 	margin: 100px 100px;
-	padding: 130px 0px 10px 0px;
+	padding: 130px 12px 10px 12px;
 	border-radius: 30px;
 	position: relative;
 	box-shadow: -2px 5px 5px #8f8f8f;
@@ -169,7 +184,7 @@ nav{
 	width: 800px;
 	height: 300px;
 	margin: 100px 100px;
-	padding: 130px 0px 10px 0px;
+	padding: 130px 12px 10px 12px;
 	border-radius: 30px;
 	position: relative;
 	box-shadow: -2px 5px 5px #8f8f8f;
@@ -177,13 +192,13 @@ nav{
 }
 .dev-pic1 {
 	margin-top: 20px;
-	margin-left: 300px;
+	margin-left: 250px;
 	z-index: 9;
 	position: absolute;
 }
 .dev-pic2 {
 	margin-top: 15px;
-	margin-left: 1050px;
+	margin-left: 950px;
 	z-index: 9;
 	position: absolute;
 }
@@ -257,14 +272,97 @@ button:hover {
     background-color: #d9d9d9;
 }
 
-@media screen and (max-width: 768px) {
-
-	#content {
-		width: calc(100% - 60px);
-		left: 200px;
+@media (min-width: 768px) and (max-width: 1024px) {
+	#first-content {
+		padding-left: 100px;
+		padding-right: 100px;
+		text-align: left;
+		display: block;
+		justify-content: center;
+	}
+	.description {
+		font-size: 18px;
+		line-height: 1.5rem;
+		margin-bottom: 10px;
+		padding: 40px;
+		padding-right: 50px;
+		padding-left: 40px;
+		border-radius: 30px;
+		font-family: 'Poppins-Regular';
+		color: black;
+		background-color: #ebebeb;
+		box-shadow: -2px 5px 5px #8f8f8f;
+	}
+	.prototype {
+		margin-bottom: 50px;
+		align-items: center;
+		box-shadow: -2px 5px 5px #8f8f8f;
 	}
 
-	#content nav .nav-link {
-		display: none;
+	/* developer */
+	.second-content {
+		margin-bottom: 20px;
+		color: black;
+		text-align: center;
+		justify-content: center;
+	}
+	.row {
+		margin-top: 25px;
+		margin-bottom: 50px;
+		line-height: 1.5rem;
+		display: block;
+	}
+	.dev-content1 {
+		width: 650px;
+		height: 300px;
+		margin: 100px 100px;
+		padding: 130px 12px 10px 12px;
+		border-radius: 30px;
+		position: relative;
+		box-shadow: -2px 5px 5px #8f8f8f;
+		background: #ebebeb;
+	}
+	.dev-content2 {
+		width: 650px;
+		height: 300px;
+		margin: 100px 100px;
+		padding: 130px 12px 10px 12px;
+		border-radius: 30px;
+		position: relative;
+		box-shadow: -2px 5px 5px #8f8f8f;
+		background: #ebebeb;
+	}
+	.dev-pic1 {
+		margin-top: -75px;
+		margin-left: 330px;
+		z-index: 9;
+		position: absolute;
+	}
+	.dev-pic2 {
+		margin-top: -75px;
+		margin-left: 330px;
+		z-index: 9;
+		position: absolute;
+	}
+	.dev-pic1 img, .dev-pic2 img {
+		border: 3px solid #8f8f8f;
+		border-radius: 50%;
+	}
+	.name {
+		font-size: 30px;
+		margin-bottom: 10px;
+		font-family: 'Poppins-Black';
+		color: black;
+		text-shadow: 0px 2px 5px #8f8f8f;
+	}
+	.email, .contact-num {
+		font-size: 20px;
+		font-family: 'Poppins-Regular';
+	}
+	.details {
+		padding-left: 50px;
+		padding-right: 50px;
+		font-size: 15px;
+		font-family: 'Poppins-Regular';
 	}
 }

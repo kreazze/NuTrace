@@ -46,19 +46,6 @@ a {
 li {
 	list-style: none;
 }
-body {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	overflow-x: hidden;
-	color: #0b032d;
-	background: #f7f7f7;
-	width: 100%;
-	max-height: calc(100vh - 56px);
-	overflow-y: auto;
-	position: sticky;
-	background-color: #f7f7f7;
-}
 
 /* sidebar */
 #sidebar {
@@ -166,32 +153,20 @@ body {
 	color: white;
 }
 #sidebar .side-menu.top li a:hover {
-	animation: bounce 0.5s;
+	color: black;
 }
-.logout:hover {
-	color: white;
-	animation: bounce 0.5s;
-}
-@keyframes bounce {
-	0% {
-		transform: scale(0.8);
-		opacity: 0;
-	}
-	100% {
-		transform: scale(1);
-		opacity: 1;
-	}
+#sidebar .side-menu li a:hover {
+	color: black;
 }
 #sidebar .side-menu li a .bx {
 	min-width: calc(60px  - ((4px + 6px) * 2));
 	display: flex;
 	justify-content: center;
 }
-
-
 #content {
 	position: relative;
 	width: calc(100% - 60px);
+	height: fit-content;
 	left: 60px;
 	transition: .3s ease;
 }
@@ -199,7 +174,6 @@ body {
 	width: calc(100% - 60px);
 	left: 60px;
 }
-
 #content nav {
 	height: 56px;
 	background: #25a22b;
@@ -221,7 +195,6 @@ body {
 	left: 0;
 	border-radius: 50%;
 }
-
 #content nav .profile  {
 	width: 40px;
 	height: 40px;
@@ -235,6 +208,7 @@ body {
 	font-size: 20px;
 	color: white;
 	font-family: "Poppins-Bold";
+	margin-right: auto;
 }
 .about-div {
 	display: flex;
@@ -250,19 +224,17 @@ body {
 }
 
 /* calendar */
-main .calendar-of-tasks{
-	color: #0cab19;
-	position: absolute;
-	display: flex;
-	justify-content: stretch;
-	top: 110px;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 40px;
+.calendar-of-tasks {
+	margin-top: 10px;
+}
+h1 {
+	font-size: 50px;
+	text-align: center;
+	color: #25a22b;
 	font-family: 'Poppins-Black';
 }
 main .container{
-	top: 100px;
+	top: 20px;
 	position: relative;
 	justify-content: center;
 	width: 650px;
@@ -271,24 +243,22 @@ main .container{
 	padding: 5px;
 	color: #fff;
 	display: flex;
-  
 	border-radius: 5px;
 	background-color: rgb(194, 188, 188);
 }
 main .left{
 	width: 80%;
-	padding: 15px;
+	padding: 15px 0px 15px 15px;
 }
 main .calendar{
 	position: relative;
-  width: 93%;
-  height: 100%;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  color: black;
-
-  background-color: #fff;
+	width: 93%;
+	height: 100%;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	color: black;
+ 	background-color: #fff;
 }
 main .calendar .month {
 	width: 100%;
@@ -323,8 +293,6 @@ main .calendar .weekdays{
   font-weight: bold;
   text-transform: capitalize;
   font-family:  "Poppins-Bold";
-  
-
 }
 main .weekdays div .ul{
 	width: 11%;
@@ -337,7 +305,7 @@ main .goto-only{
 	color: black;
 	position: relative;
 	left: 25px;
-	top: 50px;
+	top: 20px;
 	font-size: 20px;
 	font-family:"Poppins-ExtraLight";
   }
@@ -345,7 +313,7 @@ main .add-task{
 	color: black;
 	position: relative;
 	left: 400px;
-	top: 63px;
+	top: 25px;
 	font-size: 15px;
 	font-family: 'Poppins-ExtraLight';
   }
@@ -435,11 +403,10 @@ main .calendar .days .active.event {
   }
 main .calendar .goto-today {
 	width: 100%;
-	height: 100px;
+	height: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 5px;
 	padding: 0 20px;
 	margin-bottom: 20px;
 	color: var(--primary-clr);
@@ -450,7 +417,6 @@ main .calendar .goto-today .goto {
 	border-radius: 5px;
 	overflow: hidden;
 	border: 1px solid var(--primary-clr);
-	
   }
 main .calendar .goto-today .goto input {
 	width: 100%;
@@ -490,16 +456,14 @@ main .right .today-date {
 	height: 50px;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 15px;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 40px;
-	padding-left: 20px;
+	padding: 0 20px;
+	padding-left: 30px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	text-transform: capitalize;
 	font-family: "Poppins-Bold";
-	
   }
 main .right .today-date .event-day {
 	font-size: 15px;
@@ -515,15 +479,16 @@ main .events {
 	width: 100%;
 	height: 70%;
 	max-height: 600px;
+	padding-right: 20px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	display: flex;
 	flex-direction: column;
-	
   }
 main .events .event {
 	position: relative;
 	width: 100%;
+	padding-left: 10px;
 	min-height: 70px;
 	display: flex;
 	justify-content: center;
@@ -546,7 +511,7 @@ main .events .event .title {
 main .events .event .title .event-title {
 	font-size: 15px;
 	font-weight: 400;
-	
+	font-family: "Poppins-Regular";
   }
 main .events .event i {
 	color: var(--primary-clr);
@@ -555,6 +520,7 @@ main .events .event i {
 main .events .event .event-time {
 	font-size: 10px;
 	font-weight: 400;
+	font-family: "Poppins-Regular";
 	color: black;
 	pointer-events: none;
   }
@@ -567,6 +533,7 @@ main .events .event::after {
 	right: 0;
 	font-size: 3rem;
 	line-height: 1;
+	padding-right: 5px;
 	display: none;
 	align-items: center;
 	justify-content: center;
@@ -606,6 +573,7 @@ main .events .no-event {
 	display: flex;
 	position: absolute;
 	top: 200px;
+	padding-left: 15px;
 	justify-content: space-between;
 	font-size: 20px;
 	font-weight: 500;
@@ -622,9 +590,9 @@ main .add-event-wrapper {
 	border-radius: 5px;
 	background-color: #fff;
 	transform: translateX(-50%);
-	transition: max-height 0.5s ease;
+	transition: max-heieventght 0.5s ease;
   }
-main .add-event-wrapper.active {
+main .add--wrapper.active {
 	max-height: 300px;
   }
 main .add-event-header {
@@ -635,6 +603,7 @@ main .add-event-header {
 	justify-content: space-between;
 	padding: 0 20px;
 	color: #373c4f;
+	font-family: "Poppins-Regular";
 	border-bottom: 1px solid #f5f5f5;
   }
 main .add-event-header .close {
@@ -650,7 +619,7 @@ main .add-event-header .title {
   }
 main .add-event-body {
 	width: 100%;
-	height: 100%;
+	height: fit-content;
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
@@ -833,7 +802,6 @@ main .add-event-footer .add-event-btn:hover {
 	width: calc(100% - 60px);
 	left: 60px;
 }
-
 #content nav {
 	height: 56px;
 	background: #25a22b;
@@ -854,31 +822,29 @@ main .add-event-footer .add-event-btn:hover {
 	left: 0;
 	border-radius: 50%;
 }
-
 #content nav .profile  {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
 	object-fit: cover;
 }
-
 .user {
 	font-size: 20px;
 	color: white;
 	font-family: "Poppins-Bold";
 }
+
 /*popup*/
 h2 {
 	text-align: center;
-	font-family: "poppins black", sans-serif;
+	font-family: "Poppins-Regular";
 	font-size: 25px;
 	margin-top: 10px;
 	margin-bottom: 3px;
 }
 h3 {
-	
 	font-style: italic;
-	font-family: "poppins", sans-serif;
+	font-family: "Poppins-Regular";
 	text-align: center;
 	font-size: 15px;
     font-weight: 400;
@@ -916,7 +882,6 @@ h3 {
 	max-height: 30%;
 	overflow: auto;
 }
-
 .yes {
 	font-size: 18px;
 	font-family: "poppins semibold", sans-serif;
@@ -933,7 +898,6 @@ h3 {
 	cursor: pointer;
 	position: absolute;
 }
-
 .no {
 	font-size: 18px;
 	font-family: 'Poppins-SemiBold';
@@ -997,121 +961,21 @@ img {
 	font-size: 11px;
 	font-family: 'Poppins-Regular';
 }
-@media screen and (max-width: 1000px) {
-	.main {
-	  align-items: flex-start;
-	  justify-content: flex-start;
-	}
-	main .container {
-	  min-height: 100vh;
-	  flex-direction: column;
-	  border-radius: 0;
-	}
-	main .container .left {
-	  width: 100%;
-	  height: 100%;
-	  padding: 20px 0;
-	}
-	main .container .right {
-	  width: 100%;
-	  height: 100%;
-	  padding: 20px 0;
-	}
-	main .calendar::before,
-	main .calendar::after {
-	  top: 100%;
-	  left: 50%;
-	  width: 97%;
-	  height: 12px;
-	  border-radius: 0 0 5px 5px;
-	  transform: translateX(-50%);
-	}
-	main .calendar::before {
-	  width: 94%;
-	  top: calc(100% + 12px);
-	}
-	main .events {
-	  padding-bottom: 340px;
-	}
-	main .add-event-wrapper {
-	  bottom: 100px;
-	}
-  }
-  @media screen and (max-width: 500px) {
-	main .calendar .month {
-	  height: 75px;
-	}
-	main .calendar .weekdays {
-	  height: 50px;
-	}
-	main .calendar .days .day {
-	  height: 40px;
-	  font-size: 0.8rem;
-	}
-	main .calendar .days .day.active,
-	main .calendar .days .day.today {
-	  font-size: 1rem;
-	}
-	main .right .today-date {
-	  padding: 20px;
-	}
-  }
-@media screen and (max-width: 1000px) {
-	
-	#sidebar {
-		width: 200px;
-	}
 
-	#content {
-		width: calc(100% - 60px);
-		left: 200px;
-	}
-
-	#content nav .nav-link {
+@media (min-width: 768px) and (max-width: 1024px) {
+	main .events .event::after {
+		content: "✓";
+		position: absolute;
+		top: 50%;
+		right: 0;
+		font-size: 3rem;
+		line-height: 1;
+		padding-right: 10px;
 		display: none;
-	}
-}
-
-@media screen and (max-width: 576px) {
-	#content nav form .form-input input {
-		display: none;
-	}
-
-	#content nav form .form-input button {
-		width: auto;
-		height: auto;
-		background: transparent;
-		border-radius: none;
-		color: var(--dark);
-	}
-
-	#content nav form.show .form-input input {
-		display: block;
-		width: 100%;
-	}
-	#content nav form.show .form-input button {
-		width: 36px;
-		height: 100%;
-		border-radius: 0 36px 36px 0;
-		color: var(--light);
-		background: var(--red);
-	}
-
-	#content nav form.show ~ .profile {
-		display: none;
-	}
-
-	#content main .box-info {
-		grid-template-columns: 1fr;
-	}
-
-	#content main .table-data .head {
-		min-width: 420px;
-	}
-	#content main .table-data .order table {
-		min-width: 420px;
-	}
-	#content main .table-data .todo .todo-list {
-		min-width: 420px;
+		align-items: center;
+		justify-content: center;
+		opacity: 0.3;
+		color: red;
+		transform: translateY(-50%);
 	}
 }

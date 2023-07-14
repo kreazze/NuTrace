@@ -143,7 +143,7 @@
                 </script>
             </nav>
             <main>
-                <div class = "calendar-of-tasks">
+                <div class="calendar-of-tasks">
                     <h1>Calendar of Tasks</h1>
                   </div>
                   <div class="container">
@@ -219,9 +219,9 @@
                         <i class="fas fa-plus"></i> 
                     </button>
                   </div>
-                  <script src="../js-files/calendar.js"></script>
             </main>
         </section>
+        <script src="../js-files/calendar.js"></script>
         <script src="../js-files/sidebar.js"></script>
     </body>
     <footer id="footer">

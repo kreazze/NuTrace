@@ -151,60 +151,10 @@
                                         <p id="temperature-value">--°C</p>
                                         <p id="temperature-description">-</p>
                                     </div>
-                                    <div id="weather-icon">
+                                   <div id="weather-icon">
                                         <img src="../assets/images/weather/unknown.png" alt="">                                     
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!--Today's task-->
-                        <div id="text-left2">
-                            <p id="title">Today's Task</p>
-                            <div id="description-task">
-                                <div id="section-task">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                            <th>Task</th>
-                                            <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                            <td id="task">Maglagay ng fertilizer</td>
-                                            <td class="status completed">Completed</td>
-                                            </tr>
-                                            <tr>
-                                            <td id="task">Umani ng okra</td>
-                                            <td class="status pending">Pending</td>
-                                            </tr>
-                                            <tr>
-                                            <td id="task">Training registration</td>
-                                            <td class="status pending">Pending</td>
-                                            </tr>
-                                            <tr>
-                                            <td id="task">Magbungkal ng lupa</td>
-                                            <td class="status completed">Completed</td>
-                                            </tr>
-                                            <tr>
-                                            <td id="task">Compute plan production</td>
-                                            <td class="status completed">Completed</td>
-                                            </tr>
-                                            <tr>
-                                            <td id="task">Put fertilizer</td>
-                                            <td class="status pending">Pending</td>
-                                            </tr>
-                                            <tr>
-                                            <td id="task">Eggplant soil monitoring</td>
-                                            <td class="status completed">Completed</td>
-                                            </tr>
-                                            <tr>
-                                            <td id="task">Harvest</td>
-                                            <td class="status completed">Completed</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div> 
                             </div>
                         </div>
                     </div>
