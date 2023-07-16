@@ -5,7 +5,7 @@
     use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
     $sql_query = "SELECT date, croptype, quantity, harvester, status FROM tbl_inventory";
-    $conn = new mysqli("localhost", "u158858399_root", "?QKZg9PRv4Ns", "u158858399_nutrace_server");
+    $conn = new mysqli("localhost", "root", "", "nutrace_server");
     $resultset = mysqli_query($conn, $sql_query) or die("database error:". mysqli_error($conn));
     $developer_records = array();
 

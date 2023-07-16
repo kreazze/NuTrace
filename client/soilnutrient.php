@@ -24,7 +24,7 @@
         <section id="sidebar">
             <a href="../sections/homepage.php" class="brand">
                 <img class="logo-pic" src="../assets/images/main/nutrace_logo.png" width="25px" height="25px">
-                <span>NuTrace</span>
+                <span>Soil Nutrient</span>
             </a>
             <ul class="side-menu top">
                 <li>

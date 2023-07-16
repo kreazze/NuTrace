@@ -13,7 +13,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>NuTrace</title>
+        <title>Soil Nutrient</title>
         <link rel ="stylesheet" href="../admin/admin_soilnutrient.css">
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
         <!-- Add Firebase SDK -->

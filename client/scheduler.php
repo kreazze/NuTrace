@@ -22,7 +22,7 @@
           name="keywords"
           content="calendar, events, reminders, javascript, html, css, open source coding"
         />
-        <title>NuTrace</title>
+        <title>Scheduler</title>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"

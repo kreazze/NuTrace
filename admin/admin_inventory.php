@@ -15,7 +15,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>NuTrace</title>
+        <title>Inventory</title>
         <link rel ="stylesheet" href="../admin/admin_inventory.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="icon" type="image/png" href="../assets/images/main/nutrace_logo.png">
@@ -160,12 +160,12 @@
                                     <input placeholder="MM/DD/YYYY" type="date" name="date" required>
                                     <label>Crop Type</label> <label class="tagalog">(Uri ng Tanim)</label>
                                     <select class="sBtn-text" name="croptype"id="croptype" required>
-                                            <option class="options"> Select Crop </option>
-                                            <option value="kamatis"> Kamatis </option>
-                                            <option value="mais"> Mais </option>
-                                            <option value="okra"> Okra </option>
-                                            <option value="patola"> Patola </option>
-                                            <option value="talong"> Talong </option>
+                                        <option class="options"> Select Crop </option>
+                                        <option value="kamatis"> Kamatis </option>
+                                        <option value="mais"> Mais </option>
+                                        <option value="okra"> Okra </option>
+                                        <option value="patola"> Patola </option>
+                                        <option value="talong"> Talong </option>
                                     </select>
                                     <label>Quantity</label> <label class="tagalog">(Dami)</label>
                                     <div class="qty">
