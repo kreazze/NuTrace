@@ -1,10 +1,35 @@
 <?php
     require_once('../server/session.php');
+    include('../server/connect.php');
 
     // Check if user is not logged in, redirect to login page
     if (!isset($_SESSION["fullname"])) {
         header("Location: ../sections/homepage.php");
         exit();
+    }
+    
+    date_default_timezone_set('Asia/Manila');
+    
+    $hostname     = "localhost";
+    $username     = "u158858399_root"; 
+    $password     = "+8IM3HNgT/f";
+    $databasename = "u158858399_nutrace_server";
+    
+    $conn = new mysqli($hostname, $username, $password, $databasename);
+    
+    
+    if(
+        isset($_GET['update'])
+    ) {
+        $sn_nitrogen    = $_GET["nitrogen"];
+        $sn_phosphorus  = $_GET["phosphorus"];
+        $sn_potassium   = $_GET["potassium"];
+        $sn_moisture    = $_GET["moisture"];
+        $sn_temperature = $_GET["temperature"];
+        $sn_ph          = $_GET["ph"];
+    
+        $query = sprintf("INSERT INTO `soil_nutrients` (`sn_date`, `sn_nitrogen`, `sn_phosphorus`, `sn_potassium`, `sn_moisture`, `sn_temperature`, `sn_ph`) VALUES(now(),'%s','%s','%s','%s','%s','%s')", $sn_nitrogen, $sn_phosphorus, $sn_potassium, $sn_moisture, $sn_temperature, $sn_ph);
+        $conn->query($query);
     }
 ?>
 
@@ -132,6 +157,7 @@
             <main id="main-content">
                 <p id="p4">Soil Nutrient Monitoring</p>
                 <div id="upper-content">
+                    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
                     <div id="main-left">
                         <p id="eggplant-title">Eggplant Soil Nutrient Status</p>
                         <p id="p5" class="datetime">Date of monitoring: <span id="datetime"></span></p>
@@ -187,109 +213,114 @@
                         </div>
                     </div>
                     <script>
-                        // Initialize Firebase
-                        var firebaseConfig = {
-                            apiKey: "AIzaSyCH6RkFBG6hvPotKfA7A6YpzExaPfdvtxo",
-                            authDomain: "nutrace-71753.firebaseapp.com",
-                            databaseURL: "https://nutrace-71753-default-rtdb.asia-southeast1.firebasedatabase.app",
-                            projectId: "nutrace-71753",
-                            storageBucket: "nutrace-71753.appspot.com",
-                            messagingSenderId: "329028247407",
-                            appId: "1:329028247407:web:f47c5b574053215e8d929a",
-                            measurementId: "G-K2M665SDHS"
-                        };
-                        firebase.initializeApp(firebaseConfig);
-
-                        // Get a reference to the database
-                        var database = firebase.database().ref("Sensors");
-
-                        // Read data from the Firebase Realtime Database
-                        database.on("value", function(snapshot) {
-                            var data = snapshot.val();
-
-                            // Clear the table bodies
-                            var nitrogenBody = document.getElementById("nitrogen-body");
-                            var phosphorusBody = document.getElementById("phosphorus-body");
-                            var potassiumBody = document.getElementById("potassium-body");
-                            var moistureBody = document.getElementById("moisture-body");
-                            var tempBody = document.getElementById("temp-body");
-                            var phBody = document.getElementById("ph-body");
-                            nitrogenBody.innerHTML = "";
-                            phosphorusBody.innerHTML = "";
-                            potassiumBody.innerHTML = "";
-                            moistureBody.innerHTML = "";
-                            tempBody.innerHTML = "";
-                            phBody.innerHTML = "";
-
-                            // Iterate over the data and create table rows for each parameter
-                            for (var key in data) {
-                                if (data.hasOwnProperty(key)) {
-                                    var row = document.createElement("tr");
-                                    var valueCell = document.createElement("td");
-                                    valueCell.textContent = data[key];
-                                    valueCell.id = key + "-value"; // Set ID for value cell
-
-                                    var npk_thresholds = [
-                                        { maxValue: 10, className: "low", color: "#DFE400" },
-                                        { maxValue: 20, className: "medium-low", color: "#ECBF1E" },
-                                        { maxValue: 40, className: "normal", color: "#75E463" },
-                                        { maxValue: 60, className: "medium-high", color: "#FF9292" },
-                                        { maxValue: 100, className: "high", color: "#DF3333" },
-                                    ];
-                                    var moisture_thresholds = [
-                                        { maxValue: 30, className: "low", color: "#DFE400" },
-                                        { maxValue: 59, className: "dry", color: "#ECBF1E" },
-                                        { maxValue: 90, className: "moist", color: "#75E463" },
-                                        { maxValue: 100, className: "wet", color: "#7CD7F5" },
-                                        { maxValue: 200, className: "xtrm-wet", color: "#00789D" },
-                                    ];
-                                    var temp_thresholds = [
-                                        { maxValue: 15, className: "low", color: "#DFE400" },
-                                        { maxValue: 23, className: "medium-low", color: "#ECBF1E" },
-                                        { maxValue: 32, className: "normal", color: "#75E463" },
-                                        { maxValue: 35, className: "medium-high", color: "#FF9292" },
-                                        { maxValue: 100, className: "high", color: "#DF3333" },
-                                    ];
-                                    var pH_thresholds = [
-                                        { maxValue: 5.4, className: "low", color: "#DFE400" },
-                                        { maxValue: 6.8, className: "normal", color: "#75E463" },
-                                        { maxValue: 10, className: "high", color: "#DF3333" },
-                                    ];
-
-                                    // Add CSS class based on amount
-                                    if (key === "Nitrogen") {
-                                        valueCell.classList.add(getAmountClass(data[key], npk_thresholds));
-                                    } else if (key === "Phosphorus") {
-                                        valueCell.classList.add(getAmountClass(data[key], npk_thresholds));
-                                    } else if (key === "Potassium") {
-                                        valueCell.classList.add(getAmountClass(data[key], npk_thresholds));
-                                    } else if (key === "SoilMoisture") {
-                                        valueCell.classList.add(getAmountClass(data[key], moisture_thresholds));
-                                    } else if (key === "SoilTemp") {
-                                        valueCell.classList.add(getAmountClass(data[key], temp_thresholds));
-                                    } else if (key === "pH") {
-                                        valueCell.classList.add(getAmountClass(data[key], pH_thresholds));
+                        $(document).ready(function() {
+                            get_data();
+                            setInterval(() => {
+                                get_data();
+                            }, 1000)
+                        });
+                        
+                        function get_data() {
+                            $.ajax({
+                        		url: "https://nutrace.website/check.php",
+                        		type: "GET",
+                        		data: {},
+                        		success: function(response) {
+                        			var data = JSON.parse(response);
+                        			
+                        			$('#nitrogen-body').text(data.nitrogen);
+                        			$('#phosphorus-body').text(data.phosphorus);
+                        			$('#potassium-body').text(data.potassium);
+                        			$('#moisture-body').text(data.moisture);
+                        			$('#temp-body').text(data.temperature);
+                        			$('#ph-body').text(data.ph);
+                        			
+                        			// Clear the table bodies
+                                    var nitrogenBody = document.getElementById("nitrogen-body");
+                                    var phosphorusBody = document.getElementById("phosphorus-body");
+                                    var potassiumBody = document.getElementById("potassium-body");
+                                    var moistureBody = document.getElementById("moisture-body");
+                                    var tempBody = document.getElementById("temp-body");
+                                    var phBody = document.getElementById("ph-body");
+                                    nitrogenBody.innerHTML = "";
+                                    phosphorusBody.innerHTML = "";
+                                    potassiumBody.innerHTML = "";
+                                    moistureBody.innerHTML = "";
+                                    tempBody.innerHTML = "";
+                                    phBody.innerHTML = "";
+        
+                                    // Iterate over the data and create table rows for each parameter
+                                    for (var key in data) {
+                                        if (data.hasOwnProperty(key)) {
+                                            var row = document.createElement("tr");
+                                            var valueCell = document.createElement("td");
+                                            valueCell.textContent = data[key];
+                                            valueCell.id = key + "-value"; // Set ID for value cell
+        
+                                            var npk_thresholds = [
+                                                { maxValue: 10, className: "low", color: "#DFE400" },
+                                                { maxValue: 20, className: "medium-low", color: "#ECBF1E" },
+                                                { maxValue: 40, className: "normal", color: "#75E463" },
+                                                { maxValue: 60, className: "medium-high", color: "#FF9292" },
+                                                { maxValue: 100, className: "high", color: "#DF3333" },
+                                            ];
+                                            var moisture_thresholds = [
+                                                { maxValue: 30, className: "low", color: "#DFE400" },
+                                                { maxValue: 59, className: "dry", color: "#ECBF1E" },
+                                                { maxValue: 90, className: "moist", color: "#75E463" },
+                                                { maxValue: 100, className: "wet", color: "#7CD7F5" },
+                                                { maxValue: 200, className: "xtrm-wet", color: "#00789D" },
+                                            ];
+                                            var temp_thresholds = [
+                                                { maxValue: 15, className: "low", color: "#DFE400" },
+                                                { maxValue: 23, className: "medium-low", color: "#ECBF1E" },
+                                                { maxValue: 32, className: "normal", color: "#75E463" },
+                                                { maxValue: 35, className: "medium-high", color: "#FF9292" },
+                                                { maxValue: 100, className: "high", color: "#DF3333" },
+                                            ];
+                                            var pH_thresholds = [
+                                                { maxValue: 5.4, className: "low", color: "#DFE400" },
+                                                { maxValue: 6.8, className: "normal", color: "#75E463" },
+                                                { maxValue: 10, className: "high", color: "#DF3333" },
+                                            ];
+        
+                                            // Add CSS class based on amount
+                                            if (key === "nitrogen") {
+                                                valueCell.classList.add(getAmountClass(data.nitrogen, npk_thresholds));
+                                            } else if (key === "phosphorus") {
+                                                valueCell.classList.add(getAmountClass(data.phosphorus, npk_thresholds));
+                                            } else if (key === "potassium") {
+                                                valueCell.classList.add(getAmountClass(data.potassium, npk_thresholds));
+                                            } else if (key === "moisture") {
+                                                valueCell.classList.add(getAmountClass(data.moisture, moisture_thresholds));
+                                            } else if (key === "temperature") {
+                                                valueCell.classList.add(getAmountClass(data.temperature, temp_thresholds));
+                                            } else if (key === "ph") {
+                                                valueCell.classList.add(getAmountClass(data.ph, pH_thresholds));
+                                            }
+        
+                                            row.appendChild(valueCell);
+        
+                                            // Append the row to the corresponding table based on the parameter
+                                            if (key === "nitrogen") {
+                                                nitrogenBody.appendChild(row);
+                                            } else if (key === "phosphorus") {
+                                                phosphorusBody.appendChild(row);
+                                            } else if (key === "potassium") {
+                                                potassiumBody.appendChild(row);
+                                            } else if (key === "moisture") {
+                                                moistureBody.appendChild(row);
+                                            } else if (key === "temperature") {
+                                                tempBody.appendChild(row);
+                                            } else if (key === "ph") {
+                                                phBody.appendChild(row);
+                                            }
+                                        }
                                     }
-
-                                    row.appendChild(valueCell);
-
-                                    // Append the row to the corresponding table based on the parameter
-                                    if (key === "Nitrogen") {
-                                        nitrogenBody.appendChild(row);
-                                    } else if (key === "Phosphorus") {
-                                        phosphorusBody.appendChild(row);
-                                    } else if (key === "Potassium") {
-                                        potassiumBody.appendChild(row);
-                                    } else if (key === "SoilMoisture") {
-                                        moistureBody.appendChild(row);
-                                    } else if (key === "SoilTemp") {
-                                        tempBody.appendChild(row);
-                                    } else if (key === "pH") {
-                                        phBody.appendChild(row);
-                                    }
-                                }
-                            }
-                        })
+                        		}
+                        	})
+                        }
+                        
                         // Function to determine the CSS class based on amount
                         function getAmountClass(amount, thresholds) {
                             for (var i = 0; i < thresholds.length; i++) {

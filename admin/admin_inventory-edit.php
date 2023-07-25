@@ -17,7 +17,7 @@
         $harvester = $_POST['edit_harvester'];
         
         $statusQuery = "SELECT status FROM tbl_inventory WHERE id='$id'";
-        $conn = new mysqli("localhost", "u158858399_root", "?QKZg9PRv4Ns", "u158858399_nutrace_server");
+        $conn = new mysqli("localhost", "root", "", "nutrace_server");
         $statusResult = mysqli_query($conn, $statusQuery);
         $row = mysqli_fetch_assoc($statusResult);
         $status = $row['status'];
